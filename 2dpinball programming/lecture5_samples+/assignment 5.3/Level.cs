@@ -6,7 +6,6 @@ namespace GXPEngine
 {
 	public partial class Level : GameObject
 	{	
-		//helloworld
 		List<NLineSegment> _lines;
 		Ball _ball;
 		MyGame _game;
