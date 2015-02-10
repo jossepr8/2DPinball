@@ -2,7 +2,7 @@
 
 namespace GXPEngine
 {
-	public partial class Menu : GameObject
+	public class Menu : GameObject
 	{
 		public Menu ()
 		{

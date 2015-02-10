@@ -5,7 +5,7 @@ using System;
 namespace GXPEngine
 {
 
-	public partial class MyGame : Game
+	public class MyGame : Game
 	{	
 		States _state;
 		Level _level;

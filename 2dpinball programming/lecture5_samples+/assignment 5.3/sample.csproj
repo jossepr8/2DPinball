@@ -126,9 +126,6 @@
     <Compile Include="..\..\Components\NLineSegment.cs">
       <Link>Components\NLineSegment.cs</Link>
     </Compile>
-    <Compile Include="Josse.cs" />
-    <Compile Include="Tim.cs" />
-    <Compile Include="Dmitrij.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
   </ItemGroup>

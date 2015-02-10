@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace GXPEngine
 {
-	public partial class Level : GameObject
+	public class Level : GameObject
 	{	
 		List<NLineSegment> _lines;
 		Ball _ball;
