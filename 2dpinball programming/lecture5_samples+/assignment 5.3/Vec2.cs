@@ -78,6 +78,29 @@ namespace GXPEngine
 			return this;
 		}
 
+		public void SetAngleRadians(float radians){
+			float length = Length ();
+			x = (float)Math.Cos (radians) * length;
+			y = (float)Math.Sin (radians) * length;
+		}
+		public void SetAngleDegrees(float degrees){
+			SetAngleRadians (degrees * ((float)Math.PI / 180));
+		}
+		public float GetAngleRadians(){
+			return (float)Math.Atan2 (y,x);
+		}
+		public float GetAngleDegrees(){
+			return GetAngleRadians() * (180 / (float)Math.PI);
+		}
+		public void RotateDegrees(float degrees){
+			//RotateRadians (degrees * ((float)Math.PI / 180));
+			SetAngleDegrees (GetAngleDegrees () + degrees);
+		}
+		public void RotateRadians(float radians){
+			SetAngleRadians (GetAngleRadians() + radians);
+		}
+
+
 
 	}
 }

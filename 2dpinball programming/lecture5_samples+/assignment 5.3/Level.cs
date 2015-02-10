@@ -6,7 +6,7 @@ namespace GXPEngine
 {
 	public class Level : GameObject
 	{	
-		List<NLineSegment> _lines;
+		List<LineSegment> _lines;
 		Ball _ball;
 		MyGame _game;
 
@@ -14,6 +14,10 @@ namespace GXPEngine
 		Canvas _canvas;
 		int width;
 		int height;
+		Flipper flipper1;
+		Flipper flipper2;
+
+
 
 		public Level (MyGame game)
 		{
@@ -23,7 +27,7 @@ namespace GXPEngine
 			_canvas = new Canvas (width, height);
 			AddChild (_canvas);
 
-			_lines = new List<NLineSegment> ();
+			_lines = new List<LineSegment> ();
 
 			//-----------------------------walls----------------------
 			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));	
@@ -33,16 +37,24 @@ namespace GXPEngine
 			//--------------------------------------------------------
 
 			//------------------------------enemies-------------------
-			AddLine (new Vec2 (400, 300), new Vec2 (400,400));	
+			//AddLine (new Vec2 (400, 300), new Vec2 (500,400));	
 			//--------------------------------------------------------
 
-			AddLine (new Vec2 (200, 600), new Vec2 (0,400));	//flipper1
-			AddLine (new Vec2 (600, 600), new Vec2 (800,400));	//flipper2
+			//AddLine (new Vec2 (200, 600), new Vec2 (0,400));		//flipper1
+			//AddLine (new Vec2 (600, 600), new Vec2 (800,400));	//flipper2
+			flipper1 = new Flipper (new Vec2 (200, 550), new Vec2 (50, 550));
+			AddChild (flipper1);
+			_lines.Add (flipper1);
+
+			flipper2 = new Flipper (new Vec2 (600, 550),new Vec2 (750, 550));
+			AddChild (flipper2);
+			_lines.Add (flipper2);
+
 
 			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){ name = "Ball" };
 			AddChild (_ball);
 			_ball.Read ();
-			_ball.velocity = new Vec2 (400,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
+			_ball.velocity = new Vec2 (500,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
 			_previousPosition = _ball.position.Clone ();
 		}
 		void AddLine (Vec2 start, Vec2 end) {
@@ -69,7 +81,7 @@ namespace GXPEngine
 			_ball.velocity.Add (new Vec2 (0, 1));
 		}
 
-		void lineCollisionTest(NLineSegment line, bool flipNormal) {
+		void lineCollisionTest(LineSegment line, bool flipNormal) {
 			Vec2 differenceVector = _ball.position.Clone ().Sub (line.start);
 			Vec2 lineNormal = line.end.Clone ().Sub (line.start).Normal ().Scale(flipNormal? -1: 1);
 			Vec2 lineNormalNormal = lineNormal.Clone().Normal ().Scale(flipNormal? -1: 1);
