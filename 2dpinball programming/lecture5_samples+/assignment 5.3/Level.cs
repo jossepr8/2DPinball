@@ -25,17 +25,24 @@ namespace GXPEngine
 
 			_lines = new List<NLineSegment> ();
 
+			//-----------------------------walls----------------------
 			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));	
 			AddLine (new Vec2 (width, 0), new Vec2 (width, height));	
 			AddLine (new Vec2 (width, height), new Vec2 (0, height));	
 			AddLine (new Vec2 (0, height), new Vec2 (0,0));	
+			//--------------------------------------------------------
 
-			//AddLine (new Vec2 (200, 200), new Vec2 (width-200,height-200));	
+			//------------------------------enemies-------------------
+			AddLine (new Vec2 (400, 300), new Vec2 (400,400));	
+			//--------------------------------------------------------
 
-			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green);
+			AddLine (new Vec2 (200, 600), new Vec2 (0,400));	//flipper1
+			AddLine (new Vec2 (600, 600), new Vec2 (800,400));	//flipper2
+
+			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){ name = "Ball" };
 			AddChild (_ball);
-
-			_ball.velocity = new Vec2 (300,200).Sub(_ball.position).Normalize().Scale(25);
+			Console.WriteLine (_ball.name);
+			_ball.velocity = new Vec2 (400,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
 			_previousPosition = _ball.position.Clone ();
 		}
 		void AddLine (Vec2 start, Vec2 end) {
@@ -50,15 +57,16 @@ namespace GXPEngine
 			_ball.Step ();
 
 			for (int i = 0; i < _lines.Count; i++) {
-				lineCollisionTest (_lines [i],false);
+				lineCollisionTest (_lines [i],false);	//collisiontest twice for both sides
 				lineCollisionTest (_lines [i],true);
 			}
 
-			_canvas.graphics.DrawLine (
+			_canvas.graphics.DrawLine (	//white trail behind the ball
 				Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 			);
 
 			_previousPosition = _ball.position.Clone ();
+			_ball.velocity.Add (new Vec2 (0, 1));
 		}
 
 		void lineCollisionTest(NLineSegment line, bool flipNormal) {

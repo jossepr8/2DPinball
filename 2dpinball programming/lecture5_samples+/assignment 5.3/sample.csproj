@@ -128,8 +128,10 @@
     </Compile>
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="XMLsaver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
 </Project>
