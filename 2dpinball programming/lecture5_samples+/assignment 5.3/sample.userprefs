@@ -1,13 +1,10 @@
 ﻿<Properties StartupItem="sample.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Level.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyGame.cs">
     <Files>
-      <File FileName="MyGame.cs" Line="5" Column="5" />
-      <File FileName="Level.cs" Line="4" Column="4" />
-      <File FileName="Josse.cs" Line="1" Column="1" />
-      <File FileName="Tim.cs" Line="1" Column="1" />
-      <File FileName="Dmitrij.cs" Line="1" Column="1" />
-      <File FileName="Menu.cs" Line="1" Column="1" />
+      <File FileName="MyGame.cs" Line="3" Column="3" />
+      <File FileName="Level.cs" Line="3" Column="3" />
+      <File FileName="Menu.cs" Line="9" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,5 +1,6 @@
 using GXPEngine;
 using System;
+using System.Collections.Generic;
 
 
 namespace GXPEngine
@@ -8,8 +9,8 @@ namespace GXPEngine
 	public class MyGame : Game
 	{	
 		States _state;
-		Level _level;
-		Menu _menu;
+		//Level _level;
+		//Menu _menu;
 
 		static void Main() {
 			new MyGame().Start();
@@ -36,10 +37,11 @@ namespace GXPEngine
 				return;
 			}
 			_state = state;
-			for (int i = 0; i < GetChildren().Count; i++) {	
-				if (GetChildren () [i] is Level ||	//remove level
-					GetChildren () [i] is Menu) {	//remove menu
-					RemoveChild (GetChildren () [i]);
+			List<GameObject> children = GetChildren ();
+			for (int i = 0; i < children.Count; i++) {	
+				if (children [i] is Level ||	//remove level
+					children [i] is Menu) {		//remove menu
+					RemoveChild (children [i]);
 				}
 			}
 			StartState (_state);
