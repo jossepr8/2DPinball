@@ -53,25 +53,29 @@ namespace GXPEngine
 			}
 		}
 
-		public static void Read(){
+		public void Read(){
 			using (XmlReader reader = XmlReader.Create("properties.xml")) {
 				while (reader.Read()) {
+
+				
+
 					switch (reader.NodeType) 
 					{
 					case XmlNodeType.Element: 
 
-						Console.Write ("<" + reader.Name);
-						Console.WriteLine (">");
+						//Console.Write ("<" + reader.Name);
+						//Console.WriteLine (">");
 
 						break;
 
 					case XmlNodeType.Text:
+						Console.WriteLine (reader.Name);
 						Console.WriteLine (reader.Value);
 						break;
 
 					case XmlNodeType.EndElement:
-						Console.Write("</" + reader.Name);
-						Console.WriteLine(">");
+						//Console.Write("</" + reader.Name);
+						//Console.WriteLine(">");
 						break;
 					}
 				}

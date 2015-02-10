@@ -8,7 +8,7 @@ namespace GXPEngine
 		public XMLsaver ()
 		{
 		}
-
+		/*
 		public static void Read(){
 			using (XmlReader reader = XmlReader.Create("properties.xml")) {
 				while (reader.Read()) {
@@ -32,7 +32,7 @@ namespace GXPEngine
 				}
 			}
 		}
-
+		*/
 
 	}
 }

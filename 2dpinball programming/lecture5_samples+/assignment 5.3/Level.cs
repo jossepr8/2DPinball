@@ -41,7 +41,7 @@ namespace GXPEngine
 
 			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){ name = "Ball" };
 			AddChild (_ball);
-			Console.WriteLine (_ball.name);
+			_ball.Read ();
 			_ball.velocity = new Vec2 (400,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
 			_previousPosition = _ball.position.Clone ();
 		}
