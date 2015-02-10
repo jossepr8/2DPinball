@@ -1,0 +1,20 @@
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\001_line_collision_bouncing_starting_point\bin\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\001_line_collision_bouncing_starting_point\bin\Debug\GXPEngine.pdb
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\001_line_collision_bouncing_starting_point\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\001_line_collision_bouncing_starting_point\obj\x86\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\001_line_collision_bouncing_starting_point\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.pdb
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\assignment 5.3\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\game physics\physics_lect_5_ball_ball_collision\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Josse\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.exe
+C:\Users\Josse\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.pdb
+C:\Users\Josse\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Josse\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.exe
+C:\Users\Josse\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Administrator\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.exe
+C:\Users\Administrator\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Administrator\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.exe
+C:\Users\Administrator\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.pdb
+C:\Users\Administrator\Dropbox\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
