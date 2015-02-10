@@ -23,7 +23,8 @@ namespace GXPEngine
 				for (int a = 0; a < currentwave.GetLength(1); a++) {
 					if (currentwave [a, i] == 1) {
 						Enemie enemie = new Enemie ();
-						enemie.SetXY (i * 64, a * 64);
+						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
+						enemie.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
 						_level.AddEnemie (enemie);
 					}
 				}
@@ -33,16 +34,16 @@ namespace GXPEngine
 		public static void Read(){	//dont touch this
 			using (XmlReader reader = XmlReader.Create ("waves.xml")) {
 				reader.ReadStartElement ("Waves");
-				for (int i = 0; i < 3; i++) {
-					int[,] wave = new int[20, 20];
+				for (int i = 0; i < 19; i++) {
+					int[,] wave = new int[10, 10];
 					reader.ReadStartElement ("Wave");
 					reader.ReadStartElement ("count");
 					enemiecountlist.Add(reader.ReadContentAsInt ());
 					reader.ReadEndElement ();
-					for (int a = 0; a < 20; a++) {
+					for (int a = 0; a < 10; a++) {
 						reader.ReadStartElement ("row");
 						string[] cols = reader.ReadContentAsString ().Split (',');
-						for (int b = 0; b < 20; b++) {
+						for (int b = 0; b < 10; b++) {
 							wave [a, b] = int.Parse(cols [b]);
 						}
 						reader.ReadEndElement ();

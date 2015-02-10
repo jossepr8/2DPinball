@@ -7,7 +7,10 @@ namespace GXPEngine
 {
     public class Properties
     {
-        Vec2 Gravity;
+		public static Vec2 Gravity {
+			get;
+			set;
+		}
 
         public Properties()
         {
@@ -18,6 +21,8 @@ namespace GXPEngine
         {
             XmlReader reader = XmlReader.Create("properties.xml");
             ReadBall(reader);
+
+			reader.Dispose ();
         }
 
         void ReadBall(XmlReader reader)

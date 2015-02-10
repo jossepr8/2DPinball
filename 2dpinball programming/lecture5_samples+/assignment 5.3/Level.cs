@@ -53,11 +53,10 @@ namespace GXPEngine
 		
 
 
-			//_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green);
-			//AddChild (_ball);
-			//_ball.Read ();
-			//_ball.velocity = new Vec2 (500,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
-			//_previousPosition = _ball.position.Clone ();
+			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green);
+			AddChild (_ball);
+			_ball.velocity = new Vec2 (500,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
+			_previousPosition = _ball.position.Clone ();
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 0.95f) {
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
@@ -67,6 +66,12 @@ namespace GXPEngine
 		public void AddEnemie(Enemie enemie){
 			AddChild (enemie);
 			enemielist.Add (enemie);
+		}
+		public int GetWidth(){
+			return width;
+		}
+		public int GetHeight(){
+			return height;
 		}
 
 		void Update(){
