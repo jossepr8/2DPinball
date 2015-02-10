@@ -31,7 +31,7 @@ namespace GXPEngine
 
 			_lines = new List<LineSegment> ();
 
-			Wave wav = new Wave (this);
+			Wave wav = new Wave (this);	//spawns 1 wave
 
 
 			//-----------------------------walls----------------------
@@ -44,21 +44,23 @@ namespace GXPEngine
 			//------------------------------enemies-------------------
 			//AddLine (new Vec2 (400, 300), new Vec2 (500,400));	
 			//--------------------------------------------------------
-			flip1 = new LineSegment (new Vec2 (200, 600), new Vec2 (0,400), 0xff00ff00, 4, false, 1);
-			flip2 = new LineSegment (new Vec2 (600, 600), new Vec2 (800,400), 0xff00ff00, 4, false, 1);
+			flip1 = new LineSegment (new Vec2 (200, 720), new Vec2 (0,400), 0xff00ff00, 4, false, 1.5f);	//left flipper(player1)
+			flip2 = new LineSegment (new Vec2 (width-200, 720), new Vec2 (width,400), 0xff00ff00, 4, false, 1.5f);	//right flipper(player2)
 			AddChild (flip1);
 			_lines.Add (flip1);
 			AddChild (flip2);
 			_lines.Add (flip2);
 		
 
-
-			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green);
+			//--------------------------------ball-------------------------------------------
+			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
+				position = new Vec2 (700, 400)};	//start position
 			AddChild (_ball);
-			_ball.velocity = new Vec2 (500,200).Sub(_ball.position).Normalize().Scale(25);	//start velocity
+			_ball.velocity = new Vec2 (500,-200).Normalize().Scale(25);	//start velocity
 			_previousPosition = _ball.position.Clone ();
+			//--------------------------------------------------------------------------------
 		}
-		void AddLine (Vec2 start, Vec2 end, float bounciness = 0.95f) {
+		void AddLine (Vec2 start, Vec2 end, float bounciness = 0.99f) {
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
 			AddChild (line);
 			_lines.Add (line);
@@ -76,12 +78,12 @@ namespace GXPEngine
 
 		void Update(){
 
-			if (Input.GetKey (Key.LEFT)) {
+			if (Input.GetKey (Key.LEFT)) {	//player 1 control
 				flip1.bounciness = 1.5f;
 			} else {
 				flip1.bounciness = 1;
 			}
-			if (Input.GetKey (Key.RIGHT)) {
+			if (Input.GetKey (Key.RIGHT)) {	//player 2 control
 				flip2.bounciness = 1.5f;
 			} else {
 				flip2.bounciness = 1;
@@ -103,7 +105,7 @@ namespace GXPEngine
 
 			if (_ball != null) {
 				_previousPosition = _ball.position.Clone ();
-				_ball.velocity.Add (new Vec2 (0, 1.5f));	//gravity
+				_ball.velocity.Add (new Vec2 (0, 2f));	//gravity
 			}
 		}
 

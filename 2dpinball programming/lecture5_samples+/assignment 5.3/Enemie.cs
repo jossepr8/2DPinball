@@ -4,7 +4,7 @@ namespace GXPEngine
 {
 	public class Enemie : Sprite
 	{
-		float _speed = 10f;
+		float _speed = 0.5f;
 
 		public Enemie () : base("checkers.png")
 		{

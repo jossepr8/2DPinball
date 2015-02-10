@@ -15,8 +15,8 @@ namespace GXPEngine
 		public Wave (Level level)
 		{
 			_level = level;
-			currentwave = wavelist[Utils.Random(0,wavelist.Count)];	//get a random wave
-			//currentwave = wavelist [0];
+			//currentwave = wavelist[Utils.Random(0,wavelist.Count)];	//get a random wave
+			currentwave = wavelist [0];
 			Spawn ();
 		}
 		void Spawn(){

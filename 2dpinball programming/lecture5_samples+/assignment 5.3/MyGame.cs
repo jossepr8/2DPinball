@@ -17,9 +17,9 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
-			Wave.Read ();
-
-			SetState (States.Level);
+			Wave.Read ();	//read enemie wave patterns from xml
+			//SetState(States.Menu);
+			SetState (States.Level);	// start at "Level"
 
 		}
 			
