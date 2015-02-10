@@ -15,9 +15,12 @@ namespace GXPEngine
 			new MyGame().Start();
 		}
 			
-		public MyGame () : base(800, 600, false, false)
+		public MyGame () : base(1280, 720, false, false)
 		{
+			Wave.Read ();
+
 			SetState (States.Level);
+
 		}
 			
 		void Update () {

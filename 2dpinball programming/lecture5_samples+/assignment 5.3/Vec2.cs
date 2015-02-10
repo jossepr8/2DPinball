@@ -90,7 +90,8 @@ namespace GXPEngine
 			return (float)Math.Atan2 (y,x);
 		}
 		public float GetAngleDegrees(){
-			return GetAngleRadians() * (180 / (float)Math.PI);
+			float angle = GetAngleRadians() * (180 / (float)Math.PI);
+			return angle;
 		}
 		public void RotateDegrees(float degrees){
 			//RotateRadians (degrees * ((float)Math.PI / 180));

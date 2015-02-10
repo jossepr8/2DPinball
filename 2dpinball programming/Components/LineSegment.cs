@@ -16,20 +16,23 @@ namespace GXPEngine
 		public uint lineWidth = 1;
 
 		public bool useGlobalCoords = false;
+		public float bounciness = 1;
 
 		public LineSegment (float pStartX, float pStartY, float pEndX, float pEndY, uint pColor = 0xffffffff, uint pLineWidth = 1, bool pGlobalCoords = false)
 			: this (new Vec2 (pStartX, pStartY), new Vec2 (pEndX, pEndY), pColor, pLineWidth)
 		{
 		}
 
-		public LineSegment (Vec2 pStart, Vec2 pEnd, uint pColor = 0xffffffff, uint pLineWidth = 1, bool pGlobalCoords = false)
+		public LineSegment (Vec2 pStart, Vec2 pEnd, uint pColor = 0xffffffff, uint pLineWidth = 1, bool pGlobalCoords = false, float pbounciness = 1)
 		{
 			start = pStart;
 			end = pEnd;
 			color = pColor;
 			lineWidth = pLineWidth;
 			useGlobalCoords = pGlobalCoords;
+			bounciness = pbounciness;
 		}
+	
 	
 		//------------------------------------------------------------------------------------------------------------------------
 		//														RenderSelf()

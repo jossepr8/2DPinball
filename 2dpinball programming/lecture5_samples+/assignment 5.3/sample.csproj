@@ -129,7 +129,8 @@
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties.cs" />
-    <Compile Include="Flipper.cs" />
+    <Compile Include="Enemie.cs" />
+    <Compile Include="Wave.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
