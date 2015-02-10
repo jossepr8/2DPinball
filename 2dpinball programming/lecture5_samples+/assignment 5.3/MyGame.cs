@@ -8,8 +8,8 @@ namespace GXPEngine
 	public class MyGame : Game
 	{	
 		States _state;
-		Level _level;
-		Menu _menu;
+		//Level _level;
+		//Menu _menu;
 
 		static void Main() {
 			new MyGame().Start();
