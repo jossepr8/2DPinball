@@ -128,7 +128,7 @@
     </Compile>
     <Compile Include="Level.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="XMLsaver.cs" />
+    <Compile Include="Properties.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

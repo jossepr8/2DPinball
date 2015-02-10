@@ -18,9 +18,7 @@ namespace GXPEngine
 		public MyGame () : base(800, 600, false, false)
 		{
 			SetState (States.Level);
-			//XMLsaver.Read ();
 		}
-        //hello world
 			
 		void Update () {
 			//---------test--------
