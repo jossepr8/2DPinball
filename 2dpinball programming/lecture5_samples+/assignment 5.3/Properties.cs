@@ -5,14 +5,14 @@ using System.Drawing;
 
 namespace GXPEngine
 {
-	public class Properties
-	{
-		Vec2 Gravity;
+    public class Properties
+    {
+        Vec2 Gravity;
 
-		public Properties ()
-		{
-            
-		}
+        public Properties()
+        {
+
+        }
 
         public void Read()
         {
@@ -31,14 +31,14 @@ namespace GXPEngine
             reader.ReadEndElement();
             reader.ReadEndElement();
         }
-        
-
-       
 
 
-        
 
 
-	}
+
+
+
+
+    }
 }
 
