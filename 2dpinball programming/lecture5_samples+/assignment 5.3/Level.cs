@@ -170,7 +170,6 @@ namespace GXPEngine
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 				);
 				_previousPosition = _ball.position.Clone ();
-				//_ball.velocity.Add (new Vec2 (0, 2.5f));	//gravity
 				if (_ball.velocity.Length () > 50) {
 					_ball.velocity.Scale (0.8f);
 				}
