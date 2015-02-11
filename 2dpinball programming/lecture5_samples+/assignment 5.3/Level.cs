@@ -125,6 +125,7 @@ namespace GXPEngine
 				lineCollisionTest (_lines [i],false);	//collisiontest twice for both sides
 				lineCollisionTest (_lines [i],true);
 			}
+			//-------------------------------collision in right direction--------------------------------
 			if (_ball.HitTest (_player1)) {
 				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),1.3f);	//bounce from top side player1
 				_ball.ballColor = Color.Red;
@@ -133,6 +134,7 @@ namespace GXPEngine
 				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),1.3f);	//bounce from top side player2
 				_ball.ballColor = Color.Blue;
 			}
+			//--------------------------------------------------------------------------------------------
 			foreach (Enemie enemie in enemielist) {
 				if (_ball.HitTest (enemie)) {
 					_ball.velocity.Reflect (new Vec2 (_ball.x - enemie.x,  _ball.y - enemie.y).Normal());
@@ -146,7 +148,6 @@ namespace GXPEngine
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 				);
 				_previousPosition = _ball.position.Clone ();
-				_ball.velocity.Add (new Vec2 (0, 2.5f));	//gravity
 				if (_ball.velocity.Length () > 50) {
 					_ball.velocity.Scale (0.8f);
 				}

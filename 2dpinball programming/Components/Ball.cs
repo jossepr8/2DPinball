@@ -10,9 +10,11 @@ namespace GXPEngine
 		public Vec2 velocity;
 		public readonly int radius;
 		private Color _ballColor;
+		Vec2 Gravity;
 
 		public Ball (int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
+			Gravity = new Vec2 (0, 2.5f);
 			radius = pRadius;
 			SetOrigin (radius, radius);
 
@@ -24,7 +26,7 @@ namespace GXPEngine
 			Step ();
 		}
 
-		private void draw() {
+		void draw() {
 			graphics.Clear (Color.Empty);
 			graphics.FillEllipse (
 				new SolidBrush (_ballColor),
@@ -32,11 +34,12 @@ namespace GXPEngine
 			);
 		}
 
-		public void Step(bool skipVelocity = false) {
+		public void Step(bool skipVelocity = false, bool skipGravity = false) {
 			if (position == null || velocity == null)
 				return;
 
 			if (!skipVelocity) position.Add (velocity);
+			if (!skipGravity) velocity.Add (Gravity);
 
 			x = position.x;
 			y = position.y;
