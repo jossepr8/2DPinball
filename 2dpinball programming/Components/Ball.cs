@@ -10,9 +10,15 @@ namespace GXPEngine
 		public Vec2 velocity;
 		public readonly int radius;
 		private Color _ballColor;
+		Vec2 Gravity;
+		float Speed;
+		float MaxSpeed;
 
 		public Ball (int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
+			Speed = Properties.BallSpeed;
+			MaxSpeed = Properties.BallMaxSpeed;
+			Gravity = Properties.BallGravity;
 			radius = pRadius;
 			SetOrigin (radius, radius);
 
@@ -37,7 +43,7 @@ namespace GXPEngine
 				return;
 
 			if (!skipVelocity) position.Add (velocity);
-
+			velocity.Add (Gravity);
 			x = position.x;
 			y = position.y;
 		}

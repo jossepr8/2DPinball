@@ -71,13 +71,13 @@ namespace GXPEngine
 
 			_player1 = new Flipper ();
 			_player1.SetXY (width/2-150, 150);
-			_player1.rotation = 25;
+			_player1.rotation = Properties.PaddleStartAngle;
 			_player1.SetColor (200, 0, 0);
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
 			_player2.SetXY (width/2+150, 150);
-			_player2.rotation = -25;
+			_player2.rotation = -Properties.PaddleStartAngle;
 			_player2.SetColor (0, 0, 200);
 			AddChild (_player2);
 
@@ -138,14 +138,14 @@ namespace GXPEngine
 				lineCollisionTest (_lines [i],true);
 			}
 			if (_ball.HitTest (_player1)) {
-				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),1.3f);	//bounce from top side player1
+				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player1
 				_ball.ballColor = Color.Red;
 				_touched = LastTouchedBy._player1;
 
 
 			}
 			if (_ball.HitTest (_player2)) {
-				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),1.3f);	//bounce from top side player2
+				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player2
 				_ball.ballColor = Color.Blue;
 				_touched = LastTouchedBy._player2;
 			}
@@ -170,7 +170,7 @@ namespace GXPEngine
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 				);
 				_previousPosition = _ball.position.Clone ();
-				_ball.velocity.Add (new Vec2 (0, 2.5f));	//gravity
+				//_ball.velocity.Add (new Vec2 (0, 2.5f));	//gravity
 				if (_ball.velocity.Length () > 50) {
 					_ball.velocity.Scale (0.8f);
 				}
