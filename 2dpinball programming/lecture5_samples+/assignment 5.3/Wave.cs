@@ -23,10 +23,10 @@ namespace GXPEngine
 			for (int i = 0; i < currentwave.GetLength(0); i++) {
 				for (int a = 0; a < currentwave.GetLength(1); a++) {
 					if (currentwave [a, i] == 1) {
-						Enemy enemy = new Enemy ();
+						Enemie enemie = new Enemie ();
 						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
-						enemy.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
-						_level.AddEnemie (enemy);
+						enemie.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
+						_level.AddEnemie (enemie);
 					}
 				}
 			}

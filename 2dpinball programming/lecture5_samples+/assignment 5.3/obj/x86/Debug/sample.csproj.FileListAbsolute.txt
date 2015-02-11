@@ -30,8 +30,3 @@ C:\Users\Administrator\Downloads\2DPinball\2dpinball programming\lecture5_sample
 C:\Users\Administrator\Downloads\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
 C:\Users\mzare_000\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.exe
 C:\Users\mzare_000\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb
-C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.exe
-C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.pdb
-C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
-C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.exe
-C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb

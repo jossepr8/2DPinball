@@ -2,11 +2,11 @@
 
 namespace GXPEngine
 {
-	public class Enemy : Sprite
+	public class Enemie : Sprite
 	{
 		float _speed = 0.5f;
 
-		public Enemy () : base("checkers.png")
+		public Enemie () : base("checkers.png")
 		{
 			SetScaleXY (0.5f, 0.5f);
 			SetOrigin (width / 2, height / 2);
