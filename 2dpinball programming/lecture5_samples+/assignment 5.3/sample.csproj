@@ -131,6 +131,7 @@
     <Compile Include="Properties.cs" />
     <Compile Include="Enemie.cs" />
     <Compile Include="Wave.cs" />
+    <Compile Include="Flipper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

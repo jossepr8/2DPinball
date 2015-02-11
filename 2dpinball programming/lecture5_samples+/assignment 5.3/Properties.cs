@@ -32,9 +32,9 @@ namespace GXPEngine
             reader.ReadStartElement("Gravity");
             int g = reader.ReadContentAsInt();
             Gravity = new Vec2(0f, g);
-            reader.ReadEndElement();
-            reader.ReadEndElement();
-            reader.ReadEndElement();
+            reader.ReadEndElement();	//gravity
+            reader.ReadEndElement();	//ball
+            reader.ReadEndElement();	//properties
         }
 
 

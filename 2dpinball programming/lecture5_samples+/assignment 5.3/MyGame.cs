@@ -20,15 +20,15 @@ namespace GXPEngine
 			Wave.Read ();	//read enemie wave patterns from xml
 			//SetState(States.Menu);
 			SetState (States.Level);	// start at "Level"
-
+			targetFps = 30;
 		}
 			
 		void Update () {
 			//---------test--------
-			if (Input.GetKeyDown (Key.A)) {
+			if (Input.GetKeyDown (Key.G)) {
 				SetState (States.MainMenu);
 			}
-			if (Input.GetKeyDown (Key.S)) {
+			if (Input.GetKeyDown (Key.H)) {
 				SetState (States.Level);
 			}
 			//--------------------
