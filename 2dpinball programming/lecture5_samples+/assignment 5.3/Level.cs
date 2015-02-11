@@ -16,7 +16,7 @@ namespace GXPEngine
 		int height;
 
 	
-		List<Enemie> enemielist = new List<Enemie> ();
+		List<Enemy> enemylist = new List<Enemy> ();
 
 		Flipper _player1;
 		Flipper _player2;
@@ -76,9 +76,9 @@ namespace GXPEngine
 			AddChild (line);
 			_lines.Add (line);
 		}
-		public void AddEnemie(Enemie enemie){
-			AddChild (enemie);
-			enemielist.Add (enemie);
+		public void AddEnemie(Enemy enemy){
+			AddChild (enemy);
+			enemylist.Add (enemy);
 		}
 		public int GetWidth(){
 			return width;
@@ -133,11 +133,11 @@ namespace GXPEngine
 				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),1.3f);	//bounce from top side player2
 				_ball.ballColor = Color.Blue;
 			}
-			foreach (Enemie enemie in enemielist) {
-				if (_ball.HitTest (enemie)) {
-					_ball.velocity.Reflect (new Vec2 (_ball.x - enemie.x,  _ball.y - enemie.y).Normal());
-					enemielist.Remove (enemie);
-					enemie.Destroy ();
+			foreach (Enemy enemy in enemylist) {
+				if (_ball.HitTest (enemy)) {
+					_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
+					enemylist.Remove (enemy);
+					enemy.Destroy ();
 					break;
 				}
 			}
