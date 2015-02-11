@@ -6,6 +6,7 @@ namespace GXPEngine
 	{
 		public Menu ()
 		{
+
 		}
 	}
 }

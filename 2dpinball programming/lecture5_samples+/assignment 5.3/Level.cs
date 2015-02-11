@@ -4,6 +4,14 @@ using System.Drawing;
 
 namespace GXPEngine
 {
+
+	public enum LastTouchedBy
+	{
+		_player1,
+		_player2,
+		none
+	}
+
 	public class Level : GameObject
 	{	
 		List<LineSegment> _lines;
@@ -15,11 +23,15 @@ namespace GXPEngine
 		int width;
 		int height;
 
+
 	
 		List<Enemie> enemielist = new List<Enemie> ();
 
 		Flipper _player1;
 		Flipper _player2;
+
+		LastTouchedBy _touched = LastTouchedBy.none;
+
 
 
 
@@ -128,16 +140,28 @@ namespace GXPEngine
 			if (_ball.HitTest (_player1)) {
 				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),1.3f);	//bounce from top side player1
 				_ball.ballColor = Color.Red;
+				_touched = LastTouchedBy._player1;
+
+
 			}
 			if (_ball.HitTest (_player2)) {
 				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),1.3f);	//bounce from top side player2
 				_ball.ballColor = Color.Blue;
+				_touched = LastTouchedBy._player2;
 			}
 			foreach (Enemie enemie in enemielist) {
 				if (_ball.HitTest (enemie)) {
 					_ball.velocity.Reflect (new Vec2 (_ball.x - enemie.x,  _ball.y - enemie.y).Normal());
 					enemielist.Remove (enemie);
 					enemie.Destroy ();
+					if (_touched == LastTouchedBy._player1) {
+						_player1.score++;
+						Console.WriteLine("touched by player1");
+					} else if (_touched == LastTouchedBy._player2)
+					{
+						_player2.score++;
+						Console.WriteLine("touched by player1");
+					}
 					break;
 				}
 			}
@@ -179,10 +203,9 @@ namespace GXPEngine
 				_ball.velocity.Reflect (linecapnormal.Normal());
 			}
 
-
+			Console.WriteLine (_player1.score);
 
 		}
-
 
 
 
