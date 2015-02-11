@@ -12,9 +12,10 @@ namespace GXPEngine
 		public Flipper () : base("paddle.png")
 		{
 			SetOrigin (width / 2, height/2 - 500);
-			rotationspeed = 4; //just for now
+			rotationspeed = Properties.PaddleSpeed;
 
 		}
+
 	}
 }
 
