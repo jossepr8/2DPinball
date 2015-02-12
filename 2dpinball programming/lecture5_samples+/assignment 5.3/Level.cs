@@ -34,17 +34,13 @@ namespace GXPEngine
 
 		Players _touched = Players.none;
 		float Damage = 0;
-		Font font;
 		SolidBrush brush = new SolidBrush (Color.Red);
 		PointF pnt = new PointF (10, 10);
 
 
 		public Level (MyGame game)
 		{
-			PrivateFontCollection pfc = new PrivateFontCollection ();
-			pfc.AddFontFile ("Starjhol.ttf");
-			//pfc.AddFontFile ("C:\\Users\\Josse\\Desktop\\map\\2DPinball\\2dpinball programming\\lecture5_samples+\\assignment 5.3\\bin\\Debug\\Starjedi.ttf");
-			font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+
 			//test
 
 			//pfc.Dispose ();
@@ -150,11 +146,11 @@ namespace GXPEngine
 			Player2Control ();
 			//_canvas.graphics.Clear (Color.Black);
 			if (Input.GetKeyDown (Key.SPACE)) {
-				_canvas.graphics.DrawString ("0", font, brush, pnt);
+				_canvas.graphics.DrawString ("0", _game.font, brush, pnt);	//test
 			}
 			//Console.WriteLine (_canvas.graphics);
-			if (font != null) {
-				Console.WriteLine (font);
+			if (_game.font != null) {
+				Console.WriteLine (_game.font);	//font becomes null??? or something
 			}
 			if (_ball != null) {
 				_ball.Step ();

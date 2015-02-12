@@ -11,7 +11,7 @@ namespace GXPEngine
 	public class MyGame : Game
 	{	
 		States _state;
-
+		public Font font;
 
 
 
@@ -21,6 +21,12 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
+
+			PrivateFontCollection pfc = new PrivateFontCollection ();
+			pfc.AddFontFile ("Starjedi.ttf");
+			//pfc.AddFontFile ("C:\\Users\\Josse\\Desktop\\map\\2DPinball\\2dpinball programming\\lecture5_samples+\\assignment 5.3\\bin\\Debug\\Starjedi.ttf");
+			font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
 			SetState(States.MainMenu);
