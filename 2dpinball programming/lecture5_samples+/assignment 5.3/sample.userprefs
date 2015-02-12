@@ -1,17 +1,19 @@
 ﻿<Properties StartupItem="sample.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="HUD.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\Components\Ball.cs">
     <Files>
-      <File FileName="MyGame.cs" Line="16" Column="16" />
-      <File FileName="Level.cs" Line="20" Column="20" />
+      <File FileName="MyGame.cs" Line="5" Column="5" />
+      <File FileName="Level.cs" Line="19" Column="19" />
       <File FileName="Wave.cs" Line="1" Column="1" />
-      <File FileName="Properties.cs" Line="1" Column="1" />
-      <File FileName="Flipper.cs" Line="4" Column="4" />
-      <File FileName="Menu.cs" Line="32" Column="32" />
+      <File FileName="Properties.cs" Line="10" Column="10" />
+      <File FileName="Flipper.cs" Line="1" Column="1" />
+      <File FileName="Menu.cs" Line="1" Column="1" />
       <File FileName="Vec2.cs" Line="1" Column="1" />
       <File FileName="..\..\Components\Ball.cs" Line="4" Column="4" />
-      <File FileName="HUD.cs" Line="4" Column="4" />
-      <File FileName="c:\Users\Tim\Desktop\2DPinball\2dpinball programming\gxpengine\sources\gxpengine\Game.cs" Line="15" Column="15" />
+      <File FileName="HUD.cs" Line="5" Column="5" />
+      <File FileName="Highscores.cs" Line="4" Column="4" />
+      <File FileName="Score.cs" Line="4" Column="4" />
+      <File FileName="..\..\GXPEngine\sources\gxpengine\AnimSprite.cs" Line="31" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

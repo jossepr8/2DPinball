@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Text;
 
 namespace GXPEngine
 {
@@ -38,6 +39,20 @@ namespace GXPEngine
 
 		public Level (MyGame game)
 		{
+			PrivateFontCollection pfc = new PrivateFontCollection ();
+			pfc.AddFontFile ("Starjedi.ttf");
+			//pfc.AddFontFile ("C:\\Users\\Josse\\Desktop\\map\\2DPinball\\2dpinball programming\\lecture5_samples+\\assignment 5.3\\bin\\Debug\\Starjedi.ttf");
+			Font font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+			//test
+			for (int i = 0; i < FontFamily.Families.GetLength(0); i++) {
+				Console.WriteLine(FontFamily.Families [i]);
+			}
+
+
+
+
+			//_canvas.graphics.Clear (Color.Green);
+
 
 			_game = game;
 			width = _game.width;
@@ -46,7 +61,7 @@ namespace GXPEngine
 			AddChild (_canvas);
 			_hud = new HUD();
 			AddChild (_hud);
-
+			_canvas.graphics.DrawString ("abcdefgh", font, new SolidBrush (Color.Red), new Point (0, 0));
 			_lines = new List<LineSegment> ();
 
 			Wave wave = new Wave (this);	//spawns 1 wave

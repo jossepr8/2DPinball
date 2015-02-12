@@ -2,6 +2,7 @@ using GXPEngine;
 using System;
 using System.Drawing.Text;
 using System.IO;
+using System.Drawing;
 
 
 namespace GXPEngine
@@ -11,22 +12,8 @@ namespace GXPEngine
 	{	
 		States _state;
 
-		//-----------fonts---------------------
-		//PrivateFontCollection aaa = new PrivateFontCollection();
-		//Stream fontStream = this.GetType().Assembly.GetManifestResourceStream("embedfont.Starjedi.ttf");
-		/*
-		byte[] fontdata = new byte[fontStream.Length];
-		fontStream.Read(fontdata,0,(int)fontStream.Length);
-		fontStream.Close();
-		unsafe
-		{
-			fixed(byte * pFontData = fontdata)
-			{
-				pfc.AddMemoryFont((System.IntPtr)pFontData,fontdata.Length);
-			}
-		}*/
 
-		//--------------------------------------
+
 
 		static void Main() {
 			new MyGame().Start();
@@ -36,7 +23,7 @@ namespace GXPEngine
 		{
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
-			//SetState(States.Menu);
+			SetState(States.MainMenu);
 			SetState (States.Level);	// start at "Level"
 			//SetState (States.Highscores);
 		}
