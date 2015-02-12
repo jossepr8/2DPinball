@@ -35,6 +35,7 @@ namespace GXPEngine
 			Wave.Read ();	//read enemie wave patterns from xml
 			SetState(States.MainMenu);
 			SetState (States.Level);	// start at "Level"
+			//targetFps = 5; //--test mode---
 		}
 			
 		void Update () {

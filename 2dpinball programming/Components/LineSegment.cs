@@ -32,6 +32,7 @@ namespace GXPEngine
 			useGlobalCoords = pGlobalCoords;
 			bounciness = pbounciness;
 		}
+
 	
 	
 		//------------------------------------------------------------------------------------------------------------------------

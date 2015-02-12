@@ -4,7 +4,9 @@
     <Files>
       <File FileName="MyGame.cs" Line="30" Column="30" />
       <File FileName="Menu.cs" Line="5" Column="5" />
-      <File FileName="Level.cs" Line="5" Column="5" />
+      <File FileName="Level.cs" Line="57" Column="57" />
+      <File FileName="..\..\gxpengine\sources\gxpengine\Core\Transformable.cs" Line="1" Column="1" />
+      <File FileName="Vec2.cs" Line="3" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
