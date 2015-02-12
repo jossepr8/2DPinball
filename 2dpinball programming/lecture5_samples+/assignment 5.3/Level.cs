@@ -26,7 +26,7 @@ namespace GXPEngine
 
 		HUD _hud;
 	
-		List<Enemie> enemielist = new List<Enemie> ();
+		List<Enemy> enemylist = new List<Enemy> ();
 
 		Flipper _player1;
 		Flipper _player2;
@@ -92,9 +92,9 @@ namespace GXPEngine
 			AddChild (line);
 			_lines.Add (line);
 		}
-		public void AddEnemie(Enemie enemie){
-			AddChild (enemie);
-			enemielist.Add (enemie);
+		public void Addenemy(Enemy enemy){
+			AddChild (enemy);
+			enemylist.Add (enemy);
 		}
 		public int GetWidth(){
 			return width;
@@ -153,11 +153,20 @@ namespace GXPEngine
 				_ball.ballColor = Color.Blue;
 				_touched = LastTouchedBy._player2;
 			}
-			foreach (Enemie enemie in enemielist) {
-				if (_ball.HitTest (enemie)) {
-					_ball.velocity.Reflect (new Vec2 (_ball.x - enemie.x,  _ball.y - enemie.y).Normal());
-					enemielist.Remove (enemie);
-					enemie.Destroy ();
+			foreach (Enemy enemy in enemylist) 
+			{
+
+				if (enemy.y >= height) {
+					Damage++;
+					_hud.UpdateHUD (Damage);
+				}
+
+
+				if (_ball.HitTest (enemy)) {
+					_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
+					enemylist.Remove (enemy);
+					enemy.Destroy ();
+
 					if (_touched == LastTouchedBy._player1) {
 						_player1.score++;
 						//Console.WriteLine("touched by player1");
@@ -169,11 +178,9 @@ namespace GXPEngine
 					break;
 				}
 
-				if (enemie.x >= 400) 
-				{
-					Damage++;
-					_hud.UpdateHUD (Damage);
-				}
+
+
+
 			}
 			if (_ball != null) {
 				_canvas.graphics.DrawLine (//white trail behind the ball
@@ -184,8 +191,6 @@ namespace GXPEngine
 					_ball.velocity.Scale (0.8f);
 				}
 			}
-
-
 
 
 		}
@@ -213,11 +218,6 @@ namespace GXPEngine
 				_ball.velocity.Reflect (linecapnormal.Normal());
 			}
 
-
 		}
-
-
-
 	}
 }
-

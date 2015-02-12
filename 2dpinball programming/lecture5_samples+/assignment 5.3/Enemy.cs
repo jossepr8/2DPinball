@@ -2,20 +2,26 @@
 
 namespace GXPEngine
 {
-	public class Enemie : Sprite
+	public class Enemy : Sprite
 	{
-		float _speed = 0.5f;
+		float _speed = 0.1f;
 
-		public Enemie () : base("checkers.png")
-		{
+
+		public Enemy () : base("checkers.png")
+		{	
 			SetScaleXY (0.5f, 0.5f);
 			SetOrigin (width / 2, height / 2);
 			_speed = Properties.EnemyGravity;
 		}
 
-		void Update(){
+		void Update()
+		{
 			y += _speed;
 		}
+
 	}
+
 }
+
+
 

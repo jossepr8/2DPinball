@@ -15,7 +15,7 @@
 </Paddle>
 
 <Enemy>
-	<Gravity> 	1.5 </Gravity>
+	<Gravity> 	5 </Gravity>
 </Enemy>
 
 

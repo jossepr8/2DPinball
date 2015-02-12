@@ -14,22 +14,21 @@ namespace GXPEngine
 		public HUD () : base(1280,720)
 		{
 		
-			graphics.FillRectangle (blueBrush,500,30,30,20);
+			graphics.FillRectangle (blueBrush, 500, 30, 30, 20);
 			graphics.DrawRectangle (redPen, rec);
 
 		}
 
-
 		public void UpdateHUD(int health)
-		{
+		{	
+			if (health >= 100) 
+			{
+				health = 100;
+			}
+
 			graphics.FillRectangle (blueBrush,500,30,health * 3,20);
 			graphics.DrawRectangle (redPen, rec);
 		}
-
-	//draw reactangle
-	// rectangle width = damage * 3; assuming damge = 100 max total length of the bar would be 300px
-
-
 	}
 }
 
