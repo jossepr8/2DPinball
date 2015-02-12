@@ -2,20 +2,20 @@
 
 
 <Ball>
-	<Gravity> 	2.5 </Gravity>
+	<Gravity> 	0.75 </Gravity>
 	<Speed> 	0 </Speed>
 	<MaxSpeed>	0 </MaxSpeed>
 </Ball>
 
 <Paddle>
-	<Speed> 	4 </Speed>
+	<Speed> 	2 </Speed>
 	<Bounce> 	1.3 </Bounce>
 	<StartAngle> 	25 </StartAngle>
 	<MaxAngle> 	45 </MaxAngle>
 </Paddle>
 
 <Enemy>
-	<Gravity> 	5 </Gravity>
+	<Gravity> 	2.5 </Gravity>
 </Enemy>
 
 

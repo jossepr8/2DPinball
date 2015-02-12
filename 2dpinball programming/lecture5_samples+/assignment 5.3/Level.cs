@@ -5,7 +5,7 @@ using System.Drawing;
 namespace GXPEngine
 {
 
-	public enum LastTouchedBy
+	public enum Players
 	{
 		_player1,
 		_player2,
@@ -31,7 +31,7 @@ namespace GXPEngine
 		Flipper _player1;
 		Flipper _player2;
 
-		LastTouchedBy _touched = LastTouchedBy.none;
+		Players _touched = Players.none;
 		int Damage = 0;
 
 
@@ -129,6 +129,7 @@ namespace GXPEngine
 
 
 		void Update(){
+			//Console.WriteLine (enemylist.Count);
 
 			Player1Control ();
 			Player2Control ();
@@ -144,14 +145,14 @@ namespace GXPEngine
 			if (_ball.HitTest (_player1)) {
 				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player1
 				_ball.ballColor = Color.Red;
-				_touched = LastTouchedBy._player1;
+				_touched = Players._player1;
 
 
 			}
 			if (_ball.HitTest (_player2)) {
 				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player2
 				_ball.ballColor = Color.Blue;
-				_touched = LastTouchedBy._player2;
+				_touched = Players._player2;
 			}
 			foreach (Enemy enemy in enemylist) 
 			{
@@ -159,6 +160,9 @@ namespace GXPEngine
 				if (enemy.y >= height) {
 					Damage++;
 					_hud.UpdateHUD (Damage);
+					enemylist.Remove (enemy);
+					enemy.Destroy ();
+					break;
 				}
 
 
@@ -167,10 +171,10 @@ namespace GXPEngine
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
 
-					if (_touched == LastTouchedBy._player1) {
+					if (_touched == Players._player1) {
 						_player1.score++;
 						//Console.WriteLine("touched by player1");
-					} else if (_touched == LastTouchedBy._player2)
+					} else if (_touched == Players._player2)
 					{
 						_player2.score++;
 						//Console.WriteLine("touched by player1");
@@ -187,7 +191,7 @@ namespace GXPEngine
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 				);
 				_previousPosition = _ball.position.Clone ();
-				if (_ball.velocity.Length () > 50) {
+				if (_ball.velocity.Length () > 25) {
 					_ball.velocity.Scale (0.8f);
 				}
 			}
