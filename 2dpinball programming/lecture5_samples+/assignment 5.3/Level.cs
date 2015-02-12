@@ -18,12 +18,13 @@ namespace GXPEngine
 		Ball _ball;
 		MyGame _game;
 
+
 		Vec2 _previousPosition;
 		Canvas _canvas;
 		int width;
 		int height;
 
-
+		HUD _hud;
 	
 		List<Enemie> enemielist = new List<Enemie> ();
 
@@ -31,17 +32,20 @@ namespace GXPEngine
 		Flipper _player2;
 
 		LastTouchedBy _touched = LastTouchedBy.none;
-
+		int Damage = 0;
 
 
 
 		public Level (MyGame game)
 		{
+
 			_game = game;
 			width = _game.width;
 			height = _game.height;
 			_canvas = new Canvas (width, height);
 			AddChild (_canvas);
+			_hud = new HUD();
+			AddChild (_hud);
 
 			_lines = new List<LineSegment> ();
 
@@ -156,13 +160,19 @@ namespace GXPEngine
 					enemie.Destroy ();
 					if (_touched == LastTouchedBy._player1) {
 						_player1.score++;
-						Console.WriteLine("touched by player1");
+						//Console.WriteLine("touched by player1");
 					} else if (_touched == LastTouchedBy._player2)
 					{
 						_player2.score++;
-						Console.WriteLine("touched by player1");
+						//Console.WriteLine("touched by player1");
 					}
 					break;
+				}
+
+				if (enemie.x >= 400) 
+				{
+					Damage++;
+					_hud.UpdateHUD (Damage);
 				}
 			}
 			if (_ball != null) {
@@ -175,6 +185,7 @@ namespace GXPEngine
 					_ball.velocity.Scale (0.8f);
 				}
 			}
+
 
 
 
@@ -203,7 +214,6 @@ namespace GXPEngine
 				_ball.velocity.Reflect (linecapnormal.Normal());
 			}
 
-			Console.WriteLine (_player1.score);
 
 		}
 

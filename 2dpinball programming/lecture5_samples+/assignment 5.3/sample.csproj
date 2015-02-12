@@ -132,6 +132,7 @@
     <Compile Include="Enemie.cs" />
     <Compile Include="Wave.cs" />
     <Compile Include="Flipper.cs" />
+    <Compile Include="HUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

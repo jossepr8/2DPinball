@@ -13,6 +13,7 @@ namespace GXPEngine
 			get;
 			set;
 		}
+			
 
 		public Flipper () : base("paddle.png")
 		{
