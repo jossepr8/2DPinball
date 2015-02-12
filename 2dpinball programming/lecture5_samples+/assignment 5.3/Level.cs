@@ -91,11 +91,11 @@ namespace GXPEngine
 			DEBUGdistance = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance.end.RotateDegrees (_player1.rotation);
 			DEBUGdistance.end.Add (new Vec2 (_player1.x, _player1.y));
-			AddChild (DEBUGdistance);	//add debug lines
+			//AddChild (DEBUGdistance);	//add debug lines
 			DEBUGdistance2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance2.end.RotateDegrees (_player2.rotation);
 			DEBUGdistance2.end.Add (new Vec2 (_player2.x, _player2.y));
-			AddChild (DEBUGdistance2);	//add debug lines
+			//AddChild (DEBUGdistance2);	//add debug lines
 
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
