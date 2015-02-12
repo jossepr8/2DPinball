@@ -64,7 +64,7 @@ namespace GXPEngine
 		
 
 			//--------------------------------ball-------------------------------------------
-			_ball = new Ball (30, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
+			_ball = new Ball (32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
 				position = new Vec2 (300, 400)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(3);	//start velocity
@@ -144,15 +144,18 @@ namespace GXPEngine
 			}
 			if (_ball.HitTest (_player1)) {
 				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player1
-				_ball.ballColor = Color.Red;
+				//_ball.ballColor = Color.Red;
 				_touched = Players._player1;
-
+				//_ball.overlay1.SetColor (200, 0, 0);
+				_ball.overlay2.SetColor (200, 0, 0);
 
 			}
 			if (_ball.HitTest (_player2)) {
 				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player2
-				_ball.ballColor = Color.Blue;
+				//_ball.ballColor = Color.Blue;
 				_touched = Players._player2;
+				//_ball.overlay1.SetColor (0, 0, 200);
+				_ball.overlay2.SetColor (0, 0, 200);
 			}
 			foreach (Enemy enemy in enemylist) 
 			{

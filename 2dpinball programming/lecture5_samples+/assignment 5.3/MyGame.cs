@@ -1,5 +1,7 @@
 using GXPEngine;
 using System;
+using System.Drawing.Text;
+using System.IO;
 
 
 namespace GXPEngine
@@ -8,8 +10,23 @@ namespace GXPEngine
 	public class MyGame : Game
 	{	
 		States _state;
-		//Level _level;
-		//Menu _menu;
+
+		//-----------fonts---------------------
+		//PrivateFontCollection aaa = new PrivateFontCollection();
+		//Stream fontStream = this.GetType().Assembly.GetManifestResourceStream("embedfont.Starjedi.ttf");
+		/*
+		byte[] fontdata = new byte[fontStream.Length];
+		fontStream.Read(fontdata,0,(int)fontStream.Length);
+		fontStream.Close();
+		unsafe
+		{
+			fixed(byte * pFontData = fontdata)
+			{
+				pfc.AddMemoryFont((System.IntPtr)pFontData,fontdata.Length);
+			}
+		}*/
+
+		//--------------------------------------
 
 		static void Main() {
 			new MyGame().Start();
@@ -21,7 +38,7 @@ namespace GXPEngine
 			Wave.Read ();	//read enemie wave patterns from xml
 			//SetState(States.Menu);
 			SetState (States.Level);	// start at "Level"
-			//targetFps = 30;
+			//SetState (States.Highscores);
 		}
 			
 		void Update () {
@@ -32,8 +49,10 @@ namespace GXPEngine
 			if (Input.GetKeyDown (Key.H)) {
 				SetState (States.Level);
 			}
+			if (Input.GetKeyDown (Key.J)) {
+				SetState (States.Highscores);
+			}
 			//--------------------
-			//Console.WriteLine (currentFps);
 		}
 
 		public void SetState(States state){
@@ -43,7 +62,9 @@ namespace GXPEngine
 			_state = state;
 			for (int i = 0; i < GetChildren().Count; i++) {	
 				if (GetChildren () [i] is Level ||	//remove level
-					GetChildren () [i] is Menu) {	//remove menu
+					GetChildren () [i] is Menu  ||	//remove menu
+					GetChildren () [i] is Highscores//remove highscore menu
+				){
 					RemoveChild (GetChildren () [i]);
 				}
 			}
@@ -59,6 +80,9 @@ namespace GXPEngine
 			case States.Level:
 				statevar = new Level (this);
 				break;
+			case States.Highscores:
+				statevar = new Highscores ();
+				break;
 			}
 			AddChild (statevar);
 		}
@@ -67,7 +91,8 @@ namespace GXPEngine
 	public enum States
 	{
 		MainMenu,
-		Level
+		Level,
+		Highscores
 	}
 
 }

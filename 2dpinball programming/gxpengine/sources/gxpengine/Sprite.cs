@@ -54,7 +54,7 @@ namespace GXPEngine
 		//------------------------------------------------------------------------------------------------------------------------
 		//														initializeFromTexture()
 		//------------------------------------------------------------------------------------------------------------------------
-		protected void initializeFromTexture (Texture2D texture) {
+		public void initializeFromTexture (Texture2D texture) {
 			_texture = texture;
 			_bounds = new Rectangle(0, 0, _texture.width, _texture.height);
 			setUVs();
