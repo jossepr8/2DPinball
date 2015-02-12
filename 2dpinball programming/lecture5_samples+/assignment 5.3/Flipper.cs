@@ -8,6 +8,18 @@ namespace GXPEngine
 			get;
 			set;
 		}
+		public float StartAngle {
+			get;
+			set;
+		}
+		public float MaxAngle {
+			get;
+			set;
+		}
+		public float Bounce {
+			get;
+			set;
+		}
 
 		public int score {
 			get;
@@ -19,7 +31,9 @@ namespace GXPEngine
 		{
 			SetOrigin (width / 2, height/2 - 500);
 			rotationspeed = Properties.PaddleSpeed;
-
+			StartAngle = Properties.PaddleStartAngle;
+			MaxAngle = Properties.PaddleMaxAngle;
+			Bounce = Properties.PaddleBounce;
 		}
 
 	}

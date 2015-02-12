@@ -21,12 +21,14 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
-
-			PrivateFontCollection pfc = new PrivateFontCollection ();
+			/* custom font doesnt work correctly, crashed after 3.5seconds
+			PrivateFontCollection pfc = new PrivateFontCollection ();	
 			pfc.AddFontFile ("Starjedi.ttf");
 			//font = new Font(pfc.Families[0], 16, FontStyle.Regular);
-			font = new Font ("Broadway",10,FontStyle.Regular);
 			//pfc.Dispose ();
+			*/
+			font = new Font ("Broadway",10,FontStyle.Regular);
+
 
 
 			Properties.Read ();

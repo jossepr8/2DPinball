@@ -101,7 +101,10 @@ namespace GXPEngine
 			SetAngleRadians (GetAngleRadians() + radians);
 		}
 
-
+		public float DistanceTo(Vec2 other){
+			Vec2 distanceV = other.Clone ().Sub (this);
+			return distanceV.Length ();
+		}
 
 	}
 }

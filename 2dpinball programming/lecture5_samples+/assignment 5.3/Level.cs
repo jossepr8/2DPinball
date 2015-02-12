@@ -36,20 +36,10 @@ namespace GXPEngine
 		float Damage = 0;
 		SolidBrush brush = new SolidBrush (Color.Red);
 		PointF pnt = new PointF (10, 10);
-
+		LineSegment distance;
 
 		public Level (MyGame game)
 		{
-
-			//test
-
-			//pfc.Dispose ();
-
-
-
-			//_canvas.graphics.Clear (Color.Green);
-
-
 			_game = game;
 			width = _game.width;
 			height = _game.height;
@@ -57,10 +47,10 @@ namespace GXPEngine
 			AddChild (_canvas);
 			_hud = new HUD();
 			AddChild (_hud);
-			//_canvas.graphics.DrawString ("abcdefgh", font, new SolidBrush (Color.Red), new Point (0, 0));
 			_lines = new List<LineSegment> ();
 
 			Wave wave = new Wave (this);	//spawns 1 wave
+
 
 
 			//-----------------------outer walls----------------------
@@ -86,16 +76,21 @@ namespace GXPEngine
 
 			_player1 = new Flipper ();
 			_player1.SetXY (width/2-150, 150);
-			_player1.rotation = Properties.PaddleStartAngle;
+			_player1.rotation = _player1.StartAngle;
 			_player1.SetColor (200, 0, 0);
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
 			_player2.SetXY (width/2+150, 150);
-			_player2.rotation = -Properties.PaddleStartAngle;
+			_player2.rotation = -_player2.StartAngle;
 			_player2.SetColor (0, 0, 200);
 			AddChild (_player2);
 
+
+			distance = new LineSegment (new Vec2 (0, 0), new Vec2 (420, 0));
+			distance.end.SetAngleDegrees (_player1.rotation);
+			distance.end.Add (new Vec2 (_player1.x, _player1.y));
+			AddChild (distance);
 
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
@@ -115,7 +110,7 @@ namespace GXPEngine
 		}
 		void Player1Control(){
 			if (Input.GetKey (Key.A)) {	//player 1 control LEFT
-				if (_player1.rotation < 60) {
+				if (_player1.rotation < _player1.MaxAngle) {
 					_player1.rotation += _player1.rotationspeed;
 				}
 			} 
@@ -132,7 +127,7 @@ namespace GXPEngine
 				}
 			} 
 			if (Input.GetKey (Key.RIGHT)) {	//player 2 control RIGHT
-				if (_player2.rotation > -60) {
+				if (_player2.rotation > -_player2.MaxAngle) {
 					_player2.rotation -= _player2.rotationspeed;
 				}
 			} 
@@ -140,17 +135,14 @@ namespace GXPEngine
 
 
 		void Update(){
+			//Console.WriteLine (_ball.position.DistanceTo (new Vec2 (_player1.matrix [0] + _player1.x, _player1.matrix [1] + _player1.y)));
+			distance.start = _ball.position;
+		
 			//Console.WriteLine (enemylist.Count);
-
 			Player1Control ();
 			Player2Control ();
-			//_canvas.graphics.Clear (Color.Black);
 			if (Input.GetKeyDown (Key.SPACE)) {
 				_canvas.graphics.DrawString ("abcdefghijklmnopqrstuvwxyz", _game.font, brush, pnt);	//test
-			}
-			//Console.WriteLine (_canvas.graphics);
-			if (_game.font != null) {
-				Console.WriteLine (_game.font);	//font becomes null??? or something
 			}
 			if (_ball != null) {
 				_ball.Step ();
@@ -161,19 +153,15 @@ namespace GXPEngine
 				lineCollisionTest (_lines [i],true);
 			}
 			if (_ball.HitTest (_player1)) {
-				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player1
-				//_ball.ballColor = Color.Red;
+				_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal(),_player1.Bounce);	//bounce from top side player1
 				_touched = Players._player1;
-				//_ball.overlay1.SetColor (200, 0, 0);
 				_ball.overlay2.SetColor (200, 0, 0);
 
 			}
 			if (_ball.HitTest (_player2)) {
-				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),Properties.PaddleBounce);	//bounce from top side player2
-				//_ball.ballColor = Color.Blue;
+				_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal(),_player2.Bounce);	//bounce from top side player2
 				_touched = Players._player2;
-				//_ball.overlay1.SetColor (0, 0, 200);
-				_ball.overlay2.SetColor (0, 0, 200);
+				_ball.overlay2.SetColor (0, 0, 200);	//overlay
 			}
 			foreach (Enemy enemy in enemylist) 
 			{
@@ -194,14 +182,10 @@ namespace GXPEngine
 
 					if (_touched == Players._player1) {
 						_player1.score++;
-						//Console.WriteLine("touched by player1");
 					} else if (_touched == Players._player2)
 					{
 						_player2.score++;
-						//Console.WriteLine("touched by player1");
 					}
-				
-
 					break;
 				}
 
@@ -210,7 +194,7 @@ namespace GXPEngine
 
 			}
 			if (_ball != null) {
-				_canvas.graphics.DrawLine (//white trail behind the ball
+				_canvas.graphics.DrawLine (		//white trail behind the ball
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
 				);
 				_previousPosition = _ball.position.Clone ();
