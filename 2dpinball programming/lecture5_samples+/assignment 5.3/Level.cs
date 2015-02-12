@@ -34,20 +34,20 @@ namespace GXPEngine
 
 		Players _touched = Players.none;
 		float Damage = 0;
-
+		Font font;
+		SolidBrush brush = new SolidBrush (Color.Red);
+		PointF pnt = new PointF (10, 10);
 
 
 		public Level (MyGame game)
 		{
 			PrivateFontCollection pfc = new PrivateFontCollection ();
-			pfc.AddFontFile ("Starjedi.ttf");
+			pfc.AddFontFile ("Starjhol.ttf");
 			//pfc.AddFontFile ("C:\\Users\\Josse\\Desktop\\map\\2DPinball\\2dpinball programming\\lecture5_samples+\\assignment 5.3\\bin\\Debug\\Starjedi.ttf");
-			Font font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+			font = new Font(pfc.Families[0], 16, FontStyle.Regular);
 			//test
-			for (int i = 0; i < FontFamily.Families.GetLength(0); i++) {
-				Console.WriteLine(FontFamily.Families [i]);
-			}
 
+			//pfc.Dispose ();
 
 
 
@@ -61,7 +61,7 @@ namespace GXPEngine
 			AddChild (_canvas);
 			_hud = new HUD();
 			AddChild (_hud);
-			_canvas.graphics.DrawString ("abcdefgh", font, new SolidBrush (Color.Red), new Point (0, 0));
+			//_canvas.graphics.DrawString ("abcdefgh", font, new SolidBrush (Color.Red), new Point (0, 0));
 			_lines = new List<LineSegment> ();
 
 			Wave wave = new Wave (this);	//spawns 1 wave
@@ -148,7 +148,14 @@ namespace GXPEngine
 
 			Player1Control ();
 			Player2Control ();
-
+			//_canvas.graphics.Clear (Color.Black);
+			if (Input.GetKeyDown (Key.SPACE)) {
+				_canvas.graphics.DrawString ("0", font, brush, pnt);
+			}
+			//Console.WriteLine (_canvas.graphics);
+			if (font != null) {
+				Console.WriteLine (font);
+			}
 			if (_ball != null) {
 				_ball.Step ();
 			}
@@ -197,6 +204,8 @@ namespace GXPEngine
 						_player2.score++;
 						//Console.WriteLine("touched by player1");
 					}
+				
+
 					break;
 				}
 
