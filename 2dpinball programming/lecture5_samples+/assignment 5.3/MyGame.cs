@@ -11,22 +11,6 @@ namespace GXPEngine
 	{	
 		States _state;
 
-		//-----------fonts---------------------
-		//PrivateFontCollection aaa = new PrivateFontCollection();
-		//Stream fontStream = this.GetType().Assembly.GetManifestResourceStream("embedfont.Starjedi.ttf");
-		/*
-		byte[] fontdata = new byte[fontStream.Length];
-		fontStream.Read(fontdata,0,(int)fontStream.Length);
-		fontStream.Close();
-		unsafe
-		{
-			fixed(byte * pFontData = fontdata)
-			{
-				pfc.AddMemoryFont((System.IntPtr)pFontData,fontdata.Length);
-			}
-		}*/
-
-		//--------------------------------------
 
 		static void Main() {
 			new MyGame().Start();
@@ -75,7 +59,7 @@ namespace GXPEngine
 			GameObject statevar = new GameObject();
 			switch (state) {
 			case States.MainMenu:
-				statevar = new Menu ();
+				statevar = new Menu (this);
 				break;
 			case States.Level:
 				statevar = new Level (this);
