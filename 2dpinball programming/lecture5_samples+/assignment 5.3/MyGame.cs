@@ -62,7 +62,7 @@ namespace GXPEngine
 			GameObject statevar = new GameObject();
 			switch (state) {
 			case States.MainMenu:
-				statevar = new Menu ();
+				statevar = new Menu (this);
 				break;
 			case States.Level:
 				statevar = new Level (this);
