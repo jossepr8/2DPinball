@@ -24,14 +24,15 @@ namespace GXPEngine
 
 			PrivateFontCollection pfc = new PrivateFontCollection ();
 			pfc.AddFontFile ("Starjedi.ttf");
-			//pfc.AddFontFile ("C:\\Users\\Josse\\Desktop\\map\\2DPinball\\2dpinball programming\\lecture5_samples+\\assignment 5.3\\bin\\Debug\\Starjedi.ttf");
-			font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+			//font = new Font(pfc.Families[0], 16, FontStyle.Regular);
+			font = new Font ("Broadway",10,FontStyle.Regular);
+			//pfc.Dispose ();
+
 
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
 			SetState(States.MainMenu);
 			SetState (States.Level);	// start at "Level"
-			//SetState (States.Highscores);
 		}
 			
 		void Update () {

@@ -146,7 +146,7 @@ namespace GXPEngine
 			Player2Control ();
 			//_canvas.graphics.Clear (Color.Black);
 			if (Input.GetKeyDown (Key.SPACE)) {
-				_canvas.graphics.DrawString ("0", _game.font, brush, pnt);	//test
+				_canvas.graphics.DrawString ("abcdefghijklmnopqrstuvwxyz", _game.font, brush, pnt);	//test
 			}
 			//Console.WriteLine (_canvas.graphics);
 			if (_game.font != null) {
