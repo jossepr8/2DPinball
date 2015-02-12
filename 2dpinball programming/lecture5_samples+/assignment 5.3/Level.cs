@@ -32,7 +32,7 @@ namespace GXPEngine
 		Flipper _player2;
 
 		Players _touched = Players.none;
-		int Damage = 0;
+		float Damage = 0;
 
 
 
