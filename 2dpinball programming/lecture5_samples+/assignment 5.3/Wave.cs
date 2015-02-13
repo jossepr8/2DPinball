@@ -10,24 +10,27 @@ namespace GXPEngine
 
 		static List<int[,]> wavelist = new List<int[,]>();
 		static List<PresetWave> preset_wavelist = new List<PresetWave> ();
+		static List<PresetWave> preset_wavelistCopy = new List<PresetWave> ();
 		static List<int> enemycountlist = new List<int> ();
 		static XmlReader reader;
 		static Random rnd;
 
 		public Wave (Level level)
 		{
+			preset_wavelistCopy = preset_wavelist;
 			rnd = new Random ();
 			_level = level;
-			SpawnPresetWave (preset_wavelist [0]);
+			SpawnPresetWave (preset_wavelistCopy [0]);
+
 		}
 
 		void Update(){
 			if (_level.GetEnemyList ().Count == 0) {
-				if (preset_wavelist.Count > 0) {
-					preset_wavelist.Remove (preset_wavelist [0]);
+				if (preset_wavelistCopy.Count > 0) {
+					preset_wavelistCopy.Remove (preset_wavelistCopy [0]);
 				}
-					if (preset_wavelist.Count > 0) {
-					SpawnPresetWave (preset_wavelist [0]);
+					if (preset_wavelistCopy.Count > 0) {
+					SpawnPresetWave (preset_wavelistCopy [0]);
 				} else {
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 				}
@@ -110,7 +113,7 @@ namespace GXPEngine
 				reader.ReadEndElement ();	//waves
 				reader.ReadEndElement ();	//preset_waves
 			reader.Dispose();
-		
+
 			//-------------------------------------------------------------
 
 

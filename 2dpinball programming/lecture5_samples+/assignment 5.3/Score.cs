@@ -4,7 +4,7 @@ namespace GXPEngine
 {
 	public class Score
 	{
-		public float SCORE{
+		public int SCORE{
 			get;
 			set;
 		}

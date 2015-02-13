@@ -42,10 +42,12 @@ namespace GXPEngine
 
 			case 0:
 				_game.SetState (States.Level);
+				this.Destroy ();
 				return;
 
 			case 1:
 				_game.SetState (States.Highscores);
+				this.Destroy ();
 				return;
 
 			}
