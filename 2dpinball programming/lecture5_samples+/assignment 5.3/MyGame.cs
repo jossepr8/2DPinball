@@ -27,7 +27,7 @@ namespace GXPEngine
 			//font = new Font(pfc.Families[0], 16, FontStyle.Regular);
 			//pfc.Dispose ();
 			*/
-			font = new Font ("Broadway",10,FontStyle.Regular);
+			font = new Font ("Broadway",50,FontStyle.Regular);
 
 
 

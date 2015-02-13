@@ -27,6 +27,8 @@ namespace GXPEngine
 
 		HUD _hud;
 	
+		bool instadeath = false;	//hard mode
+
 		List<Enemy> enemylist = new List<Enemy> ();
 
 		Flipper _player1;
@@ -34,60 +36,69 @@ namespace GXPEngine
 
 		Players _touched = Players.none;
 		float Damage = 0;
-		SolidBrush brush = new SolidBrush (Color.Red);
+		SolidBrush brushred = new SolidBrush (Color.Red);
+		SolidBrush brushblue = new SolidBrush (Color.Blue);
 		PointF pnt = new PointF (10, 10);
+		PointF pnt2;
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
+		Sprite background;
 
 		public Level (MyGame game)
 		{
+
+			background = new Sprite ("nebula.png");
+			background.SetScaleXY (0.75f,0.75f);
+			AddChild (background);
+
 			_game = game;
 			width = _game.width;
 			height = _game.height;
 			_canvas = new Canvas (width, height);
 			AddChild (_canvas);
-			_hud = new HUD();
-			AddChild (_hud);
+
 			_lines = new List<LineSegment> ();
 
 			Wave wave = new Wave (this);	//spawns 1 wave
 
+			_hud = new HUD();
+			AddChild (_hud);
 
+			pnt2 = new PointF (width-150, 10);
 
 			//-----------------------outer walls----------------------
-			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));	
-			AddLine (new Vec2 (width, 0), new Vec2 (width, height));	
-			AddLine (new Vec2 (width, height), new Vec2 (0, height));	
-			AddLine (new Vec2 (0, height), new Vec2 (0,0));	
+			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));				//top
+			AddLine (new Vec2 (width, 0), new Vec2 (width, height));	//right
+			AddLine (new Vec2 (width, height), new Vec2 (0, height));	//bottom
+			AddLine (new Vec2 (0, height), new Vec2 (0,0));				//left
 			//--------------------------------------------------------
 
-
-
-		
 
 			//--------------------------------ball-------------------------------------------
 			_ball = new Ball (32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
 				position = new Vec2 (300, 400)};	//start position
 			AddChild (_ball);
-			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(3);	//start velocity
+			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(5);	//start velocity
 			_previousPosition = _ball.position.Clone ();
 			//--------------------------------------------------------------------------------
 		
 
-
+			//--------------------------------flippers/paddles/players------------------------
 			_player1 = new Flipper ();
-			_player1.SetXY (width/2-150, 150);
+			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
 			_player1.SetColor (0, 0, 200);	//blue
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
-			_player2.SetXY (width/2+150, 150);
+			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
 			_player2.SetColor (200, 0, 0);	//red
 			AddChild (_player2);
+			//--------------------------------------------------------------------------------
 
 
+			//------------ball distance to the paddles----------------------------------------
 			DEBUGdistance = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance.end.RotateDegrees (_player1.rotation);
 			DEBUGdistance.end.Add (new Vec2 (_player1.x, _player1.y));
@@ -96,6 +107,7 @@ namespace GXPEngine
 			DEBUGdistance2.end.RotateDegrees (_player2.rotation);
 			DEBUGdistance2.end.Add (new Vec2 (_player2.x, _player2.y));
 			//AddChild (DEBUGdistance2);	//add debug lines
+			//--------------------------------------------------------------------------------
 
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
@@ -153,17 +165,17 @@ namespace GXPEngine
 
 
 		void Update(){
-			//Console.WriteLine (DEBUGdistance.start.DistanceTo (DEBUGdistance.end));
-			//Console.WriteLine (_ball.position.DistanceTo (new Vec2 (_player1.matrix [0] + _player1.x, _player1.matrix [1] + _player1.y)));
+			_canvas.graphics.Clear (Color.Empty);
+			_canvas.graphics.DrawString (_player1.score.ToString(), _game.font, brushblue, pnt);
+			_canvas.graphics.DrawString (_player2.score.ToString(), _game.font, brushred, pnt2);
+
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
 		
 			//Console.WriteLine (enemylist.Count);
 			Player1Control ();
 			Player2Control ();
-			if (Input.GetKeyDown (Key.SPACE)) {
-				_canvas.graphics.DrawString ("abcdefghijklmnopqrstuvwxyz", _game.font, brush, pnt);	//test
-			}
+
 			if (_ball != null) {
 				_ball.Step ();
 			}
@@ -177,9 +189,11 @@ namespace GXPEngine
 					_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal (), _player1.Bounce);	//bounce from top player1
 				} else {
 					_ball.velocity.Reflect (new Vec2 (_player1.matrix [4], _player1.matrix [5]).Normal (), _player1.Bounce);	//bounce from side player1
+					_ball.position.Add (_ball.velocity);
 				}
 				_touched = Players._player1;
 				_ball.overlay2.SetColor (0, 0, 200);	//color = blue
+				_ball.overlay1.SetColor (0, 0, 200);	//color = blue
 
 			}
 			if (_ball.HitTest (_player2)) {
@@ -187,13 +201,14 @@ namespace GXPEngine
 					_ball.velocity.Reflect (new Vec2 (_player2.matrix [0], _player2.matrix [1]).Normal (), _player2.Bounce);	//bounce from top player2
 				} else {
 					_ball.velocity.Reflect (new Vec2 (_player2.matrix [4], _player2.matrix [5]).Normal (), _player2.Bounce);	//bounce from side player2
+					_ball.position.Add (_ball.velocity);
 				}
 				_touched = Players._player2;
 				_ball.overlay2.SetColor (200, 0, 0);	//color = red
+				_ball.overlay1.SetColor (200, 0, 0);	//color = red
 			}
 			foreach (Enemy enemy in enemylist) 
 			{
-
 				if (enemy.y >= height) {
 					Damage++;
 					_hud.UpdateHUD (Damage);
@@ -201,13 +216,10 @@ namespace GXPEngine
 					enemy.Destroy ();
 					break;
 				}
-
-
 				if (_ball.HitTest (enemy)) {
 					_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
-
 					if (_touched == Players._player1) {
 						_player1.score++;
 					} else if (_touched == Players._player2)
@@ -216,24 +228,18 @@ namespace GXPEngine
 					}
 					break;
 				}
-
-
-
-
 			}
 
 			if (_ball != null) {
 				/*
-				_canvas.graphics.DrawLine (		//white trail behind the ball
-					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y
+				_canvas.graphics.DrawLine (//white trail behind the ball
+					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y);
 				*/
 				_previousPosition = _ball.position.Clone ();
 				if (_ball.velocity.Length () > 25) {
 					_ball.velocity.Scale (0.8f);
 				}
 			}
-
-
 		}
 
 		void lineCollisionTest(LineSegment line, bool flipNormal) {
@@ -254,11 +260,21 @@ namespace GXPEngine
 				if (ballDistanceNormal < 0 && ballDistanceNormal > -linevec.Length ()) {
 					_ball.velocity.Reflect (lineNormal,line.bounciness);
 					_ball.position.Sub (lineNormal.Scale (ballDistance - _ball.radius));
+					if (line == _lines [2] && instadeath) {
+						_game.SetState (States.MainMenu);
+						this.Destroy ();
+					}
 				}
 			} else if (overlap > 0) {
 				_ball.velocity.Reflect (linecapnormal.Normal());
+				if (line == _lines [2] && instadeath) {
+					_game.SetState (States.MainMenu);
+					this.Destroy ();
+				}
 			}
-
 		}
+
+
+
 	}
 }

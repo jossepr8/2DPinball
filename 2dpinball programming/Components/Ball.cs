@@ -43,6 +43,7 @@ namespace GXPEngine
 			velocity = pVelocity ?? Vec2.zero;
 			_ballColor = pColor ?? Color.Blue;
 
+			_ballColor = Color.Black;
 			//draw ();
 			Step ();
 		}
@@ -54,7 +55,7 @@ namespace GXPEngine
 			overlay2.SetFrame ((int)Frame);
 		}
 
-		private void draw() {
+		void draw() {
 			graphics.Clear (Color.Empty);
 			graphics.FillEllipse (
 				new SolidBrush (_ballColor),
@@ -62,17 +63,17 @@ namespace GXPEngine
 			);
 		}
 
-		public void Step(bool skipVelocity = false) {
+		public void Step(bool skipVelocity = false, bool skipGravity = false) {
 			overlay1.rotation-=10;
-			//Animation ();
 			if (position == null || velocity == null)
 				return;
 
 			if (!skipVelocity) position.Add (velocity);
-			velocity.Add (Gravity);
+			if(!skipGravity) velocity.Add (Gravity);
 			x = position.x;
 			y = position.y;
 			rotation += velocity.Length() + 1;
+			//draw ();
 		}
 
 		public Color ballColor {
