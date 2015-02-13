@@ -13,7 +13,7 @@ namespace GXPEngine
 		readonly Pen redPen = new Pen(Color.Red, 3);
 		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
 		Rectangle rec = new Rectangle (500,30,300,20);
-		int maxhealth = 20;
+		int maxhealth = 200;
 		Canvas _canvas;
 
 		public HUD ()

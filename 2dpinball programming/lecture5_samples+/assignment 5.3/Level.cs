@@ -47,6 +47,12 @@ namespace GXPEngine
 		PointF pntmiddle;
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
+
+		LineSegment DEBUGdistance11;
+		LineSegment DEBUGdistance12;
+
+		LineSegment DEBUGdistance21;
+		LineSegment DEBUGdistance22;
 		Sprite background;
 		Wave wave;
 
@@ -100,18 +106,19 @@ namespace GXPEngine
 			_player1 = new Flipper ();
 			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
-			//_player1.SetColor (0, 0, 200);	//blue
+			_player1.SetColor (0, 0, 200);	//blue
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
 			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
-			//_player2.SetColor (200, 0, 0);	//red
+			_player2.SetColor (200, 0, 0);	//red
 			AddChild (_player2);
 			//--------------------------------------------------------------------------------
 
 
 			//------------ball distance to the paddles----------------------------------------
+			//middle of the paddle-----------------------------------------------------------
 			DEBUGdistance = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance.end.RotateDegrees (_player1.rotation);
 			DEBUGdistance.end.Add (new Vec2 (_player1.x, _player1.y));
@@ -120,6 +127,27 @@ namespace GXPEngine
 			DEBUGdistance2.end.RotateDegrees (_player2.rotation);
 			DEBUGdistance2.end.Add (new Vec2 (_player2.x, _player2.y));
 			//AddChild (DEBUGdistance2);	//add debug lines
+			//----------------------------------------------------------------------------------------
+
+			//sides of the paddle---------------------------------------------------------------------
+			DEBUGdistance11 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
+			DEBUGdistance11.end.RotateDegrees (_player1.rotation + 7);
+			DEBUGdistance11.end.Add (new Vec2 (_player1.x, _player1.y));
+			//AddChild (DEBUGdistance11);	//add debug lines
+			DEBUGdistance12 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
+			DEBUGdistance12.end.RotateDegrees (_player1.rotation - 7);
+			DEBUGdistance12.end.Add (new Vec2 (_player1.x, _player1.y));
+			//AddChild (DEBUGdistance12);	//add debug lines
+
+			DEBUGdistance21 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
+			DEBUGdistance21.end.RotateDegrees (_player2.rotation + 7);
+			DEBUGdistance21.end.Add (new Vec2 (_player2.x, _player2.y));
+			//AddChild (DEBUGdistance21);	//add debug lines
+			DEBUGdistance22 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
+			DEBUGdistance22.end.RotateDegrees (_player2.rotation - 7);
+			DEBUGdistance22.end.Add (new Vec2 (_player2.x, _player2.y));
+			//AddChild (DEBUGdistance22);	//add debug lines
+			//---------------------------------------------------------------------------------
 			//--------------------------------------------------------------------------------
 
 		}
@@ -161,12 +189,18 @@ namespace GXPEngine
 				if (_player1.rotation < _player1.MaxAngle) {
 					_player1.rotation += _player1.rotationspeed;
 					UpdateDistance (DEBUGdistance,_player1);
+
+					UpdateDistance (DEBUGdistance11,_player1);
+					UpdateDistance (DEBUGdistance12,_player1);
 				}
 			} 
 			if (Input.GetKey (Key.D)) {	//player 1 control RIGHT
 				if (_player1.rotation > 0) {
 					_player1.rotation -= _player1.rotationspeed;
 					UpdateDistance (DEBUGdistance,_player1, false);
+
+					UpdateDistance (DEBUGdistance11,_player1, false);
+					UpdateDistance (DEBUGdistance12,_player1, false);
 				}
 			} 
 		}
@@ -175,12 +209,18 @@ namespace GXPEngine
 				if (_player2.rotation < 0) {
 					_player2.rotation += _player2.rotationspeed;
 					UpdateDistance (DEBUGdistance2,_player2);
+
+					UpdateDistance (DEBUGdistance21,_player2);
+					UpdateDistance (DEBUGdistance22,_player2);
 				}
 			} 
 			if (Input.GetKey (Key.RIGHT)) {	//player 2 control RIGHT
 				if (_player2.rotation > -_player2.MaxAngle) {
 					_player2.rotation -= _player2.rotationspeed;
 					UpdateDistance (DEBUGdistance2,_player2, false);
+
+					UpdateDistance (DEBUGdistance21,_player2, false);
+					UpdateDistance (DEBUGdistance22,_player2, false);
 				}
 			} 
 		}
@@ -199,6 +239,12 @@ namespace GXPEngine
 
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
+
+			DEBUGdistance11.start = _ball.position;
+			DEBUGdistance12.start = _ball.position;
+
+			DEBUGdistance21.start = _ball.position;
+			DEBUGdistance22.start = _ball.position;
 		
 			//Console.WriteLine (enemylist.Count);
 			Player1Control ();
