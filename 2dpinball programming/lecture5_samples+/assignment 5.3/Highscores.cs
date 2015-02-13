@@ -8,6 +8,7 @@ namespace GXPEngine
 	{
 		List<Score> scorelist;
 		XmlReader reader;
+		XmlWriter writer;
 
 		public Highscores ()
 		{
@@ -33,13 +34,45 @@ namespace GXPEngine
 
 			reader.Dispose ();
 		}
+
 		public void Save(){
-			reader = XmlReader.Create ("highscores.xml");
+			scorelist.Sort((score1,score2) => score1.SCORE.CompareTo(score2.SCORE));
 
+			writer = XmlWriter.Create ("highscxores.xml");
+			writer.WriteStartElement ("Highscores");
+			writer.WriteStartElement ("Solo");
 
+			foreach (Score score in scorelist) 
+			{	
 
+				writer.WriteStartElement ("highscore");
+				WriteScore (score.SCORE, writer);
+				WriteName (score.NAME, writer);
+				writer.WriteEndElement ();
+			}
+
+			writer.WriteEndElement ();
+			writer.WriteEndElement ();
 			reader.Dispose ();
 		}
+
+
+
+		public void WriteName (string value , XmlWriter writer)
+		{
+			writer.WriteStartElement ("Name");
+			writer.WriteValue (value);
+			writer.WriteEndElement	();
+		}
+
+		public void WriteScore (int value , XmlWriter writer)
+		{
+			writer.WriteStartElement ("Score");
+			writer.WriteValue (value);
+			writer.WriteEndElement	();
+		}
+
+
 	}
 }
 
