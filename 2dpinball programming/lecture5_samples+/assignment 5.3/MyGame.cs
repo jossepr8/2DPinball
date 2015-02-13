@@ -54,8 +54,8 @@ namespace GXPEngine
 			}
 			//--------------------
 			if (level != null) {
-				//level.Step ();
-				//level.GetWave ().Step ();
+				level.Step ();
+				level.GetWave ().Step ();
 			}
 	
 		}
