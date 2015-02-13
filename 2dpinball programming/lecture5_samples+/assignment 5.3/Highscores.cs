@@ -9,22 +9,24 @@ namespace GXPEngine
 		List<Score> scorelist;
 		XmlReader reader;
 		XmlWriter writer;
+		XmlWriterSettings settings = new XmlWriterSettings();
 
 		public Highscores ()
 		{
 			scorelist = new List<Score>();
-			/*	test
-			Score s1 = new Score (){ SCORE = 5, NAME = "aaa" };
+
+			Score s1 = new Score (){ SCORE = 5, NAME = "adfdfdfdfaa" };
 			Score s2 = new Score (){ SCORE = 1, NAME = "ddd" };
 			Score s3 = new Score (){ SCORE = 7, NAME = "ccc" };
 			scorelist.Add (s1);
 			scorelist.Add (s2);
 			scorelist.Add (s3);
-			*/	
 
+
+			settings.Indent = true;
 			//sort highscore list based on specified property
 			scorelist.Sort((score1,score2) => score1.SCORE.CompareTo(score2.SCORE));
-
+			Save ();
 		}
 
 		public void Read(){
@@ -37,8 +39,8 @@ namespace GXPEngine
 
 		public void Save(){
 			scorelist.Sort((score1,score2) => score1.SCORE.CompareTo(score2.SCORE));
+			writer = XmlWriter.Create ("highscores.xml",settings);
 
-			writer = XmlWriter.Create ("highscxores.xml");
 			writer.WriteStartElement ("Highscores");
 			writer.WriteStartElement ("Solo");
 

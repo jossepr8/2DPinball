@@ -1,29 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Highscores>
-
-<Solo>
-	<highscore>
-		<Score> 5 </Score>
-		<Name> ccc </Name>
-	</highscore>
-	<highscore>
-		<Score> 4 </Score>
-		<Name> ddd </Name>
-	</highscore>
-	<highscore>
-		<Score> 3 </Score>
-		<Name> aaa </Name>
-	</highscore>
-	<highscore>
-		<Score> 2 </Score>
-		<Name> eee </Name>
-	</highscore>
-	<highscore>
-		<Score> 1 </Score>
-		<Name> bbb </Name>
-	</highscore>
-</Solo>
-
-<Co-op>
-</Co-op>
-
+  <Solo>
+    <highscore>
+      <Score>1</Score>
+      <Name>ddd</Name>
+    </highscore>
+    <highscore>
+      <Score>5</Score>
+      <Name>adfdfdfdfaa</Name>
+    </highscore>
+    <highscore>
+      <Score>7</Score>
+      <Name>ccc</Name>
+    </highscore>
+  </Solo>
 </Highscores>
