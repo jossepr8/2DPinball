@@ -26,10 +26,12 @@ namespace GXPEngine
 
 		void Update(){
 			if (_level.GetEnemyList ().Count == 0) {
-				if (preset_wavelistCopy.Count > 0) {
+				if (preset_wavelistCopy.Count > 0) 
+				{
 					preset_wavelistCopy.Remove (preset_wavelistCopy [0]);
 				}
-					if (preset_wavelistCopy.Count > 0) {
+					if (preset_wavelistCopy.Count > 0) 
+				{
 					SpawnPresetWave (preset_wavelistCopy [0]);
 				} else {
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
@@ -72,6 +74,7 @@ namespace GXPEngine
 			reader.ReadEndElement ();
 			return defloat;
 		}
+
 		static string readstring(string name){
 			reader.ReadStartElement (name);
 			string destring = reader.ReadContentAsString ();
