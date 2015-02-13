@@ -45,8 +45,6 @@ namespace GXPEngine
 				score.SCORE = readInt ("Score",reader);
 				score.NAME = readString ("Name", reader);
 				reader.ReadEndElement ();
-
-				Console.WriteLine (score.NAME);
 			}
 			reader.ReadEndElement ();
 			reader.ReadEndElement ();
