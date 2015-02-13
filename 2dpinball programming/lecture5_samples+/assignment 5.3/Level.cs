@@ -48,7 +48,7 @@ namespace GXPEngine
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
 		Sprite background;
-
+		Wave wave;
 
 	
 
@@ -73,7 +73,7 @@ namespace GXPEngine
 
 			_lines = new List<LineSegment> ();
 
-			Wave wave = new Wave (this);	//spawns 1 wave
+			wave = new Wave (this);	//spawns 1 wave
 
 			_hud = new HUD();
 			AddChild (_hud);
@@ -122,6 +122,12 @@ namespace GXPEngine
 			//AddChild (DEBUGdistance2);	//add debug lines
 			//--------------------------------------------------------------------------------
 
+		}
+		public MyGame GetGame(){
+			return _game;
+		}
+		public Wave GetWave(){
+			return wave;
 		}
 		public List<Enemy> GetEnemyList(){
 			return enemylist;
@@ -178,16 +184,23 @@ namespace GXPEngine
 				}
 			} 
 		}
-
-		void Update(){
-			_canvas.graphics.Clear (Color.Empty);
-			_canvas.graphics.DrawString (_player1.score.ToString(), _game.font, brushblue, pnt);
-			_canvas.graphics.DrawString (_player2.score.ToString(), _game.font, brushred, pnt2);
+		public void Step(){
+			Updatee ();
+		}
+		void Updatee(){
+			if (Input.GetKeyDown (Key.B)) {
+				_canvas.Destroy ();
+			}
+			if (GetChildren().Contains(_canvas)) {
+				_canvas.graphics.Clear (Color.Empty);
+				_canvas.graphics.DrawString (_player1.score.ToString (), _game.font, brushblue, pnt);
+				_canvas.graphics.DrawString (_player2.score.ToString (), _game.font, brushred, pnt2);
+			}
 
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
 		
-			Console.WriteLine (enemylist.Count);
+			//Console.WriteLine (enemylist.Count);
 			Player1Control ();
 			Player2Control ();
 

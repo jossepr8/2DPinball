@@ -10,9 +10,11 @@ namespace GXPEngine
 
 	public class MyGame : Game
 	{	
-		States _state;
+		public States _state;
 		public Font font;
-
+		Level level;
+		Menu menu;
+		Highscores highscores;
 
 
 		static void Main() {
@@ -33,12 +35,13 @@ namespace GXPEngine
 
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
-			SetState(States.MainMenu);
+			//SetState(States.MainMenu);
 			SetState (States.Level);	// start at "Level"
 			//targetFps = 5; //--test mode---
 		}
 			
 		void Update () {
+			//Console.WriteLine (GetChildren ().Count);
 			//---------test--------
 			if (Input.GetKeyDown (Key.G)) {
 				SetState (States.MainMenu);
@@ -50,43 +53,63 @@ namespace GXPEngine
 				SetState (States.Highscores);
 			}
 			//--------------------
+			if (level != null) {
+				//level.Step ();
+				//level.GetWave ().Step ();
+			}
+	
 		}
 
 		public void SetState(States state){
 			if (_state == state) {
-				return;
+				//return;
 			}
 			_state = state;
+			/*
 			for (int i = 0; i < GetChildren().Count; i++) {	
 				if (GetChildren () [i] is Level ||	//remove level
 					GetChildren () [i] is Menu  ||	//remove menu
 					GetChildren () [i] is Highscores//remove highscore menu
 				){
-					RemoveChild (GetChildren () [i]);
+					GetChildren () [i].Destroy ();
+					//RemoveChild (GetChildren () [i]);
 				}
+			}*/
+			if (level != null) {
+				level.Destroy ();
+			}
+			if (menu != null) {
+				menu.Destroy ();
+			}
+			if (highscores != null) {
+				highscores.Destroy ();
 			}
 			StartState (_state);
 		}
 			
 		void StartState(States state){
-			GameObject statevar = new GameObject();
+			//GameObject statevar = new GameObject();
 			switch (state) {
 			case States.MainMenu:
-				statevar = new Menu (this);
+				menu = new Menu (this);
+				AddChild (menu);
 				break;
 			case States.Level:
-				statevar = new Level (this);
+				level = new Level (this);
+				AddChild (level);
 				break;
 			case States.Highscores:
-				statevar = new Highscores ();
+				highscores = new Highscores ();
+				AddChild (highscores);
 				break;
 			}
-			AddChild (statevar);
+			//AddChild (statevar);
 		}
 	}
 
 	public enum States
 	{
+		None,
 		MainMenu,
 		Level,
 		Highscores

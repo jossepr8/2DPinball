@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Resources;
 namespace GXPEngine
 {
-	public class HUD : Canvas
+	public class HUD : GameObject
 	{	
 
 		Sprite rightHealthbar = new Sprite ("RightHealthbar.png");
@@ -14,11 +14,12 @@ namespace GXPEngine
 		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
 		Rectangle rec = new Rectangle (500,30,300,20);
 		int maxhealth = 20;
+		Canvas _canvas;
 
-
-		public HUD () : base(1280,720)
+		public HUD ()
 		{
-
+			_canvas = new Canvas (1280, 720);
+			AddChild (_canvas);
 
 			AddChild (leftHealthbar);
 			leftHealthbar.SetXY (650,30);
@@ -28,7 +29,7 @@ namespace GXPEngine
 			rightHealthbar.SetXY (650,30);
 			rightHealthbar.SetScaleXY (0.01f,1.7);
 
-			graphics.DrawRectangle (redPen, rec);
+			_canvas.graphics.DrawRectangle (redPen, rec);
 		}
 
 		public void UpdateHUD(float health)
@@ -40,7 +41,9 @@ namespace GXPEngine
 
 			rightHealthbar.SetScaleXY ((health / maxhealth),1.7);
 			leftHealthbar.SetScaleXY ((-health / maxhealth), 1.7);
-			graphics.DrawRectangle (redPen, rec);
+			if (GetChildren ().Contains (_canvas)) {
+				_canvas.graphics.DrawRectangle (redPen, rec);
+			}
 		}
 	
 	

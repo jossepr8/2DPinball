@@ -10,30 +10,44 @@ namespace GXPEngine
 
 		static List<int[,]> wavelist = new List<int[,]>();
 		static List<PresetWave> preset_wavelist = new List<PresetWave> ();
-		static List<PresetWave> preset_wavelistCopy = new List<PresetWave> ();
 		static List<int> enemycountlist = new List<int> ();
 		static XmlReader reader;
 		static Random rnd;
+		int currentwave = 0;
 
 		public Wave (Level level)
 		{
-			preset_wavelistCopy = preset_wavelist;
 			rnd = new Random ();
 			_level = level;
-			SpawnPresetWave (preset_wavelistCopy [0]);
+			SpawnPresetWave (preset_wavelist [0]);
 
 		}
-
-		void Update(){
-			if (_level.GetEnemyList ().Count == 0) {
-				if (preset_wavelistCopy.Count > 0) {
-					preset_wavelistCopy.Remove (preset_wavelistCopy [0]);
+	
+		public void Step(){
+			Updatee ();
+		}
+		void Updatee(){
+			if (_level.GetEnemyList ().Count == 0 && _level.GetGame()._state == States.Level) {
+				/*
+				if (preset_wavelist.Count > 0) {
+					preset_wavelist.Remove (preset_wavelist [0]);
 				}
-					if (preset_wavelistCopy.Count > 0) {
-					SpawnPresetWave (preset_wavelistCopy [0]);
+					if (preset_wavelist.Count > 0) {
+					SpawnPresetWave (preset_wavelist [0]);
 				} else {
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 				}
+				*/
+
+				if (currentwave < preset_wavelist.Count-1) {
+					currentwave++;
+					SpawnPresetWave (preset_wavelist [currentwave]);
+				} else {
+					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
+				}
+
+
+
 			}
 		}
 
@@ -141,6 +155,7 @@ namespace GXPEngine
 				reader.ReadEndElement ();
 			reader.Dispose();
 			//---------------------------------------------------------------
+			Console.WriteLine ("Done");
 		}
 	}
 }
