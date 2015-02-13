@@ -53,7 +53,9 @@ namespace GXPEngine
 
 			writer.WriteEndElement ();
 			writer.WriteEndElement ();
-			reader.Dispose ();
+			writer.Flush ();
+			writer.Close ();
+			writer.Dispose ();
 		}
 
 
