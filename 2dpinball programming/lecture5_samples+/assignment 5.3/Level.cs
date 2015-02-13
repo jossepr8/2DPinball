@@ -13,6 +13,9 @@ namespace GXPEngine
 		none
 	}
 
+
+
+
 	public class Level : GameObject
 	{	
 		List<LineSegment> _lines;
@@ -22,6 +25,7 @@ namespace GXPEngine
 
 		Vec2 _previousPosition;
 		Canvas _canvas;
+		Canvas _layer1canvas;
 		int width;
 		int height;
 
@@ -40,12 +44,17 @@ namespace GXPEngine
 		SolidBrush brushblue = new SolidBrush (Color.Blue);
 		PointF pnt = new PointF (10, 10);
 		PointF pnt2;
+		PointF pntmiddle;
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
 		Sprite background;
 
+
+	
+
 		public Level (MyGame game)
 		{
+
 
 			background = new Sprite ("nebula.png");
 			background.SetScaleXY (0.75f,0.75f);
@@ -56,6 +65,11 @@ namespace GXPEngine
 			height = _game.height;
 			_canvas = new Canvas (width, height);
 			AddChild (_canvas);
+			_layer1canvas = new Canvas (width, height);
+			AddChild (_layer1canvas);
+
+			pnt2 = new PointF (width-150, 10);
+			pntmiddle = new PointF (width / 2, height / 2);
 
 			_lines = new List<LineSegment> ();
 
@@ -64,7 +78,6 @@ namespace GXPEngine
 			_hud = new HUD();
 			AddChild (_hud);
 
-			pnt2 = new PointF (width-150, 10);
 
 			//-----------------------outer walls----------------------
 			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));				//top
@@ -87,13 +100,13 @@ namespace GXPEngine
 			_player1 = new Flipper ();
 			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
-			_player1.SetColor (0, 0, 200);	//blue
+			//_player1.SetColor (0, 0, 200);	//blue
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
 			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
-			_player2.SetColor (200, 0, 0);	//red
+			//_player2.SetColor (200, 0, 0);	//red
 			AddChild (_player2);
 			//--------------------------------------------------------------------------------
 
@@ -109,6 +122,9 @@ namespace GXPEngine
 			//AddChild (DEBUGdistance2);	//add debug lines
 			//--------------------------------------------------------------------------------
 
+		}
+		public List<Enemy> GetEnemyList(){
+			return enemylist;
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
@@ -163,7 +179,6 @@ namespace GXPEngine
 			} 
 		}
 
-
 		void Update(){
 			_canvas.graphics.Clear (Color.Empty);
 			_canvas.graphics.DrawString (_player1.score.ToString(), _game.font, brushblue, pnt);
@@ -172,7 +187,7 @@ namespace GXPEngine
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
 		
-			//Console.WriteLine (enemylist.Count);
+			Console.WriteLine (enemylist.Count);
 			Player1Control ();
 			Player2Control ();
 

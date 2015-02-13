@@ -135,6 +135,8 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Highscores.cs" />
     <Compile Include="Score.cs" />
+    <Compile Include="PresetWave.cs" />
+    <Compile Include="Message.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
