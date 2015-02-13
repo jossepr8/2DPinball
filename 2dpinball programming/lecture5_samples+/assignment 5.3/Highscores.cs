@@ -25,7 +25,7 @@ namespace GXPEngine
 
 			settings.Indent = true;
 			//sort highscore list based on specified property
-			scorelist.Sort((score1,score2) => score1.SCORE.CompareTo(score2.SCORE));
+			scorelist.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
 			Save ();
 		}
 
@@ -38,7 +38,6 @@ namespace GXPEngine
 		}
 
 		public void Save(){
-			scorelist.Sort((score1,score2) => score1.SCORE.CompareTo(score2.SCORE));
 			writer = XmlWriter.Create ("highscores.xml",settings);
 
 			writer.WriteStartElement ("Highscores");
