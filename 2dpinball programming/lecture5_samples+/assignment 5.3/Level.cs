@@ -32,7 +32,7 @@ namespace GXPEngine
 		int width;
 		int height;
 
-		HUD _hud;
+		public HUD _hud;
 	
 		bool instadeath = false;	//hard mode --doesnt work atm
 
@@ -41,11 +41,9 @@ namespace GXPEngine
 		public Flipper _player1;
 		public Flipper _player2;
 
-		float Damage = 0;
-		SolidBrush brushred = new SolidBrush (Color.Red);
-		SolidBrush brushblue = new SolidBrush (Color.Blue);
-		PointF pnt = new PointF (10, 10);
-		PointF pnt2;
+		public float Damage = 0;
+
+
 		PointF pntmiddle;
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
@@ -76,7 +74,7 @@ namespace GXPEngine
 			_enemyballs = new List<BasicBall> ();
 
 
-
+			Console.Beep();
 			colmanager = new CollisionManager2(this);
 
 			background = new Sprite ("nebula.png");
@@ -91,7 +89,6 @@ namespace GXPEngine
 			_layer1canvas = new Canvas (width, height);
 			AddChild (_layer1canvas);
 
-			pnt2 = new PointF (width-150, 10);
 			pntmiddle = new PointF (width / 2, height / 2);
 
 
@@ -183,6 +180,7 @@ namespace GXPEngine
 			_balls.Add (linecap22);
 
 
+			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 		}
 		public MyGame GetGame(){
 			return _game;
@@ -317,12 +315,12 @@ namespace GXPEngine
 			linecap22.Step ();
 
 
+//			if (GetChildren().Contains(_canvas)) {
+//				_canvas.graphics.Clear (Color.Empty);
+//				_canvas.graphics.DrawString (_player1.score.ToString (), _game.font, brushblue, pnt);
+//				_canvas.graphics.DrawString (_player2.score.ToString (), _game.font, brushred, pnt2);
+//			}
 
-			if (GetChildren().Contains(_canvas)) {
-				_canvas.graphics.Clear (Color.Empty);
-				_canvas.graphics.DrawString (_player1.score.ToString (), _game.font, brushblue, pnt);
-				_canvas.graphics.DrawString (_player2.score.ToString (), _game.font, brushred, pnt2);
-			}
 
 
 
@@ -369,7 +367,7 @@ namespace GXPEngine
 				_enemyballs [i].Step ();
 				if (enemy.y >= height) {
 					Damage++;
-					_hud.UpdateHUD (Damage);
+					_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
 					_enemyballs [i].Destroy ();
