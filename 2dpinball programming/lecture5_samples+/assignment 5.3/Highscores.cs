@@ -69,8 +69,10 @@ namespace GXPEngine
 
 			writer.WriteEndElement ();
 			writer.WriteEndElement ();
+
 			writer.Flush ();
 			writer.Close ();
+
 			writer.Dispose ();
 		}
 
