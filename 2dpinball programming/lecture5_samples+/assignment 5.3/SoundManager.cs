@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Timers;
 using System.IO;
 
-
-
-
 namespace GXPEngine
 {
 	public class SoundManager
@@ -67,12 +64,14 @@ namespace GXPEngine
 
 		private static readonly Dictionary <SoundEffect,string> SoundDictionary
 		= new Dictionary <SoundEffect,string> {
+
 			{ SoundEffect.bounce, "bounce.wav" },
 			{ SoundEffect.bounce2, "bounce2.wav" },
 			{ SoundEffect.bounce3,"bounce3.wav" },
 			{ SoundEffect.enemyhit,"enemyhit.wav" },
 			{ SoundEffect.enemyhit2,"enemyhit2.wav" },
 			{ SoundEffect.nyan,"nyan.wav" }
+		
 		};
 			
 
