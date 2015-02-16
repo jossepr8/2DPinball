@@ -73,7 +73,7 @@ namespace GXPEngine
 			}
 		}
 		void HitWall(){
-
+			SoundManager.Playsound(SoundEffect.bounce);
 		}
 		void HitBall(){
 
