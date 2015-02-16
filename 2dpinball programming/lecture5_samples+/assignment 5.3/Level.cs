@@ -70,7 +70,7 @@ namespace GXPEngine
 			_enemyballs = new List<BasicBall> ();
 
 
-
+			Console.Beep();
 			colmanager = new CollisionManager2(this);
 
 			background = new Sprite ("nebula.png");
