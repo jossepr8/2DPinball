@@ -34,44 +34,46 @@ namespace GXPEngine
 		}
 
 		public void Read(){
-			reader = XmlReader.Create ("highscores.xml");
+			using (reader = XmlReader.Create ("highscores.xml")) {
+				//reader = XmlReader.Create ("highscores.xml");
 
-			reader.ReadStartElement ("Highscores");
-			reader.ReadStartElement ("Solo");
+				reader.ReadStartElement ("Highscores");
+				reader.ReadStartElement ("Solo");
 
-			foreach (Score score in scorelist) 
-			{
-				reader.ReadStartElement ("highscore");
-				score.SCORE = readInt ("Score",reader);
-				score.NAME = readString ("Name", reader);
+				foreach (Score score in scorelist) {
+					reader.ReadStartElement ("highscore");
+					score.SCORE = readInt ("Score", reader);
+					score.NAME = readString ("Name", reader);
+					reader.ReadEndElement ();
+				}
 				reader.ReadEndElement ();
-			}
-			reader.ReadEndElement ();
-			reader.ReadEndElement ();
+				reader.ReadEndElement ();
 
-			reader.Dispose ();
+				//reader.Dispose ();
+			}
 		}
 
 		public void Save(){
-			writer = XmlWriter.Create ("highscores.xml",settings);
+			using (writer = XmlWriter.Create ("highscores.xml", settings)) {
+				//writer = XmlWriter.Create ("highscores.xml",settings);
 
-			writer.WriteStartElement ("Highscores");
-			writer.WriteStartElement ("Solo");
+				writer.WriteStartElement ("Highscores");
+				writer.WriteStartElement ("Solo");
 
-			foreach (Score score in scorelist) 
-			{	
+				foreach (Score score in scorelist) {	
 
-				writer.WriteStartElement ("highscore");
-				WriteScore (score.SCORE, writer);
-				WriteName (score.NAME, writer);
+					writer.WriteStartElement ("highscore");
+					WriteScore (score.SCORE, writer);
+					WriteName (score.NAME, writer);
+					writer.WriteEndElement ();
+				}
+
 				writer.WriteEndElement ();
+				writer.WriteEndElement ();
+				//writer.Flush ();
+				//writer.Close ();
+				//writer.Dispose ();
 			}
-
-			writer.WriteEndElement ();
-			writer.WriteEndElement ();
-			writer.Flush ();
-			writer.Close ();
-			writer.Dispose ();
 		}
 
 
