@@ -40,6 +40,7 @@ namespace GXPEngine
 			//targetFps = 5; //--test mode---
 		}
 			
+			
 		void Update () {
 			//Console.WriteLine (GetChildren ().Count);
 			//---------test--------

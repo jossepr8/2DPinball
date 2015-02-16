@@ -17,10 +17,11 @@ namespace GXPEngine
 		float Frame = 1;
 		public AnimSprite overlay2;
 		public AnimSprite overlay1;
+		Level _level;
 
-		public Ball (int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
+		public Ball (Level level, int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
-
+			_level = level;
 			overlay1 = new AnimSprite ("Electric Swirl.png",2,1);
 			overlay1.SetOrigin (width / 2, height / 2);
 			overlay1.SetFrame (0);
@@ -63,16 +64,21 @@ namespace GXPEngine
 			);
 		}
 
-		public void Step(bool skipVelocity = false, bool skipGravity = false) {
+		public void Step(bool skipVelocity = false, bool skipGravity = false, Vec2 pvelocity = null) {
+			Console.WriteLine (velocity.Length ());
+			if (velocity.Length () > 20) {
+				velocity.Scale (20/velocity.Length());
+			} 
 			overlay1.rotation-=10;
 			if (position == null || velocity == null)
 				return;
 
-			if (!skipVelocity) position.Add (velocity);
+			if (!skipVelocity) position.Add (pvelocity??velocity);
 			if(!skipGravity) velocity.Add (Gravity);
 			x = position.x;
 			y = position.y;
 			rotation += velocity.Length() + 1;
+			//_level.CheckCollision ();
 			//draw ();
 		}
 

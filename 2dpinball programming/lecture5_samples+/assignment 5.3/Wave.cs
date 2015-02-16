@@ -7,6 +7,7 @@ namespace GXPEngine
 	public class Wave : GameObject
 	{
 		Level _level;
+		MyGame _game;
 
 		static List<int[,]> wavelist = new List<int[,]>();
 		static List<PresetWave> preset_wavelist = new List<PresetWave> ();
@@ -19,8 +20,7 @@ namespace GXPEngine
 		{
 			rnd = new Random ();
 			_level = level;
-			SpawnPresetWave (preset_wavelist [0]);
-
+			_game = _level.GetGame ();
 		}
 	
 		public void Step(){
@@ -28,20 +28,9 @@ namespace GXPEngine
 		}
 		void Updatee(){
 			if (_level.GetEnemyList ().Count == 0 && _level.GetGame()._state == States.Level) {
-				/*
-				if (preset_wavelist.Count > 0) {
-					preset_wavelist.Remove (preset_wavelist [0]);
-				}
-					if (preset_wavelist.Count > 0) {
-					SpawnPresetWave (preset_wavelist [0]);
-				} else {
-					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
-				}
-				*/
-
-				if (currentwave < preset_wavelist.Count-1) {
-					currentwave++;
+				if (currentwave < preset_wavelist.Count) {
 					SpawnPresetWave (preset_wavelist [currentwave]);
+					currentwave++;
 				} else {
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 				}
@@ -52,6 +41,9 @@ namespace GXPEngine
 		}
 
 		void SpawnWave(int[,] wave){
+			_level._player1.scaleX = 1;
+			_level._player2.scaleX = 1;
+			_level._ball.SetScaleXY (1, 1);
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
 					if (wave [a, i] == 1) {
@@ -64,13 +56,15 @@ namespace GXPEngine
 			}
 		}
 		void SpawnPresetWave(PresetWave presetwave){
-			_level.AddChild (new Message (presetwave.startmessage, 100));
-
+			_level.AddChild (new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer));
+			_level._player1.scaleX = presetwave.paddlewidth / 100;
+			_level._player2.scaleX = presetwave.paddlewidth / 100;
+			_level._ball.SetScaleXY (presetwave.ballsize/100, presetwave.ballsize/100);
 			int[,] wave = presetwave.wave;
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
 					if (wave [a, i] == 1) {
-						Enemy enemy = new Enemy ();
+						Enemy enemy = new Enemy (){speed = presetwave.enemygravity};
 						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
 						enemy.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
 						_level.Addenemy (enemy);
@@ -110,9 +104,10 @@ namespace GXPEngine
 					presetwave.wave = new int[10, 10];
 					reader.ReadStartElement ("Wave");
 					presetwave.startmessage = Wave.readstring ("start_message");
-					presetwave.endmessage = Wave.readstring ("end_message");
+					presetwave.messagetimer = Wave.readfloat ("messagetimer");
 					presetwave.paddlewidth = Wave.readfloat ("paddlewidth");
 					presetwave.ballsize = Wave.readfloat ("ballsize");
+					presetwave.enemygravity = Wave.readfloat ("enemygravity");
 					for (int a = 0; a < 10; a++) {
 						reader.ReadStartElement ("row");
 						string[] cols = reader.ReadContentAsString ().Split (',');
@@ -155,7 +150,7 @@ namespace GXPEngine
 				reader.ReadEndElement ();
 			reader.Dispose();
 			//---------------------------------------------------------------
-			Console.WriteLine ("Done");
+			//Console.WriteLine ("Done");
 		}
 	}
 }

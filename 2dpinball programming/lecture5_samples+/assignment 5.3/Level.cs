@@ -18,12 +18,12 @@ namespace GXPEngine
 
 	public class Level : GameObject
 	{	
-		List<LineSegment> _lines;
-		Ball _ball;
+		public List<LineSegment> _lines;
+		public Ball _ball;
 		MyGame _game;
 
-
-		Vec2 _previousPosition;
+		CollisionManager2 colmanager;
+		public Vec2 _previousPosition;
 		Canvas _canvas;
 		Canvas _layer1canvas;
 		int width;
@@ -35,8 +35,8 @@ namespace GXPEngine
 
 		List<Enemy> enemylist = new List<Enemy> ();
 
-		Flipper _player1;
-		Flipper _player2;
+		public Flipper _player1;
+		public Flipper _player2;
 
 		Players _touched = Players.none;
 		float Damage = 0;
@@ -48,19 +48,20 @@ namespace GXPEngine
 		LineSegment DEBUGdistance;
 		LineSegment DEBUGdistance2;
 
-		LineSegment DEBUGdistance11;
-		LineSegment DEBUGdistance12;
 
-		LineSegment DEBUGdistance21;
-		LineSegment DEBUGdistance22;
 		Sprite background;
 		Wave wave;
+
+		public LineSegment matrixline1;
+		public LineSegment matrixline2;
+		Vec2 matrixvec1;
+		Vec2 matrixvec2;
 
 	
 
 		public Level (MyGame game)
 		{
-
+			colmanager = new CollisionManager2(this);
 
 			background = new Sprite ("nebula.png");
 			background.SetScaleXY (0.75f,0.75f);
@@ -94,7 +95,7 @@ namespace GXPEngine
 
 
 			//--------------------------------ball-------------------------------------------
-			_ball = new Ball (32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
+			_ball = new Ball (this, 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
 				position = new Vec2 (300, 400)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(5);	//start velocity
@@ -107,12 +108,15 @@ namespace GXPEngine
 			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
 			_player1.SetColor (0, 0, 200);	//blue
+			//_player1.SetScaleXY (2, 1);
+			_player1.scaleX = 2;
 			AddChild (_player1);
 
 			_player2 = new Flipper ();
 			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
 			_player2.SetColor (200, 0, 0);	//red
+			_player2.scaleX = 3;
 			AddChild (_player2);
 			//--------------------------------------------------------------------------------
 
@@ -122,33 +126,28 @@ namespace GXPEngine
 			DEBUGdistance = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance.end.RotateDegrees (_player1.rotation);
 			DEBUGdistance.end.Add (new Vec2 (_player1.x, _player1.y));
-			//AddChild (DEBUGdistance);	//add debug lines
+			AddChild (DEBUGdistance);	//add debug lines
 			DEBUGdistance2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance2.end.RotateDegrees (_player2.rotation);
 			DEBUGdistance2.end.Add (new Vec2 (_player2.x, _player2.y));
 			//AddChild (DEBUGdistance2);	//add debug lines
 			//----------------------------------------------------------------------------------------
 
-			//sides of the paddle---------------------------------------------------------------------
-			DEBUGdistance11 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
-			DEBUGdistance11.end.RotateDegrees (_player1.rotation + 7);
-			DEBUGdistance11.end.Add (new Vec2 (_player1.x, _player1.y));
-			//AddChild (DEBUGdistance11);	//add debug lines
-			DEBUGdistance12 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
-			DEBUGdistance12.end.RotateDegrees (_player1.rotation - 7);
-			DEBUGdistance12.end.Add (new Vec2 (_player1.x, _player1.y));
-			//AddChild (DEBUGdistance12);	//add debug lines
-
-			DEBUGdistance21 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
-			DEBUGdistance21.end.RotateDegrees (_player2.rotation + 7);
-			DEBUGdistance21.end.Add (new Vec2 (_player2.x, _player2.y));
-			//AddChild (DEBUGdistance21);	//add debug lines
-			DEBUGdistance22 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
-			DEBUGdistance22.end.RotateDegrees (_player2.rotation - 7);
-			DEBUGdistance22.end.Add (new Vec2 (_player2.x, _player2.y));
-			//AddChild (DEBUGdistance22);	//add debug lines
-			//---------------------------------------------------------------------------------
 			//--------------------------------------------------------------------------------
+
+			matrixline1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
+			matrixline1.bounciness = 1.3f;
+			AddChild (matrixline1);
+			_lines.Add (matrixline1);
+
+			matrixline2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
+			matrixline2.bounciness = 1.3f;
+			AddChild (matrixline2);
+			_lines.Add (matrixline2);
+
+			matrixvec1 = new Vec2 (0, 0);
+			matrixvec2 = new Vec2 (0, 0);
+
 
 		}
 		public MyGame GetGame(){
@@ -159,6 +158,9 @@ namespace GXPEngine
 		}
 		public List<Enemy> GetEnemyList(){
 			return enemylist;
+		}
+		public List<LineSegment> GetLineList(){
+			return _lines;
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
@@ -175,32 +177,27 @@ namespace GXPEngine
 		public int GetHeight(){
 			return height;
 		}
+
 		void UpdateDistance(LineSegment line, Flipper player, bool plus = true){	//checks the distance between ball and _player
-			line.end.Sub (new Vec2 (player.x, player.y));
+			line.end.Sub (new Vec2 (player.x, player.y));	//start from point 0,0 (needed to rotate)
 			if (plus) {
-				line.end.RotateDegrees (player.rotationspeed);
+				line.end.RotateDegrees (player.rotationspeed);	//rotate to desired rotation
 			} else {
 				line.end.RotateDegrees (-player.rotationspeed);
 			}
-			line.end.Add (new Vec2 (player.x, player.y));
+			line.end.Add (new Vec2 (player.x, player.y));	//start from paddle location again
 		}
 		void Player1Control(){
 			if (Input.GetKey (Key.A)) {	//player 1 control LEFT
 				if (_player1.rotation < _player1.MaxAngle) {
 					_player1.rotation += _player1.rotationspeed;
 					UpdateDistance (DEBUGdistance,_player1);
-
-					UpdateDistance (DEBUGdistance11,_player1);
-					UpdateDistance (DEBUGdistance12,_player1);
 				}
 			} 
 			if (Input.GetKey (Key.D)) {	//player 1 control RIGHT
 				if (_player1.rotation > 0) {
 					_player1.rotation -= _player1.rotationspeed;
 					UpdateDistance (DEBUGdistance,_player1, false);
-
-					UpdateDistance (DEBUGdistance11,_player1, false);
-					UpdateDistance (DEBUGdistance12,_player1, false);
 				}
 			} 
 		}
@@ -209,55 +206,80 @@ namespace GXPEngine
 				if (_player2.rotation < 0) {
 					_player2.rotation += _player2.rotationspeed;
 					UpdateDistance (DEBUGdistance2,_player2);
-
-					UpdateDistance (DEBUGdistance21,_player2);
-					UpdateDistance (DEBUGdistance22,_player2);
 				}
 			} 
 			if (Input.GetKey (Key.RIGHT)) {	//player 2 control RIGHT
 				if (_player2.rotation > -_player2.MaxAngle) {
 					_player2.rotation -= _player2.rotationspeed;
 					UpdateDistance (DEBUGdistance2,_player2, false);
-
-					UpdateDistance (DEBUGdistance21,_player2, false);
-					UpdateDistance (DEBUGdistance22,_player2, false);
 				}
 			} 
 		}
+		public void CheckCollision(){
+			for (int i = 0; i < _lines.Count; i++) {
+				lineCollisionTest (_lines [i],false);	//collisiontest twice for both sides
+				lineCollisionTest (_lines [i],true);
+			}
+		}
+
 		public void Step(){
 			Updatee ();
+			colmanager.Step ();
 		}
 		void Updatee(){
-			if (Input.GetKeyDown (Key.B)) {
-				_canvas.Destroy ();
-			}
+
+			DEBUGdistance.start = _ball.position;
+			DEBUGdistance2.start = _ball.position;
+			//------------line that represents paddle 1---------------------------
+			//matrixvec represents the angle of the paddle
+			matrixvec1.x = _player1.matrix[0];	
+			matrixvec1.y = _player1.matrix [1];
+			matrixline1.start = 
+				DEBUGdistance.end.Clone()
+					.Sub(matrixvec1.Clone()
+						.Scale(_player1.width/(float)_player1.scaleX/2));
+			matrixline1.end = 
+				matrixvec1.Clone()
+					.Scale (_player1.width/(float)_player1.scaleX)
+				.Add (matrixline1.start);
+			//--------------------------------------------------------------------
+			//------------line that represents paddle 2---------------------------
+			//matrixvec represents the angle of the paddle
+			matrixvec2.x = _player2.matrix[0];
+			matrixvec2.y = _player2.matrix [1];
+
+			matrixline2.start = 
+				DEBUGdistance2.end.Clone()
+					.Sub(matrixvec2.Clone()
+						.Scale(_player2.width/(float)_player2.scaleX/2));
+			matrixline2.end = 
+				matrixvec2.Clone()
+					.Scale (_player2.width/(float)_player2.scaleX)
+					.Add (matrixline2.start);
+			//--------------------------------------------------------------------
+
+
+
 			if (GetChildren().Contains(_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
 				_canvas.graphics.DrawString (_player1.score.ToString (), _game.font, brushblue, pnt);
 				_canvas.graphics.DrawString (_player2.score.ToString (), _game.font, brushred, pnt2);
 			}
 
-			DEBUGdistance.start = _ball.position;
-			DEBUGdistance2.start = _ball.position;
 
-			DEBUGdistance11.start = _ball.position;
-			DEBUGdistance12.start = _ball.position;
 
-			DEBUGdistance21.start = _ball.position;
-			DEBUGdistance22.start = _ball.position;
 		
 			//Console.WriteLine (enemylist.Count);
 			Player1Control ();
 			Player2Control ();
 
 			if (_ball != null) {
-				_ball.Step ();
+				_ball.Step (false,false);
 			}
 
-			for (int i = 0; i < _lines.Count; i++) {
-				lineCollisionTest (_lines [i],false);	//collisiontest twice for both sides
-				lineCollisionTest (_lines [i],true);
-			}
+			//CheckCollision ();
+
+			/*
 			if (_ball.HitTest (_player1)) {
 				if (DEBUGdistance.end.Clone().Sub(DEBUGdistance.start).Length() <= 100) {	//work in progress
 					_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal (), _player1.Bounce);	//bounce from top player1
@@ -281,6 +303,7 @@ namespace GXPEngine
 				_ball.overlay2.SetColor (200, 0, 0);	//color = red
 				_ball.overlay1.SetColor (200, 0, 0);	//color = red
 			}
+			*/
 			foreach (Enemy enemy in enemylist) 
 			{
 				if (enemy.y >= height) {
@@ -291,7 +314,7 @@ namespace GXPEngine
 					break;
 				}
 				if (_ball.HitTest (enemy)) {
-					_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
+					//_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
 					if (_touched == Players._player1) {
@@ -309,14 +332,15 @@ namespace GXPEngine
 				_canvas.graphics.DrawLine (//white trail behind the ball
 					Pens.White, _previousPosition.x, _previousPosition.y, _ball.position.x, _ball.position.y);
 				*/
-				_previousPosition = _ball.position.Clone ();
+				//_previousPosition = _ball.position.Clone ();
 				if (_ball.velocity.Length () > 25) {
 					_ball.velocity.Scale (0.8f);
 				}
 			}
 		}
 
-		void lineCollisionTest(LineSegment line, bool flipNormal) {
+		//not used atm
+		void lineCollisionTest(LineSegment line, bool flipNormal) {	//general one... absolete atm
 			if (_ball == null) {
 				return;
 			}

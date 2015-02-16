@@ -137,6 +137,7 @@
     <Compile Include="Score.cs" />
     <Compile Include="PresetWave.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="CollisionManager2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

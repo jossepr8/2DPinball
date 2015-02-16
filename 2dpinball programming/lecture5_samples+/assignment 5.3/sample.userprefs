@@ -1,20 +1,22 @@
 ﻿<Properties StartupItem="sample.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Level.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\Components\Ball.cs">
     <Files>
-      <File FileName="MyGame.cs" Line="41" Column="41" />
-      <File FileName="Menu.cs" Line="25" Column="25" />
-      <File FileName="Level.cs" Line="87" Column="87" />
+      <File FileName="MyGame.cs" Line="4" Column="4" />
+      <File FileName="Menu.cs" Line="1" Column="1" />
+      <File FileName="Level.cs" Line="4" Column="4" />
       <File FileName="..\..\gxpengine\sources\gxpengine\Core\Transformable.cs" Line="1" Column="1" />
-      <File FileName="Vec2.cs" Line="58" Column="58" />
-      <File FileName="Flipper.cs" Line="3" Column="3" />
-      <File FileName="..\..\Components\LineSegment.cs" Line="3" Column="3" />
-      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\Components\Ball.cs" Line="6" Column="6" />
-      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\Wave.cs" Line="15" Column="15" />
+      <File FileName="Vec2.cs" Line="1" Column="1" />
+      <File FileName="Flipper.cs" Line="1" Column="1" />
+      <File FileName="..\..\Components\LineSegment.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\Components\Ball.cs" Line="4" Column="4" />
+      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\Wave.cs" Line="21" Column="21" />
       <File FileName="PresetWave.cs" Line="8" Column="8" />
-      <File FileName="Properties.cs" Line="4" Column="4" />
-      <File FileName="Message.cs" Line="5" Column="5" />
-      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\HUD.cs" Line="5" Column="5" />
+      <File FileName="Properties.cs" Line="1" Column="1" />
+      <File FileName="Message.cs" Line="20" Column="20" />
+      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\HUD.cs" Line="1" Column="1" />
+      <File FileName="CollisionManager2.cs" Line="26" Column="26" />
+      <File FileName="Enemy.cs" Line="4" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

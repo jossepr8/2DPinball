@@ -20,7 +20,11 @@ namespace GXPEngine
 			get;
 			set;
 		}
-		public string endmessage {
+		public float messagetimer {
+			get;
+			set;
+		}
+		public float enemygravity {
 			get;
 			set;
 		}
