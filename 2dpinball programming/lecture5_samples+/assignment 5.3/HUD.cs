@@ -7,8 +7,10 @@ namespace GXPEngine
 	public class HUD : GameObject
 	{	
 
-		Sprite rightHealthbar = new Sprite ("RightHealthbar.png");
-		Sprite leftHealthbar = new Sprite ("LeftHealthbar.png");
+		Sprite HealthBar = new Sprite("HudTimer.png");
+
+		Sprite rightHealthbar = new Sprite ("InnerColor.png");
+		Sprite leftHealthbar = new Sprite ("InnerColor.png");
 
 		readonly Pen redPen = new Pen(Color.Red, 3);
 		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
@@ -21,13 +23,18 @@ namespace GXPEngine
 			_canvas = new Canvas (1280, 720);
 			AddChild (_canvas);
 
+			AddChild (HealthBar);
+			HealthBar.SetXY (500,30);
+
 			AddChild (leftHealthbar);
 			leftHealthbar.SetXY (650,30);
-			leftHealthbar.SetScaleXY (-0.01f,1.7);
+			leftHealthbar.SetScaleXY (-0.01f,1);
+			leftHealthbar.alpha = 0.65f;
 
 			AddChild (rightHealthbar);
 			rightHealthbar.SetXY (650,30);
-			rightHealthbar.SetScaleXY (0.01f,1.7);
+			rightHealthbar.SetScaleXY (0.01f,1);
+			rightHealthbar.alpha = 0.65f;
 
 			_canvas.graphics.DrawRectangle (redPen, rec);
 		}
@@ -39,8 +46,8 @@ namespace GXPEngine
 				health = maxhealth;
 			}
 
-			rightHealthbar.SetScaleXY ((health / maxhealth),1.7);
-			leftHealthbar.SetScaleXY ((-health / maxhealth), 1.7);
+			rightHealthbar.SetScaleXY ((health / maxhealth),1);
+			leftHealthbar.SetScaleXY ((-health / maxhealth), 1);
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.DrawRectangle (redPen, rec);
 			}
