@@ -19,7 +19,7 @@ namespace GXPEngine
 			if (differenceVector.Length () <= ball.radius + _level._ball.radius * _level._ball.scaleX) {
 				if (checkonly) {
 				} else {
-					Reflect (differenceVector.Normal(),ball);
+					Reflect (differenceVector,ball);
 				}
 				return true;
 			}
@@ -55,14 +55,31 @@ namespace GXPEngine
 			Reflect (line, flipnormal);
 		}
 		void Reflect(Vec2 normal, BasicBall ball){
-			_level._ball.velocity.Reflect(normal,1);
+
 			for (int i = 0; i < 10; i++) {
 				if (CheckCollision (ball, true)) {
-					_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.1f));
+					//_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.2f));
 				} else {
 					break;
 				}
 			}
+			_level._ball.velocity.Reflect(normal,1.3f);
+			if (ball.Equals (_level.linecap11) || ball.Equals (_level.linecap12)) {
+				HitPlayer1 ();
+			}
+			if (ball.Equals (_level.linecap21) || ball.Equals (_level.linecap22)) {
+				HitPlayer2 ();
+			}
+		}
+		void HitPlayer1(){
+			_level._ball.overlay1.SetColor (0, 0, 200);
+			_level._ball.overlay2.SetColor (0, 0, 200);
+			SoundManager.Playsound (SoundEffect.bounce2);
+		}
+		void HitPlayer2(){
+			_level._ball.overlay1.SetColor (200, 0, 0);
+			_level._ball.overlay2.SetColor (200, 0, 0);
+			SoundManager.Playsound (SoundEffect.bounce3);
 		}
 
 		void Reflect(LineSegment line, bool flipNormal){
@@ -73,14 +90,10 @@ namespace GXPEngine
 			float ballDistanceNormal = differenceVector.Dot (lineNormalNormal);
 			_level._ball.velocity.Reflect (lineNormal, line.bounciness);
 			if (line.Equals(_level.matrixline1)) {
-				_level._ball.overlay1.SetColor (0, 0, 200);
-				_level._ball.overlay2.SetColor (0, 0, 200);
-				SoundManager.Playsound (SoundEffect.bounce2);
+				HitPlayer1 ();
 			}
 			if (line.Equals(_level.matrixline2)) {
-				_level._ball.overlay1.SetColor (200, 0, 0);
-				_level._ball.overlay2.SetColor (200, 0, 0);
-				SoundManager.Playsound (SoundEffect.bounce3);
+				HitPlayer2 ();
 			}
 			//_level._ball.position.Sub (lineNormal.Scale (ballDistance - _level._ball.radius));
 			for (int i = 0; i < 10; i++) {	//put the ball back untill he doesnt hit the line anymore
@@ -90,18 +103,22 @@ namespace GXPEngine
 					break;
 				}
 			}
+
 				
 
 		}
 
 		public void Step(){
+			foreach (BasicBall ball in _level._balls) {
+				if (CheckCollision (ball)) {
+					return;
+				}
+			}
 			foreach (LineSegment line in _level._lines) {
 				CheckCollision (line,false);
 				CheckCollision (line,true);
 			}
-			foreach (BasicBall ball in _level._balls) {
-				CheckCollision (ball);
-			}
+
 		}
 
 	}

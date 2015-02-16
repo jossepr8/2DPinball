@@ -32,7 +32,7 @@ namespace GXPEngine
 
 		HUD _hud;
 	
-		bool instadeath = false;	//hard mode
+		bool instadeath = false;	//hard mode --doesnt work atm
 
 		List<Enemy> enemylist = new List<Enemy> ();
 
@@ -57,10 +57,10 @@ namespace GXPEngine
 		public LineSegment matrixline2;
 		Vec2 matrixvec1;
 		Vec2 matrixvec2;
-		BasicBall linecap11;
-		BasicBall linecap12;
-		BasicBall linecap21;
-		BasicBall linecap22;
+		public BasicBall linecap11;
+		public BasicBall linecap12;
+		public BasicBall linecap21;
+		public BasicBall linecap22;
 
 	
 
@@ -174,6 +174,10 @@ namespace GXPEngine
 			linecap22 = new BasicBall (5, new Vec2 (0, 0));
 			AddChild (linecap22);
 			_balls.Add (linecap22);
+
+			BasicBall balltest = new BasicBall (10, new Vec2 (299, 500));
+			AddChild (balltest);
+			_balls.Add (balltest);
 
 		}
 		public MyGame GetGame(){
@@ -322,7 +326,7 @@ namespace GXPEngine
 
 			//CheckCollision ();
 
-			/*
+			/*	//old (bad) paddle collisions -- keep here as backup
 			if (_ball.HitTest (_player1)) {
 				if (DEBUGdistance.end.Clone().Sub(DEBUGdistance.start).Length() <= 100) {	//work in progress
 					_ball.velocity.Reflect (new Vec2 (_player1.matrix [0], _player1.matrix [1]).Normal (), _player1.Bounce);	//bounce from top player1
