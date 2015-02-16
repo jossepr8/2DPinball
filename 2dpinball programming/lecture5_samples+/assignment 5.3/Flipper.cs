@@ -47,13 +47,7 @@ namespace GXPEngine
 			Velocity = new Vec2 (0, 0);
 		}
 
-		void Update(){
-			Velocity.x = matrix [1] * width;
-			Velocity.y = matrix [2] * width;
-			Velocity.Scale (Math.Abs(rotation-oldrotation)/400);
-			oldrotation = rotation;
-			Console.WriteLine (Velocity.Length ());
-		}
+
 
 	}
 }
