@@ -50,10 +50,12 @@ namespace GXPEngine
 			if (line.Equals(_level.matrixline1)) {
 				_level._ball.overlay1.SetColor (0, 0, 200);
 				_level._ball.overlay2.SetColor (0, 0, 200);
+				SoundManager.Playsound (SoundEffect.bounce2);
 			}
 			if (line.Equals(_level.matrixline2)) {
 				_level._ball.overlay1.SetColor (200, 0, 0);
 				_level._ball.overlay2.SetColor (200, 0, 0);
+				SoundManager.Playsound (SoundEffect.bounce3);
 			}
 			//_level._ball.position.Sub (lineNormal.Scale (ballDistance - _level._ball.radius));
 			for (int i = 0; i < 10; i++) {	//put the ball back untill he doesnt hit the line anymore

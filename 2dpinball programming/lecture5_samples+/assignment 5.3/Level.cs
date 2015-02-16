@@ -60,8 +60,11 @@ namespace GXPEngine
 	
 
 		public Level (MyGame game)
-		{
+		{	
+
 			colmanager = new CollisionManager2(this);
+			//SoundManager.Playsound (SoundEffect.nyan, 1, 0);
+			//SoundManager.Playmusic (".wav");
 
 			background = new Sprite ("nebula.png");
 			background.SetScaleXY (0.75f,0.75f);
@@ -317,10 +320,11 @@ namespace GXPEngine
 					//_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
-					if (_touched == Players._player1) {
+					if (_touched == Players._player1) 
+					{
 						_player1.score++;
 					} else if (_touched == Players._player2)
-					{
+					{	
 						_player2.score++;
 					}
 					break;
@@ -340,10 +344,12 @@ namespace GXPEngine
 		}
 
 		//not used atm
-		void lineCollisionTest(LineSegment line, bool flipNormal) {	//general one... absolete atm
+		void lineCollisionTest(LineSegment line, bool flipNormal) 
+			{	//general one... absolete atm
 			if (_ball == null) {
 				return;
 			}
+
 			Vec2 differenceVector = _ball.position.Clone ().Sub (line.start);
 			Vec2 lineNormal = line.end.Clone ().Sub (line.start).Normal ().Scale(flipNormal? -1: 1);
 			Vec2 lineNormalNormal = lineNormal.Clone().Normal ().Scale(flipNormal? -1: 1);

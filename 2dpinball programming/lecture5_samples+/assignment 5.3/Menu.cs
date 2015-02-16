@@ -28,10 +28,12 @@ namespace GXPEngine
 
 			_playbutton1.SetXY (460, 400);
 			_playbutton1.SetScaleXY (1.4f, 1.4f);
+
 			AddButtons ();
 		}
 
-		void AddButtons(){
+		void AddButtons()
+		{
 			AddChild (_playbutton);
 			buttonlist.Add (_playbutton);
 
@@ -40,7 +42,8 @@ namespace GXPEngine
 		}
 		private void SwitchMenu(int index)
 		{
-			switch (index) {
+			switch (index) 
+			{
 
 			case 0:
 				_game.SetState (States.Level);
@@ -56,30 +59,31 @@ namespace GXPEngine
 		}
 
 
-
-
 		void Update()
 		{	
 
-
-
-			if (Input.GetKeyDown (Key.SPACE)) {
+			if (Input.GetKeyDown (Key.SPACE)) 
+			{
 				SwitchMenu (selectednumber);
 			}
 
-			if (Input.GetKeyDown (Key.DOWN)) {
-				if (selectednumber + 1 < buttonlist.Count) {
+			if (Input.GetKeyDown (Key.DOWN)) 
+			{
+				if (selectednumber + 1 < buttonlist.Count) 
+				{
 					selectednumber++;
-				} else {
+				} else 
+				{
 					selectednumber = 0;
 				}
 			}
 
-			if (Input.GetKeyDown (Key.UP)) {
-
+			if (Input.GetKeyDown (Key.UP)) 
+			{
 				selectednumber--;
 
-				if (selectednumber < 0) {
+				if (selectednumber < 0) 
+				{
 					selectednumber = buttonlist.Count - 1;
 				}
 			}

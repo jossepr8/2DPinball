@@ -138,10 +138,12 @@
     <Compile Include="PresetWave.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="CollisionManager2.cs" />
+    <Compile Include="SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Starjedi.ttf" />

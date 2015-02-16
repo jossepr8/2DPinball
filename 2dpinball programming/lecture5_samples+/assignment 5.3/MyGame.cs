@@ -4,7 +4,6 @@ using System.Drawing.Text;
 using System.IO;
 using System.Drawing;
 
-
 namespace GXPEngine
 {
 
@@ -15,6 +14,7 @@ namespace GXPEngine
 		Level level;
 		Menu menu;
 		Highscores highscores;
+		//bool switched = false;
 
 
 		static void Main() {
@@ -39,22 +39,27 @@ namespace GXPEngine
 			SetState (States.Level);	// start at "Level"
 			//targetFps = 5; //--test mode---
 		}
-			
+
+
 			
 		void Update () {
 			//Console.WriteLine (GetChildren ().Count);
 			//---------test--------
-			if (Input.GetKeyDown (Key.G)) {
+			if (Input.GetKeyDown (Key.G)) 
+			{	
 				SetState (States.MainMenu);
 			}
-			if (Input.GetKeyDown (Key.H)) {
+			if (Input.GetKeyDown (Key.H)) 
+			{
 				SetState (States.Level);
 			}
-			if (Input.GetKeyDown (Key.J)) {
+			if (Input.GetKeyDown (Key.J)) 
+			{
 				SetState (States.Highscores);
 			}
 			//--------------------
-			if (level != null) {
+			if (level != null) 
+			{
 				level.Step ();
 				level.GetWave ().Step ();
 			}
@@ -65,6 +70,10 @@ namespace GXPEngine
 			if (_state == state) {
 				//return;
 			}
+
+			SoundManager.StopMusic ();
+			SoundManager.StopSound ();
+
 			_state = state;
 			/*
 			for (int i = 0; i < GetChildren().Count; i++) {	
