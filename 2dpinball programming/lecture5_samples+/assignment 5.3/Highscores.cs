@@ -74,7 +74,7 @@ namespace GXPEngine
 				//writer.Close ();
 				//writer.Dispose ();
 			}
-<<<<<<< HEAD
+
 
 			writer.WriteEndElement ();
 			writer.WriteEndElement ();
@@ -83,8 +83,7 @@ namespace GXPEngine
 			writer.Close ();
 
 			writer.Dispose ();
-=======
->>>>>>> origin/master
+
 		}
 
 

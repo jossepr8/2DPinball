@@ -11,6 +11,8 @@ namespace GXPEngine
 			_level = level;
 		}
 
+
+
 		bool CheckCollision(BasicBall ball, bool checkonly = false){
 			if (_level._ball == null) {
 				return false;
@@ -41,6 +43,7 @@ namespace GXPEngine
 					if (checkonly) {
 						return true;
 					} else {
+						SoundManager.Playsound (SoundEffect.bounce);
 						ResolveCollision (line, flipNormal);
 						return true;
 					}
@@ -75,12 +78,14 @@ namespace GXPEngine
 			if (line.Equals(_level.matrixline1)) {
 				_level._ball.overlay1.SetColor (0, 0, 200);
 				_level._ball.overlay2.SetColor (0, 0, 200);
-				SoundManager.Playsound (SoundEffect.bounce2);
+				SoundManager.Playsound (SoundEffect.bounce2,1,-1);
+				_level._touched = Players._player1;
 			}
 			if (line.Equals(_level.matrixline2)) {
 				_level._ball.overlay1.SetColor (200, 0, 0);
 				_level._ball.overlay2.SetColor (200, 0, 0);
-				SoundManager.Playsound (SoundEffect.bounce3);
+				SoundManager.Playsound (SoundEffect.bounce3,1,1);
+				_level._touched = Players._player2;
 			}
 			//_level._ball.position.Sub (lineNormal.Scale (ballDistance - _level._ball.radius));
 			for (int i = 0; i < 10; i++) {	//put the ball back untill he doesnt hit the line anymore

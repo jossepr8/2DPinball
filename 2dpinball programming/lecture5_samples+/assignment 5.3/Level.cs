@@ -39,7 +39,6 @@ namespace GXPEngine
 		public Flipper _player1;
 		public Flipper _player2;
 
-		Players _touched = Players.none;
 		float Damage = 0;
 		SolidBrush brushred = new SolidBrush (Color.Red);
 		SolidBrush brushblue = new SolidBrush (Color.Blue);
@@ -62,7 +61,7 @@ namespace GXPEngine
 		BasicBall linecap21;
 		BasicBall linecap22;
 
-	
+		public Players _touched = Players.none;
 
 		public Level (MyGame game)
 		{
@@ -362,8 +361,10 @@ namespace GXPEngine
 					enemy.Destroy ();
 					if (_touched == Players._player1) {
 						_player1.score++;
+						SoundManager.Playsound (SoundEffect.enemyhit);
 					} else if (_touched == Players._player2)
-					{
+					{	
+						SoundManager.Playsound (SoundEffect.enemyhit2);
 						_player2.score++;
 					}
 					break;
