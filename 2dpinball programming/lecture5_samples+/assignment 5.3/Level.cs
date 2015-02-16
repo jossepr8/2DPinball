@@ -20,6 +20,8 @@ namespace GXPEngine
 	{	
 		public List<LineSegment> _lines;
 		public List<BasicBall> _balls;
+		public List<BasicBall> _enemyballs;	//hitboxes
+		public List<Enemy> enemylist = new List<Enemy> ();
 		public Ball _ball;
 		MyGame _game;
 
@@ -34,7 +36,7 @@ namespace GXPEngine
 	
 		bool instadeath = false;	//hard mode --doesnt work atm
 
-		List<Enemy> enemylist = new List<Enemy> ();
+
 
 		public Flipper _player1;
 		public Flipper _player2;
@@ -67,6 +69,7 @@ namespace GXPEngine
 		{
 			_lines = new List<LineSegment> ();
 			_balls = new List<BasicBall> ();
+			_enemyballs = new List<BasicBall> ();
 
 
 
@@ -205,6 +208,10 @@ namespace GXPEngine
 		public void Addenemy(Enemy enemy){
 			AddChild (enemy);
 			enemylist.Add (enemy);
+			BasicBall ball = new BasicBall (25, new Vec2 (0, 0));
+			ball.SetColor (0, 200, 0);
+			AddChild (ball);
+			_enemyballs.Add (ball);
 		}
 		public int GetWidth(){
 			return width;
@@ -350,19 +357,34 @@ namespace GXPEngine
 				_ball.overlay1.SetColor (200, 0, 0);	//color = red
 			}
 			*/
-			foreach (Enemy enemy in enemylist) 
-			{
+			for (int i = 0; i < enemylist.Count; i++) {
+				Enemy enemy = enemylist [i];
+				_enemyballs [i].position.x = enemy.x;
+				_enemyballs [i].position.y = enemy.y;
+				_enemyballs [i].Step ();
+			}
+			/*
+			for (int i = 0; i < enemylist.Count; i++) {
+				Enemy enemy = enemylist [i];
+				_enemyballs [i].position.x = enemy.x;
+				_enemyballs [i].position.y = enemy.y;
+				_enemyballs [i].Step ();
 				if (enemy.y >= height) {
 					Damage++;
 					_hud.UpdateHUD (Damage);
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
+					_enemyballs [i].Destroy ();
+					_enemyballs.Remove (_enemyballs [i]);
+
 					break;
 				}
 				if (_ball.HitTest (enemy)) {
 					//_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
+					_enemyballs [i].Destroy ();
+					_enemyballs.Remove (_enemyballs [i]);
 					if (_touched == Players._player1) {
 						_player1.score++;
 						SoundManager.Playsound (SoundEffect.enemyhit);
@@ -374,6 +396,7 @@ namespace GXPEngine
 					break;
 				}
 			}
+			*/
 
 			if (_ball != null) {
 				/*

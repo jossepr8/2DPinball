@@ -69,13 +69,22 @@ namespace GXPEngine
 			} else if (ball.Equals (_level.linecap21) || ball.Equals (_level.linecap22)) {
 				HitPlayer2 ();
 			} else {
-				HitBall ();
+				HitBall (ball);
 			}
 		}
 		void HitWall(){
 			SoundManager.Playsound(SoundEffect.bounce);
 		}
-		void HitBall(){
+		void HitBall(BasicBall ball){
+			//hit enemy
+			for (int i = 0; i < _level._enemyballs.Count; i++) {
+				if (ball == _level._enemyballs [i]) {
+					_level._enemyballs [i].Destroy ();
+					_level._enemyballs.Remove (_level._enemyballs [i]);
+					_level.enemylist [i].Destroy ();
+					_level.enemylist.Remove (_level.enemylist [i]);
+				}
+			}
 
 		}
 		void HitPlayer1(){
@@ -129,6 +138,11 @@ namespace GXPEngine
 				}
 			}
 			foreach (BasicBall ball in _level._balls) {
+				if (CheckCollision (ball)) {
+					return;
+				}
+			}
+			foreach (BasicBall ball in _level._enemyballs) {
 				if (CheckCollision (ball)) {
 					return;
 				}
