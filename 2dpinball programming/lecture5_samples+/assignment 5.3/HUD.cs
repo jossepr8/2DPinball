@@ -16,6 +16,8 @@ namespace GXPEngine
 		Sprite HealthBar = new Sprite("HudTimer.png");
 		Sprite overlayHealthbar = new Sprite ("InnerColor.png");
 
+		Canvas _centcanvas = new Canvas (1000,1000);
+
 		Sprite HudBlue = new Sprite ("HudBlue.png");
 		Sprite HudRed = new Sprite ("HudRed.png");
 
@@ -27,6 +29,8 @@ namespace GXPEngine
 		PointF pnt1 = new PointF (50, 10);
 		PointF pnt2 = new PointF (1160, 10);
 
+		SizeF size1;
+		SizeF size2;
 
 		readonly Pen redPen = new Pen(Color.Red, 3);
 		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
@@ -69,6 +73,11 @@ namespace GXPEngine
 
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
+				size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font);
+
+				pnt1.X = _canvas.width - 1220 - size1.Width / 2;
+				pnt2.X = _canvas.width  - 120 - size2.Width / 2;
+
 				_canvas.graphics.DrawString (score1.ToString (), font, brushblue, pnt1);
 				_canvas.graphics.DrawString (score2.ToString (), font, brushred, pnt2);
 
