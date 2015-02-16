@@ -100,7 +100,6 @@ namespace GXPEngine
 			_level._ball.overlay2.SetColor (0, 0, 200);
 			SoundManager.Playsound (SoundEffect.bounce2,1,-1);
 			_level._touched = Players._player1;
-			//_level._ball.velocity.Scale (_level._player1.Velocity.Length ()+1);
 
 		}
 		void HitPlayer2(){
@@ -108,7 +107,6 @@ namespace GXPEngine
 			_level._ball.overlay2.SetColor (200, 0, 0);
 			SoundManager.Playsound (SoundEffect.bounce3,1,1);
 			_level._touched = Players._player2;
-			//_level._ball.velocity.Scale (_level._player2.Velocity.Length ()+1);
 		
 		}
 
@@ -140,7 +138,6 @@ namespace GXPEngine
 		}
 
 		public void Step(){
-
 			foreach (BasicBall ball in _level._balls) {
 				if (CheckCollision (ball)) {
 					return;
