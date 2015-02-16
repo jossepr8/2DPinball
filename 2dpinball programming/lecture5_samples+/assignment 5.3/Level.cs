@@ -360,7 +360,6 @@ namespace GXPEngine
 					break;
 				}
 				if (_ball.HitTest (enemy)) {
-					//Console.WriteLine (true);
 					//_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
