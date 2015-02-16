@@ -90,7 +90,8 @@ namespace GXPEngine
 		public static void Read(){	//dont touch this
 
 			//------ first few waves-------------------------------------
-			reader = XmlReader.Create ("preset_waves.xml");
+			using (reader = XmlReader.Create ("preset_waves.xml")) {
+				//reader = XmlReader.Create ("preset_waves.xml");
 			
 				reader.ReadStartElement ("preset_waves");
 				reader.ReadStartElement ("Config");
@@ -112,7 +113,7 @@ namespace GXPEngine
 						reader.ReadStartElement ("row");
 						string[] cols = reader.ReadContentAsString ().Split (',');
 						for (int b = 0; b < 10; b++) {
-							presetwave.wave [a, b] = int.Parse(cols [b]);
+							presetwave.wave [a, b] = int.Parse (cols [b]);
 						}
 						reader.ReadEndElement ();	//row
 					}
@@ -121,26 +122,28 @@ namespace GXPEngine
 				}
 				reader.ReadEndElement ();	//waves
 				reader.ReadEndElement ();	//preset_waves
-			reader.Dispose();
+				//reader.Dispose();
+			}
 
 			//-------------------------------------------------------------
 
 
 			//-----------all random waves----------------------------------
-			reader = XmlReader.Create ("waves.xml");
+			using (reader = XmlReader.Create ("waves.xml")) {
+				//reader = XmlReader.Create ("waves.xml");
 			
 				reader.ReadStartElement ("Waves");
 				for (int i = 0; i < 19; i++) {
 					int[,] wave = new int[10, 10];
 					reader.ReadStartElement ("Wave");
 					reader.ReadStartElement ("count");
-					enemycountlist.Add(reader.ReadContentAsInt ());
+					enemycountlist.Add (reader.ReadContentAsInt ());
 					reader.ReadEndElement ();
 					for (int a = 0; a < 10; a++) {
 						reader.ReadStartElement ("row");
 						string[] cols = reader.ReadContentAsString ().Split (',');
 						for (int b = 0; b < 10; b++) {
-							wave [a, b] = int.Parse(cols [b]);
+							wave [a, b] = int.Parse (cols [b]);
 						}
 						reader.ReadEndElement ();
 					}
@@ -148,7 +151,8 @@ namespace GXPEngine
 					wavelist.Add (wave);
 				}
 				reader.ReadEndElement ();
-			reader.Dispose();
+				//reader.Dispose();
+			}
 			//---------------------------------------------------------------
 			//Console.WriteLine ("Done");
 		}

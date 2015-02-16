@@ -49,9 +49,12 @@ namespace GXPEngine
 
         public static void Read()
         {
-			reader = XmlReader.Create ("properties.xml");
-			readxml();
-			reader.Dispose ();
+			using (reader = XmlReader.Create ("properties.xml")) {
+				readxml();
+			}
+			//reader = XmlReader.Create ("properties.xml");
+			//readxml();
+			//reader.Dispose ();
         }
 
 		static float readfloat(string name){

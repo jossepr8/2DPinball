@@ -11,7 +11,25 @@ namespace GXPEngine
 			_level = level;
 		}
 
+		bool CheckCollision(BasicBall ball, bool checkonly = false){
+			if (_level._ball == null) {
+				return false;
+			}
+			Vec2 differenceVector = _level._ball.position.Clone ().Sub (ball.position);
+			if (differenceVector.Length () <= ball.radius + _level._ball.radius * _level._ball.scaleX) {
+				if (checkonly) {
+				} else {
+					Reflect (differenceVector.Normal(),ball);
+				}
+				return true;
+			}
+			return false;
+		}
+
 		bool CheckCollision(LineSegment line, bool flipNormal,bool checkonly = false){
+			if (_level._ball == null) {
+				return false;
+			}
 			Vec2 differenceVector = _level._ball.position.Clone ().Sub (line.start);
 			Vec2 lineNormal = line.end.Clone ().Sub (line.start).Normal ().Scale(flipNormal? -1: 1);
 			Vec2 lineNormalNormal = lineNormal.Clone().Normal ().Scale(flipNormal? -1: 1);
@@ -26,7 +44,6 @@ namespace GXPEngine
 						ResolveCollision (line, flipNormal);
 						return true;
 					}
-
 				}
 			}
 			return false ;
@@ -36,11 +53,19 @@ namespace GXPEngine
 				return;
 			}
 			Reflect (line, flipnormal);
-
+		}
+		void Reflect(Vec2 normal, BasicBall ball){
+			_level._ball.velocity.Reflect(normal,1);
+			for (int i = 0; i < 10; i++) {
+				if (CheckCollision (ball, true)) {
+					_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.1f));
+				} else {
+					break;
+				}
+			}
 		}
 
 		void Reflect(LineSegment line, bool flipNormal){
-			//Console.WriteLine(true);
 			Vec2 differenceVector = _level._ball.position.Clone ().Sub (line.start);
 			Vec2 lineNormal = line.end.Clone ().Sub (line.start).Normal ().Scale(flipNormal? -1: 1);
 			Vec2 lineNormalNormal = lineNormal.Clone().Normal ().Scale(flipNormal? -1: 1);
@@ -73,6 +98,9 @@ namespace GXPEngine
 			foreach (LineSegment line in _level._lines) {
 				CheckCollision (line,false);
 				CheckCollision (line,true);
+			}
+			foreach (BasicBall ball in _level._balls) {
+				CheckCollision (ball);
 			}
 		}
 

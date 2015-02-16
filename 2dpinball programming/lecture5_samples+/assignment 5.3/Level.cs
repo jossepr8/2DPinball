@@ -19,6 +19,7 @@ namespace GXPEngine
 	public class Level : GameObject
 	{	
 		public List<LineSegment> _lines;
+		public List<BasicBall> _balls;
 		public Ball _ball;
 		MyGame _game;
 
@@ -56,15 +57,21 @@ namespace GXPEngine
 		public LineSegment matrixline2;
 		Vec2 matrixvec1;
 		Vec2 matrixvec2;
+		BasicBall linecap11;
+		BasicBall linecap12;
+		BasicBall linecap21;
+		BasicBall linecap22;
 
 	
 
 		public Level (MyGame game)
-		{	
+		{
+			_lines = new List<LineSegment> ();
+			_balls = new List<BasicBall> ();
+
+
 
 			colmanager = new CollisionManager2(this);
-			//SoundManager.Playsound (SoundEffect.nyan, 1, 0);
-			//SoundManager.Playmusic (".wav");
 
 			background = new Sprite ("nebula.png");
 			background.SetScaleXY (0.75f,0.75f);
@@ -81,9 +88,9 @@ namespace GXPEngine
 			pnt2 = new PointF (width-150, 10);
 			pntmiddle = new PointF (width / 2, height / 2);
 
-			_lines = new List<LineSegment> ();
 
-			wave = new Wave (this);	//spawns 1 wave
+
+			wave = new Wave (this);	//spawns waves until wave.Step() isent called anymore
 
 			_hud = new HUD();
 			AddChild (_hud);
@@ -129,7 +136,7 @@ namespace GXPEngine
 			DEBUGdistance = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance.end.RotateDegrees (_player1.rotation);
 			DEBUGdistance.end.Add (new Vec2 (_player1.x, _player1.y));
-			AddChild (DEBUGdistance);	//add debug lines
+			//AddChild (DEBUGdistance);	//add debug lines
 			DEBUGdistance2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 500));
 			DEBUGdistance2.end.RotateDegrees (_player2.rotation);
 			DEBUGdistance2.end.Add (new Vec2 (_player2.x, _player2.y));
@@ -151,6 +158,22 @@ namespace GXPEngine
 			matrixvec1 = new Vec2 (0, 0);
 			matrixvec2 = new Vec2 (0, 0);
 
+			//BasicBall linecap1 = new BasicBall (50,new Vec2(500,400));
+			//AddChild (linecap1);
+			//_balls.Add (linecap1);
+
+			linecap11 = new BasicBall (5, new Vec2 (0, 0));
+			AddChild (linecap11);
+			_balls.Add (linecap11);
+			linecap12 = new BasicBall (5, new Vec2 (0, 0));
+			AddChild (linecap12);
+			_balls.Add (linecap12);
+			linecap21 = new BasicBall (5, new Vec2 (0, 0));
+			AddChild (linecap21);
+			_balls.Add (linecap21);
+			linecap22 = new BasicBall (5, new Vec2 (0, 0));
+			AddChild (linecap22);
+			_balls.Add (linecap22);
 
 		}
 		public MyGame GetGame(){
@@ -169,6 +192,12 @@ namespace GXPEngine
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
 			AddChild (line);
 			_lines.Add (line);
+			BasicBall linecap1 = new BasicBall (15,line.start);
+			AddChild (linecap1);
+			_balls.Add (linecap1);
+			BasicBall linecap2 = new BasicBall (15,line.end);
+			AddChild (linecap2);
+			_balls.Add (linecap2);
 		}
 		public void Addenemy(Enemy enemy){
 			AddChild (enemy);
@@ -261,6 +290,17 @@ namespace GXPEngine
 					.Add (matrixline2.start);
 			//--------------------------------------------------------------------
 
+			linecap11.position = matrixline1.start;
+			linecap12.position = matrixline1.end;
+			linecap21.position = matrixline2.start;
+			linecap22.position = matrixline2.end;
+
+			//linecap11.position = new Vec2 (500, 500);
+			linecap11.Step ();
+			linecap12.Step ();
+			linecap21.Step ();
+			linecap22.Step ();
+
 
 
 			if (GetChildren().Contains(_canvas)) {
@@ -320,11 +360,10 @@ namespace GXPEngine
 					//_ball.velocity.Reflect (new Vec2 (_ball.x - enemy.x,  _ball.y - enemy.y).Normal());
 					enemylist.Remove (enemy);
 					enemy.Destroy ();
-					if (_touched == Players._player1) 
-					{
+					if (_touched == Players._player1) {
 						_player1.score++;
 					} else if (_touched == Players._player2)
-					{	
+					{
 						_player2.score++;
 					}
 					break;
@@ -344,12 +383,10 @@ namespace GXPEngine
 		}
 
 		//not used atm
-		void lineCollisionTest(LineSegment line, bool flipNormal) 
-			{	//general one... absolete atm
+		void lineCollisionTest(LineSegment line, bool flipNormal) {	//general one... absolete atm
 			if (_ball == null) {
 				return;
 			}
-
 			Vec2 differenceVector = _ball.position.Clone ().Sub (line.start);
 			Vec2 lineNormal = line.end.Clone ().Sub (line.start).Normal ().Scale(flipNormal? -1: 1);
 			Vec2 lineNormalNormal = lineNormal.Clone().Normal ().Scale(flipNormal? -1: 1);

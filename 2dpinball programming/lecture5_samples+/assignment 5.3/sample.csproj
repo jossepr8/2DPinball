@@ -138,6 +138,7 @@
     <Compile Include="PresetWave.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="CollisionManager2.cs" />
+    <Compile Include="BasicBall.cs" />
     <Compile Include="SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
