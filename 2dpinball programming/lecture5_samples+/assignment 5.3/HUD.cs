@@ -54,9 +54,8 @@ namespace GXPEngine
 			AddChild (overlayHealthbar);
 			overlayHealthbar.SetXY (650,55);
 			overlayHealthbar.SetOrigin (overlayHealthbar.width / 2, overlayHealthbar.height / 2);
-			overlayHealthbar.SetScaleXY (0.01f,0.9f);
 			overlayHealthbar.alpha = 0.65f;
-
+			overlayHealthbar.SetScaleXY (0.1f,0.75f);
 		}
 
 		public void UpdateHUD(float health, int score1, int score2)
@@ -66,7 +65,7 @@ namespace GXPEngine
 				health = maxhealth;
 			}
 
-			overlayHealthbar.SetScaleXY ((health / maxhealth),1);
+			overlayHealthbar.SetScaleXY ((health / maxhealth),0.9f);
 
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
