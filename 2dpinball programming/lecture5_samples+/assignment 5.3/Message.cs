@@ -10,15 +10,22 @@ namespace GXPEngine
 		Font font;
 		SolidBrush brush;
 		PointF point;
+	
+		public SizeF size;
+
 		public Message (int fps, string message, float timer)
 		{
-			font = new Font ("Broadway",50,FontStyle.Regular);
+			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
+			float fontsize = 50;
+			font = new Font ("Broadway",fontsize,FontStyle.Regular);
+			size = _canvas.graphics.MeasureString (message, font);
 			brush = new SolidBrush (Color.Green);
 			point = new PointF (0, 0);
 			_timer = timer * fps;
-			_canvas = new Canvas (1000, 400);	//random size that fits probably all messages
+			_canvas = new Canvas ((int)size.Width, (int)size.Height);
 			AddChild (_canvas);
 			_canvas.graphics.DrawString (message,font,brush,point);
+
 		}
 
 		void Update(){

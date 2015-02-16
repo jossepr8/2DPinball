@@ -57,7 +57,7 @@ namespace GXPEngine
 		}
 		void SpawnPresetWave(PresetWave presetwave){
 			Message message = new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer);
-			message.SetXY (_level.GetWidth () / 3, 150);
+			message.SetXY (_level.GetWidth()/2 - message.size.Width/2 , 150);
 			_level.AddChild (message);
 			_level._player1.scaleX = presetwave.paddlewidth / 100;
 			_level._player2.scaleX = presetwave.paddlewidth / 100;
