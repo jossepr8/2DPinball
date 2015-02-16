@@ -85,9 +85,11 @@ namespace GXPEngine
 					_level.enemylist.Remove (_level.enemylist [i]);
 					if (_level._touched == Players._player1) {
 						_level._player1.score++;
+						_level._ball.position.Add (_level._player1.Velocity.Clone().Scale(100));
 					}
 					if (_level._touched == Players._player2) {
 						_level._player2.score++;
+						_level._ball.position.Add (_level._player2.Velocity.Clone().Scale(20));
 					}
 				}
 			}
@@ -98,12 +100,16 @@ namespace GXPEngine
 			_level._ball.overlay2.SetColor (0, 0, 200);
 			SoundManager.Playsound (SoundEffect.bounce2,1,-1);
 			_level._touched = Players._player1;
+			//_level._ball.velocity.Scale (_level._player1.Velocity.Length ()+1);
+
 		}
 		void HitPlayer2(){
 			_level._ball.overlay1.SetColor (200, 0, 0);
 			_level._ball.overlay2.SetColor (200, 0, 0);
 			SoundManager.Playsound (SoundEffect.bounce3,1,1);
 			_level._touched = Players._player2;
+			//_level._ball.velocity.Scale (_level._player2.Velocity.Length ()+1);
+		
 		}
 
 		void Reflect(LineSegment line, bool flipNormal){
@@ -135,6 +141,11 @@ namespace GXPEngine
 
 		public void Step(){
 
+			foreach (BasicBall ball in _level._balls) {
+				if (CheckCollision (ball)) {
+					return;
+				}
+			}
 			foreach (LineSegment line in _level._lines) {
 				if (CheckCollision (line, false)) {
 					return;
@@ -143,11 +154,7 @@ namespace GXPEngine
 					return;
 				}
 			}
-			foreach (BasicBall ball in _level._balls) {
-				if (CheckCollision (ball)) {
-					return;
-				}
-			}
+
 			foreach (BasicBall ball in _level._enemyballs) {
 				if (CheckCollision (ball)) {
 					return;

@@ -55,7 +55,11 @@ namespace GXPEngine
 		Wave wave;
 
 		public LineSegment matrixline1;
+		public LineSegment pillarline11;
+		public LineSegment pillarline12;
 		public LineSegment matrixline2;
+		//public LineSegment pillarline21;
+		//public LineSegment pillarline22;
 		Vec2 matrixvec1;
 		Vec2 matrixvec2;
 		public BasicBall linecap11;
@@ -157,6 +161,7 @@ namespace GXPEngine
 			AddChild (matrixline2);
 			_lines.Add (matrixline2);
 
+
 			matrixvec1 = new Vec2 (0, 0);
 			matrixvec2 = new Vec2 (0, 0);
 
@@ -177,9 +182,6 @@ namespace GXPEngine
 			AddChild (linecap22);
 			_balls.Add (linecap22);
 
-			BasicBall balltest = new BasicBall (10, new Vec2 (299, 500));
-			AddChild (balltest);
-			_balls.Add (balltest);
 
 		}
 		public MyGame GetGame(){
@@ -269,7 +271,8 @@ namespace GXPEngine
 			colmanager.Step ();
 		}
 		void Updatee(){
-			Console.WriteLine (enemylist.Count);
+			//Console.WriteLine (_ball.position);
+			//Console.WriteLine (enemylist.Count);
 
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
@@ -300,6 +303,7 @@ namespace GXPEngine
 					.Scale (_player2.width/(float)_player2.scaleX)
 					.Add (matrixline2.start);
 			//--------------------------------------------------------------------
+		
 
 			linecap11.position = matrixline1.start;
 			linecap12.position = matrixline1.end;

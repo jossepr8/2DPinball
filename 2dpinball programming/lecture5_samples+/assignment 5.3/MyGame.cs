@@ -62,6 +62,7 @@ namespace GXPEngine
 			{
 				level.Step ();
 				level.GetWave ().Step ();
+				level._ball.stuckmanager.Step ();
 			}
 	
 		}

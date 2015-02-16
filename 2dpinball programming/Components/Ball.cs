@@ -18,9 +18,11 @@ namespace GXPEngine
 		public AnimSprite overlay2;
 		public AnimSprite overlay1;
 		Level _level;
+		public StuckManager stuckmanager;
 
 		public Ball (Level level, int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
+			stuckmanager = new StuckManager (this);
 			_level = level;
 			overlay1 = new AnimSprite ("Electric Swirl.png",2,1);
 			overlay1.SetOrigin (width / 2, height / 2);
@@ -78,6 +80,7 @@ namespace GXPEngine
 			x = position.x;
 			y = position.y;
 			rotation += velocity.Length() + 1;
+			//stuckmanager.Step ();
 			//_level.CheckCollision ();
 			//draw ();
 		}

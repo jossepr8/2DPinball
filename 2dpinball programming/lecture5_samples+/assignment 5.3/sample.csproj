@@ -140,6 +140,7 @@
     <Compile Include="CollisionManager2.cs" />
     <Compile Include="BasicBall.cs" />
     <Compile Include="SoundManager.cs" />
+    <Compile Include="StuckManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
