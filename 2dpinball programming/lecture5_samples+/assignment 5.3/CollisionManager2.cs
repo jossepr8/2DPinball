@@ -85,9 +85,11 @@ namespace GXPEngine
 					_level.enemylist.Remove (_level.enemylist [i]);
 					if (_level._touched == Players._player1) {
 						_level._player1.score++;
+						_level._hud.UpdateHUD (_level.Damage, _level._player1.score, _level._player2.score);
 					}
 					if (_level._touched == Players._player2) {
 						_level._player2.score++;
+						_level._hud.UpdateHUD (_level.Damage, _level._player1.score, _level._player2.score);
 					}
 				}
 			}
