@@ -83,6 +83,12 @@ namespace GXPEngine
 					_level._enemyballs.Remove (_level._enemyballs [i]);
 					_level.enemylist [i].Destroy ();
 					_level.enemylist.Remove (_level.enemylist [i]);
+					if (_level._touched == Players._player1) {
+						_level._player1.score++;
+					}
+					if (_level._touched == Players._player2) {
+						_level._player2.score++;
+					}
 				}
 			}
 

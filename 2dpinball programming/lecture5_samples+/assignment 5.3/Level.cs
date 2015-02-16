@@ -269,6 +269,7 @@ namespace GXPEngine
 			colmanager.Step ();
 		}
 		void Updatee(){
+			Console.WriteLine (enemylist.Count);
 
 			DEBUGdistance.start = _ball.position;
 			DEBUGdistance2.start = _ball.position;
@@ -362,6 +363,15 @@ namespace GXPEngine
 				_enemyballs [i].position.x = enemy.x;
 				_enemyballs [i].position.y = enemy.y;
 				_enemyballs [i].Step ();
+				if (enemy.y >= height) {
+					Damage++;
+					_hud.UpdateHUD (Damage);
+					enemylist.Remove (enemy);
+					enemy.Destroy ();
+					_enemyballs [i].Destroy ();
+					_enemyballs.Remove (_enemyballs [i]);
+
+				}
 			}
 			/*
 			for (int i = 0; i < enemylist.Count; i++) {
