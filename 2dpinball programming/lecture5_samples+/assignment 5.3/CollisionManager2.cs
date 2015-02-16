@@ -81,13 +81,13 @@ namespace GXPEngine
 		void HitPlayer1(){
 			_level._ball.overlay1.SetColor (0, 0, 200);
 			_level._ball.overlay2.SetColor (0, 0, 200);
-			SoundManager.Playsound (SoundEffect.bounce2);
+			SoundManager.Playsound (SoundEffect.bounce2,1,-1);
 			_level._touched = Players._player1;
 		}
 		void HitPlayer2(){
 			_level._ball.overlay1.SetColor (200, 0, 0);
 			_level._ball.overlay2.SetColor (200, 0, 0);
-			SoundManager.Playsound (SoundEffect.bounce3);
+			SoundManager.Playsound (SoundEffect.bounce3,1,1);
 			_level._touched = Players._player2;
 		}
 
