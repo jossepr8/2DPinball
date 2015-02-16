@@ -15,7 +15,8 @@ namespace GXPEngine
 
 
 		public Menu (MyGame game)
-		{
+		{	
+			SoundManager.Playmusic ("Testmusic.wav");
 			_game = game;
 			_playbutton = new Sprite ("thickmenu.png");
 
