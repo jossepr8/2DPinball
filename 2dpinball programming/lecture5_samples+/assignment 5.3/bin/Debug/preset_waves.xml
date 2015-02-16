@@ -8,7 +8,7 @@
 
 <Wave>
 <start_message> first wave </start_message>
-<messagetimer> 3 </messagetimer>
+<messagetimer> 1 </messagetimer>
 <paddlewidth> 250 </paddlewidth>
 <ballsize> 250 </ballsize>
 <enemygravity> 1 </enemygravity>
