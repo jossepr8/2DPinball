@@ -38,7 +38,7 @@ namespace GXPEngine
 				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 740, x);
 			}
 
-
+			Console.Beep ();
 
 		}
 
