@@ -91,7 +91,6 @@ namespace GXPEngine
 			return angle;
 		}
 		public void RotateDegrees(float degrees){
-			//RotateRadians (degrees * ((float)Math.PI / 180));
 			SetAngleDegrees (GetAngleDegrees () + degrees);
 		}
 		public void RotateRadians(float radians){

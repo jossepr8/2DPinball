@@ -16,10 +16,11 @@ namespace GXPEngine
 		HighscoreMenu highscoremenu;
 		Manual manual;
 		public List<Score> scorelist;
+		public List<Score> scorelistteam;
+		public List<string> namelist;
 
 		public StepStates _stepstate;
 		public States _state;
-
 
 
 		static void Main() {
@@ -31,9 +32,13 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
+
 			scorelist = new List<Score>();
+			scorelistteam = new List<Score> ();
+			namelist = new List<string> ();
 			font = new Font ("Broadway",50,FontStyle.Regular);
 
+			highscoremenu = new HighscoreMenu (this);
 			//Console.Beep ();
 
 			Properties.Read ();
@@ -46,6 +51,10 @@ namespace GXPEngine
 	
 		public void SortScores(){
 			scorelist.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
+			scorelistteam.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
+		}
+		public void SortNames(){
+			namelist.Sort ((name1, name2) => name1.CompareTo (name2));
 		}
 		void Update () {
 			//Console.WriteLine (GetChildren ().Count);

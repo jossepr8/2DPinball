@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace GXPEngine
 {
@@ -8,6 +9,7 @@ namespace GXPEngine
 	/// </summary>
 	public class Key
 	{
+
 		public const int F1			= 258;
 		public const int F2			= 259;
 		public const int F3			= 260;
@@ -94,6 +96,7 @@ namespace GXPEngine
 		public const int COMMA = 44;
 		public const int DOT = 46;
 		public const int QUESTION_MARK = 47;
+
 
 	}
 }

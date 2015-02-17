@@ -2,8 +2,28 @@
 <Highscores>
   <Solo>
     <highscore>
-      <Score>0</Score>
+      <Score>100</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>100</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>100</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>100</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>20</Score>
       <Name>PLAYERs</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYER1</Name>
     </highscore>
     <highscore>
       <Score>0</Score>
@@ -11,27 +31,7 @@
     </highscore>
     <highscore>
       <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
+      <Name>PLAYER2</Name>
     </highscore>
     <highscore>
       <Score>0</Score>
@@ -42,4 +42,46 @@
       <Name>PLAYERs</Name>
     </highscore>
   </Solo>
+  <Team>
+    <highscore>
+      <Score>200</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>100</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>100</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>20</Score>
+      <Name>PLAYERs</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYERs</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYERs</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYERs</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>PLAYERs</Name>
+    </highscore>
+  </Team>
 </Highscores>

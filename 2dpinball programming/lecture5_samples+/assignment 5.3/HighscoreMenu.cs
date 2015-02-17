@@ -8,7 +8,8 @@ namespace GXPEngine
 		MyGame _game;
 		public Highscores highscores;
 
-		new float x = 120;
+		float yvalue1 = 120;
+		float yvalue2 = 120;
 
 		string title;
 
@@ -19,6 +20,8 @@ namespace GXPEngine
 		Font fonttitle = new Font ("Broadway",30,FontStyle.Regular);
 
 		readonly SolidBrush brushpurple = new SolidBrush (purpleish);
+
+
 
 		public HighscoreMenu (MyGame game)
 		{
@@ -34,16 +37,27 @@ namespace GXPEngine
 
 			foreach (Score scorez in _game.scorelist) 
 			{
-				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,480 ,x += 40);
-				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 740, x);
+			
+				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,200 ,yvalue1 += 40);
+				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 400, yvalue1);
+			}
+			foreach (Score scorez in _game.scorelistteam) 
+			{
+				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,600,yvalue2 += 40);
+				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 800, yvalue2);
 			}
 
-			Console.Beep ();
+			foreach (string name in _game.namelist) {
+				Console.WriteLine (name);
+			}
+		
+			//Console.Beep ();
 
 		}
 
 		void Update()
 		{
+
 			if (Input.GetKeyDown(Key.DOWN))
 			{
 				_game.SetState (States.MainMenu);

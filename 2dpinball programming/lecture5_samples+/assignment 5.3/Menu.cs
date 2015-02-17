@@ -17,6 +17,7 @@ namespace GXPEngine
 		int selectednumber = 0;
 		List<AnimSprite> buttonlist = new List<AnimSprite>();
 
+		NameMenu namemenu;
 
 		public Menu (MyGame game)
 		{	
@@ -40,6 +41,8 @@ namespace GXPEngine
 			_manual.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
+			namemenu = new NameMenu(_game);
+			AddChild (namemenu);
 		}
 
 		void AddButtons()
@@ -75,6 +78,7 @@ namespace GXPEngine
 
 		void Update()
 		{	
+			namemenu.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 
 			{

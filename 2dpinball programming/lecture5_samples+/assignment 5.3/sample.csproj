@@ -144,6 +144,7 @@
     <Compile Include="ButtonMasher.cs" />
     <Compile Include="Manual.cs" />
     <Compile Include="HighscoreMenu.cs" />
+    <Compile Include="NameMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

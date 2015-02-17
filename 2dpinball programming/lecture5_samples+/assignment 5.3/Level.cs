@@ -73,7 +73,9 @@ namespace GXPEngine
 
 			if (_ball.y > height) {
 				_game._stepstate = StepStates.None;
-				_game.scorelist.Add (new Score (_player1.score + _player2.score, "PLAYERs"));
+				_game.scorelist.Add (new Score (_player1.score, "PLAYER1"));
+				_game.scorelist.Add (new Score (_player2.score, "PLAYER2"));
+				_game.scorelistteam.Add (new Score (_player2.score + _player1.score, "TEAM"));
 				_game.SAVE ();
 				_game.SetState (States.Highscores);
 			}
@@ -196,8 +198,6 @@ namespace GXPEngine
 			AddChild (linecap22);
 			_balls.Add (linecap22);
 
-			_player2.score = 5000;
-			_player1.score = 5000;
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 
 		}
