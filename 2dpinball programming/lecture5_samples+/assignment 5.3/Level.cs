@@ -70,6 +70,10 @@ namespace GXPEngine
 			UpdatePaddles ();
 			colmanager.Step ();
 			wave.Step ();
+
+			if (Input.GetKeyDown (Key.Z)) {
+				buttonmasher.Start ();
+			}
 		}
 
 		public Level (MyGame game)
@@ -77,7 +81,6 @@ namespace GXPEngine
 			_lines = new List<LineSegment> ();
 			_balls = new List<BasicBall> ();
 			_enemyballs = new List<BasicBall> ();
-
 
 			colmanager = new CollisionManager2(this);
 

@@ -35,9 +35,6 @@ namespace GXPEngine
 			//targetFps = 5; //--test mode---
 
 		}
-		public override void Destroy(){
-
-		}
 	
 	
 

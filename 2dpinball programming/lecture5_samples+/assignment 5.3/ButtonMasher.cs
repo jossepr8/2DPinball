@@ -7,9 +7,6 @@ namespace GXPEngine
 		public delegate void StopDelegate();
 		public event StopDelegate StopEvent;
 
-		int Player1Counter = 0;
-		int Player2Counter = 0;
-
 		int totalcounter = 0;
 		LastPressed Player1Last;
 		LastPressed Player2Last;
@@ -37,6 +34,9 @@ namespace GXPEngine
 		}
 
 		public void Start(){
+			Player1Last = LastPressed.none;
+			Player2Last = LastPressed.none;
+			totalcounter = 0;
 			enabled = true;
 			_game._stepstate = StepStates.None;
 			message = new Message (_game.currentFps, "Press A and D", 0,20);
@@ -51,9 +51,9 @@ namespace GXPEngine
 			bar2.SetXY (game.width/2 - bar2.width/2, 300);
 			bar2startx = bar2.x;
 
-
-			bar1.SetXY (game.width/2 - 20 - bar1.width/2, 300);
 			bar1.width = bar2.width * 20;
+			bar1.SetXY (game.width/2 - bar1.width/2, 300);
+
 			_level.AddChild (bar1);
 			_level.AddChild (bar2);
 		}
@@ -67,6 +67,7 @@ namespace GXPEngine
 		}
 		void Update(){
 			if (enabled) {
+				bar2.x = bar2startx + totalcounter * 10;
 				if (Input.GetKeyDown (Key.A) && Player1Last != LastPressed.left) {
 					Player1Last = LastPressed.left;
 					totalcounter--;
@@ -88,18 +89,25 @@ namespace GXPEngine
 					StopEvent += _level.ButtonMashPlayer1Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer1Win;
+					_level._touched = Players._player1;
+					_level._ball.overlay1.SetColor (0, 0, 200);
+					_level._ball.overlay2.SetColor (0, 0, 200);
 				}
 				if (totalcounter >= 10) {
 					StopEvent += _level.ButtonMashPlayer2Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer2Win;
+					_level._touched = Players._player2;
+					_level._ball.overlay1.SetColor (200, 0, 0);
+					_level._ball.overlay2.SetColor (200, 0, 0);
 				}
-				bar2.x = bar2startx + totalcounter * 10;
+
 
 			}
 		}
 
 		public enum LastPressed{
+			none,
 			left,
 			right
 		}
