@@ -101,7 +101,7 @@ namespace GXPEngine
 					selectednumber = buttonlist.Count - 1;
 				}
 			}
-			Console.WriteLine (selectednumber);
+			//Console.WriteLine (selectednumber);
 
 			if (selectednumber == 0) 
 			{	

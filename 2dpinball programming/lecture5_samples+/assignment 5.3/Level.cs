@@ -114,10 +114,12 @@ namespace GXPEngine
 
 		void MakeWalls(){
 			//-----------------------outer walls----------------------
-			AddLine (new Vec2 (0, 0), new Vec2 (width, 0));				//top
-			AddLine (new Vec2 (width, 0), new Vec2 (width, height));	//right
-			AddLine (new Vec2 (width, height), new Vec2 (0, height));	//bottom
-			AddLine (new Vec2 (0, height), new Vec2 (0,0));				//left
+			//AddLine (new Vec2 (0, 0), new Vec2 (width, 0));				//top
+			//AddLine (new Vec2 (width, 0), new Vec2 (width, height));		//right
+			//AddLine (new Vec2 (width, height), new Vec2 (0, height));		//bottom
+			//AddLine (new Vec2 (0, height), new Vec2 (0,0));				//left
+			AddLine (new Vec2 (width, 0), new Vec2 (width, height/2));		//right2
+			AddLine (new Vec2 (0, height/2), new Vec2 (0,0));				//left2
 			//--------------------------------------------------------
 		}
 		void MakeBall(){
@@ -164,7 +166,7 @@ namespace GXPEngine
 
 			//-------line that represents paddle of player 1--------
 			matrixline1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
-			matrixline1.bounciness = 1.3f;
+			matrixline1.bounciness = _player1.Bounce;
 			AddChild (matrixline1);
 			_lines.Add (matrixline1);
 			matrixvec1 = new Vec2 (0, 0);
@@ -178,7 +180,7 @@ namespace GXPEngine
 
 			//-------line that represents paddle of player 2--------
 			matrixline2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
-			matrixline2.bounciness = 1.3f;
+			matrixline2.bounciness = _player2.Bounce;
 			AddChild (matrixline2);
 			_lines.Add (matrixline2);
 			matrixvec2 = new Vec2 (0, 0);
@@ -198,9 +200,11 @@ namespace GXPEngine
 
 		public void ButtonMashPlayer1Win(){
 			_ball.position = new Vec2 (width/4, _player1.y);
+			_touched = Players._player1;
 		}
 		public void ButtonMashPlayer2Win(){
 			_ball.position = new Vec2 (width/4*3, _player2.y);
+			_touched = Players._player2;
 		}
 
 		public MyGame GetGame(){

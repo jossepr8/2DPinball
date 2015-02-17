@@ -33,6 +33,7 @@ namespace GXPEngine
 			StopEvent += Stop;
 		}
 
+
 		public void Start(){
 			Player1Last = LastPressed.none;
 			Player2Last = LastPressed.none;
@@ -89,17 +90,13 @@ namespace GXPEngine
 					StopEvent += _level.ButtonMashPlayer1Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer1Win;
-					_level._touched = Players._player1;
-					_level._ball.overlay1.SetColor (0, 0, 200);
-					_level._ball.overlay2.SetColor (0, 0, 200);
+				
 				}
 				if (totalcounter >= 10) {
 					StopEvent += _level.ButtonMashPlayer2Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer2Win;
-					_level._touched = Players._player2;
-					_level._ball.overlay1.SetColor (200, 0, 0);
-					_level._ball.overlay2.SetColor (200, 0, 0);
+				
 				}
 
 

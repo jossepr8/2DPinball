@@ -44,10 +44,13 @@ namespace GXPEngine
 	
 	
 		void Update () {
-
+			Console.WriteLine (GetChildren ().Count);
 			if (level != null) 
 			{
 				PauseControl ();
+			}
+			if (Input.GetKeyDown (Key.G)) {
+				SetState (States.Level);
 			}
 	
 		}
