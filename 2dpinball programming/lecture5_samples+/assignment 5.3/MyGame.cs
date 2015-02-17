@@ -26,7 +26,7 @@ namespace GXPEngine
 		{
 			font = new Font ("Broadway",50,FontStyle.Regular);
 
-
+			Console.Beep ();
 
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml

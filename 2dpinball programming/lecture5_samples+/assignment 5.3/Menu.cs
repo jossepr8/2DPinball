@@ -26,7 +26,7 @@ namespace GXPEngine
 
 			SoundManager.Playmusic ("Testmusic.wav");
 
-			_start = new AnimSprite ("start.png",2,1);
+			_start = new AnimSprite ("startgame.png",2,1);
 			_start.SetXY (460, 200);
 			_start.SetScaleXY (1.4f, 1.4f);
 
@@ -115,6 +115,7 @@ namespace GXPEngine
 			{	
 				_start.SetFrame (1);
 				_highscore.SetFrame (0);
+				_highscore.SetXY (459,300);
 				_manual.SetFrame (1);
 			}
 
