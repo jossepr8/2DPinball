@@ -49,6 +49,12 @@ namespace GXPEngine
 			if (Input.GetKeyDown (Key.G)) {
 				SetState (States.Level);
 			}
+			if (Input.GetKeyDown (Key.M)) {
+				SetState (States.MainMenu);
+			}
+			if (Input.GetKeyDown (Key.H)) {
+				SetState (States.Highscores);
+			}
 	
 		}
 
