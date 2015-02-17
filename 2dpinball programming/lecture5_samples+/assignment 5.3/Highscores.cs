@@ -20,13 +20,13 @@ namespace GXPEngine
 
 			scorelist = new List<Score>();
 
-			Score s1 = new Score (){ SCORE = 5, NAME = "adfdfdfdfaa" };
-			Score s2 = new Score (){ SCORE = 1, NAME = "ddd" };
-			Score s3 = new Score (){ SCORE = 7, NAME = "ccc" };
+			Score s1 = new Score (){ SCORE = 0, NAME = "test" };
+		
+			for (int i = 0; i < 10; i++) {
+				scorelist.Add (s1);
+			}
 
-			scorelist.Add (s1);
-			scorelist.Add (s2);
-			scorelist.Add (s3);
+
 
 
 			settings.Indent = true;
@@ -42,12 +42,14 @@ namespace GXPEngine
 				reader.ReadStartElement ("Highscores");
 				reader.ReadStartElement ("Solo");
 
-				foreach (Score score in scorelist) {
+				for (int i = 0; i < 9; i++) {
 					reader.ReadStartElement ("highscore");
-					score.SCORE = readInt ("Score", reader);
-					score.NAME = readString ("Name", reader);
+					scorelist[i].SCORE = readInt ("Score", reader);
+					scorelist[i].NAME = readString ("Name", reader);
 					reader.ReadEndElement ();
 				}
+					
+
 				reader.ReadEndElement ();
 				reader.ReadEndElement ();
 
@@ -62,14 +64,14 @@ namespace GXPEngine
 				writer.WriteStartElement ("Highscores");
 				writer.WriteStartElement ("Solo");
 
-				foreach (Score score in scorelist) {	
-
+				for (int i = 0; i < 9; i++) {
 					writer.WriteStartElement ("highscore");
-					WriteScore (score.SCORE, writer);
-					WriteName (score.NAME, writer);
+					WriteScore (scorelist[i].SCORE, writer);
+					WriteName (scorelist[i].NAME, writer);
 					writer.WriteEndElement ();
 				}
 
+					
 				writer.WriteEndElement ();
 				writer.WriteEndElement ();
 
