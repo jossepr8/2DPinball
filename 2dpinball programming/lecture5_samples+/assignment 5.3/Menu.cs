@@ -30,14 +30,14 @@ namespace GXPEngine
 			_start.SetXY (460, 200);
 			_start.SetScaleXY (1.4f, 1.4f);
 
-			_manual = new AnimSprite("howtoplay.png",2,1);
-			_manual.SetXY (460, 300);
-			_manual.SetScaleXY (1.4f, 1.4f);
-
-	
 			_highscore = new AnimSprite ("highscore.png",2,1);
-			_highscore.SetXY (460, 400);
+			_highscore.SetXY (460, 300);
 			_highscore.SetScaleXY (1.4f, 1.4f);
+
+
+			_manual = new AnimSprite("howtoplay.png",2,1);
+			_manual.SetXY (460, 400);
+			_manual.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
 		}
@@ -101,7 +101,7 @@ namespace GXPEngine
 					selectednumber = buttonlist.Count - 1;
 				}
 			}
-			//Console.WriteLine (selectednumber);
+			Console.WriteLine (selectednumber);
 
 			if (selectednumber == 0) 
 			{	
@@ -114,7 +114,7 @@ namespace GXPEngine
 			if (selectednumber == 1) 
 			{	
 				_start.SetFrame (1);
-				_highscore.SetFrame (1);
+				_highscore.SetFrame (0);
 				_manual.SetFrame (1);
 			}
 
