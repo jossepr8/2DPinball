@@ -35,7 +35,6 @@ namespace GXPEngine
 			//SetState(States.MainMenu);
 			SetState (States.MainMenu);	// start at "Level"
 			//targetFps = 5; //--test mode---
-
 		}
 	
 	
