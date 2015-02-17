@@ -22,7 +22,7 @@ namespace GXPEngine
 		Sprite HudRed = new Sprite ("HudRed.png");
 
 		Font font = new Font ("Broadway",40,FontStyle.Regular);
-		Font font1 = new Font ("Broadway",30,FontStyle.Regular);
+		Font font1 = new Font ("Broadway",25,FontStyle.Regular);
 
 		readonly SolidBrush brushred = new SolidBrush (Color.Red);
 		readonly SolidBrush brushblue = new SolidBrush (Color.Blue);
@@ -75,16 +75,56 @@ namespace GXPEngine
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
 
-				size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font);
-				size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font);
+		
+
+
+					
+
+				if (score1 >= 1000) 
+				{
+					size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font1);
+					pnt1.Y = 23;
+				} else 
+				{
+					size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font);
+				}
+
+				if (score2 >= 1000) 
+				{
+					size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font1);
+					pnt2.Y = 23;
+				} 
+				else 
+				{
+					size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font);
+				}
+
 
 				pnt1.X = _canvas.width - 1210 - size1.Width / 2;
 				pnt2.X = _canvas.width  - 100 - size2.Width / 2;
 
 
 
-				_canvas.graphics.DrawString (score1.ToString (), font, brushblue, pnt1);
-				_canvas.graphics.DrawString (score2.ToString (), font, brushred, pnt2);
+
+
+
+				if (score1 >= 1000) 
+				{
+					_canvas.graphics.DrawString (score1.ToString (), font1, brushblue, pnt1);
+				} 
+				else 
+				{
+					_canvas.graphics.DrawString (score1.ToString (), font, brushblue, pnt1);
+				}
+
+				if (score2 >= 1000) 
+				{
+					_canvas.graphics.DrawString (score2.ToString (), font1, brushred, pnt2);
+				} 
+				else 
+				{
+					_canvas.graphics.DrawString (score2.ToString (), font, brushred, pnt2);
+				}
 
 
 			}
