@@ -18,7 +18,7 @@ namespace GXPEngine
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
 			font = new Font ("Broadway",fontsize,FontStyle.Regular);
 			size = _canvas.graphics.MeasureString (message, font);
-			brush = new SolidBrush (Color.Green);
+			brush = new SolidBrush (Color.ForestGreen);
 			point = new PointF (0, 0);
 			_timer = timer * fps;
 			_canvas = new Canvas ((int)size.Width, (int)size.Height);
@@ -27,7 +27,8 @@ namespace GXPEngine
 
 		}
 
-		void Update(){
+
+		public void Step(){
 			_timer--;
 			if (_timer <= 0) {
 				this.Destroy ();

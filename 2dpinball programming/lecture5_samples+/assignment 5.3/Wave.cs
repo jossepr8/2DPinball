@@ -14,6 +14,7 @@ namespace GXPEngine
 		static List<int> enemycountlist = new List<int> ();
 		static XmlReader reader;
 		static Random rnd;
+		Message message;
 		int currentwave = 0;
 
 		public Wave (Level level)
@@ -32,7 +33,7 @@ namespace GXPEngine
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 				}
 			}
-
+			message.Step ();
 			foreach (Enemy e in _level.enemylist) {
 				e.Step ();
 			}
@@ -55,7 +56,7 @@ namespace GXPEngine
 			}
 		}
 		void SpawnPresetWave(PresetWave presetwave){
-			Message message = new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer);
+			message = new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer);
 			message.SetXY (_level.GetWidth()/2 - message.size.Width/2 , 150);
 			_level.AddChild (message);
 			_level._player1.scaleX = presetwave.paddlewidth / 100;

@@ -9,6 +9,8 @@ namespace GXPEngine
 
 		int Player1Counter = 0;
 		int Player2Counter = 0;
+
+		int totalcounter = 0;
 		LastPressed Player1Last;
 		LastPressed Player2Last;
 
@@ -18,6 +20,13 @@ namespace GXPEngine
 		}
 		MyGame _game;
 		Level _level;
+
+		Message message;
+		Message message2;
+
+		Sprite bar1 = new Sprite("mashbar.png");
+		Sprite bar2 = new Sprite("mashindicator.png");
+		float bar2startx;
 
 		public ButtonMasher (MyGame game, Level level)
 		{
@@ -30,46 +39,63 @@ namespace GXPEngine
 		public void Start(){
 			enabled = true;
 			_game._stepstate = StepStates.None;
-			Message message = new Message (_game.currentFps, "Press A and D", 3,20);
+			message = new Message (_game.currentFps, "Press A and D", 0,20);
 			message.SetXY (_level.GetWidth() / 4 - message.size.Width/2, 200);
 			_level.AddChild (message);
 
-			Message message2 = new Message (_game.currentFps, "Press LEFT and RIGHT", 3,20);
+			message2 = new Message (_game.currentFps, "Press LEFT and RIGHT", 0,20);
 			message2.SetXY (_level.GetWidth() / 4*3 - message.size.Width/2, 200);
 			_level.AddChild (message2);
+
+
+			bar2.SetXY (game.width/2 - bar2.width/2, 300);
+			bar2startx = bar2.x;
+
+
+			bar1.SetXY (game.width/2 - 20 - bar1.width/2, 300);
+			bar1.width = bar2.width * 20;
+			_level.AddChild (bar1);
+			_level.AddChild (bar2);
 		}
 		public void Stop(){
 			enabled = false;
 			_game._stepstate = StepStates.All;
+			message.Step ();
+			message2.Step ();
+			bar1.Destroy ();
+			bar2.Destroy ();
 		}
 		void Update(){
 			if (enabled) {
 				if (Input.GetKeyDown (Key.A) && Player1Last != LastPressed.left) {
 					Player1Last = LastPressed.left;
-					Player1Counter++;
+					totalcounter--;
 				}
 				if (Input.GetKeyDown (Key.D) && Player1Last != LastPressed.right) {
 					Player1Last = LastPressed.right;
-					Player1Counter++;
+					totalcounter--;
 				}
 				if (Input.GetKeyDown (Key.LEFT) && Player2Last != LastPressed.left) {
 					Player2Last = LastPressed.left;
-					Player2Counter++;
+					totalcounter++;
 				}
 				if (Input.GetKeyDown (Key.RIGHT) && Player2Last != LastPressed.right) {
 					Player2Last = LastPressed.right;
-					Player2Counter++;
+					totalcounter++;
 				}
-				if (Player1Counter >= 10) {
+
+				if (totalcounter <= -10) {
 					StopEvent += _level.ButtonMashPlayer1Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer1Win;
 				}
-				if (Player2Counter >= 10) {
+				if (totalcounter >= 10) {
 					StopEvent += _level.ButtonMashPlayer2Win;
 					StopEvent ();
 					StopEvent -= _level.ButtonMashPlayer2Win;
 				}
+				bar2.x = bar2startx + totalcounter * 10;
+
 			}
 		}
 
