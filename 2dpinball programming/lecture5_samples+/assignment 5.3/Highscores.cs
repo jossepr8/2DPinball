@@ -5,8 +5,9 @@ using System.Xml;
 namespace GXPEngine
 {
 	public class Highscores : GameObject
-	{
-		List<Score> scorelist;
+	{	
+	
+		public List<Score> scorelist;
 		XmlReader reader;
 		XmlWriter writer;
 		XmlWriterSettings settings = new XmlWriterSettings();
@@ -14,7 +15,9 @@ namespace GXPEngine
 
 
 		public Highscores ()
-		{
+		{	
+
+
 			scorelist = new List<Score>();
 
 			Score s1 = new Score (){ SCORE = 5, NAME = "adfdfdfdfaa" };
@@ -35,7 +38,6 @@ namespace GXPEngine
 
 		public void Read(){
 			using (reader = XmlReader.Create ("highscores.xml")) {
-				//reader = XmlReader.Create ("highscores.xml");
 
 				reader.ReadStartElement ("Highscores");
 				reader.ReadStartElement ("Solo");
@@ -70,9 +72,7 @@ namespace GXPEngine
 
 				writer.WriteEndElement ();
 				writer.WriteEndElement ();
-				//writer.Flush ();
-				//writer.Close ();
-				//writer.Dispose ();
+
 			}
 
 

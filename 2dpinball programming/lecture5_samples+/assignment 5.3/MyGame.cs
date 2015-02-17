@@ -12,7 +12,9 @@ namespace GXPEngine
 		public Font font;
 		Level level;
 		Menu menu;
-		Highscores highscores;
+		HighscoreMenu highscoremenu;
+		Manual manual;
+
 		public StepStates _stepstate;
 		public States _state;
 
@@ -26,7 +28,7 @@ namespace GXPEngine
 		{
 			font = new Font ("Broadway",50,FontStyle.Regular);
 
-			Console.Beep ();
+			//Console.Beep ();
 
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
@@ -35,14 +37,12 @@ namespace GXPEngine
 			//targetFps = 5; //--test mode---
 
 		}
-		public override void Destroy(){
+		public override void Destroy()
+		{
 
 		}
 	
 	
-
-
-			
 		void Update () {
 
 			if (level != null) 
@@ -77,8 +77,11 @@ namespace GXPEngine
 			if (menu != null) {
 				menu.Destroy ();
 			}
-			if (highscores != null) {
-				highscores.Destroy ();
+			if (highscoremenu != null) {
+				highscoremenu.Destroy ();
+			}
+			if (manual != null) {
+				manual.Destroy ();
 			}
 			StartState (state);
 		}
@@ -94,8 +97,12 @@ namespace GXPEngine
 				AddChild (level);
 				break;
 			case States.Highscores:
-				highscores = new Highscores ();
-				AddChild (highscores);
+				highscoremenu = new HighscoreMenu (this);
+				AddChild (highscoremenu);
+				break;
+			case States.Manual:
+				manual = new Manual (this);
+				AddChild (manual);
 				break;
 			}
 		}

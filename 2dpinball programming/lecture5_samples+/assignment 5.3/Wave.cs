@@ -91,7 +91,8 @@ namespace GXPEngine
 		public static void Read(){
 
 			//------ first few waves-------------------------------------
-			using (reader = XmlReader.Create ("preset_waves.xml")) {
+			using (reader = XmlReader.Create ("preset_waves.xml")) 
+			{
 				reader.ReadStartElement ("preset_waves");
 				reader.ReadStartElement ("Config");
 				reader.ReadStartElement ("number_of_waves");
@@ -126,8 +127,8 @@ namespace GXPEngine
 
 
 			//-----------all random waves----------------------------------
-			using (reader = XmlReader.Create ("waves.xml")) {
-			
+			using (reader = XmlReader.Create ("waves.xml")) 
+			{
 				reader.ReadStartElement ("Waves");
 				for (int i = 0; i < 19; i++) {
 					int[,] wave = new int[10, 10];

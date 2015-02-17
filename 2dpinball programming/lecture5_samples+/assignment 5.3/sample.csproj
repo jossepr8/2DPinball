@@ -142,6 +142,8 @@
     <Compile Include="SoundManager.cs" />
     <Compile Include="StuckManager.cs" />
     <Compile Include="ButtonMasher.cs" />
+    <Compile Include="Manual.cs" />
+    <Compile Include="HighscoreMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
