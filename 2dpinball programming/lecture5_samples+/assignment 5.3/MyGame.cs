@@ -58,7 +58,7 @@ namespace GXPEngine
 		}
 
 		void PauseControl(){
-			if (Input.GetKeyDown (Key.P)) {
+			if (Input.GetKeyDown (Key.ESCAPE)) {
 				if (_stepstate == StepStates.None) {
 					_stepstate = StepStates.All;
 				} else {

@@ -71,9 +71,7 @@ namespace GXPEngine
 			colmanager.Step ();
 			wave.Step ();
 
-			if (Input.GetKeyDown (Key.Z)) {
-				buttonmasher.Start ();
-			}
+		
 		}
 
 		public Level (MyGame game)
