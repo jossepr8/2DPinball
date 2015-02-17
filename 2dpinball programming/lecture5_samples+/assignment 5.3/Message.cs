@@ -13,10 +13,9 @@ namespace GXPEngine
 	
 		public SizeF size;
 
-		public Message (int fps, string message, float timer)
+		public Message (int fps, string message, float timer,float fontsize = 50)
 		{
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
-			float fontsize = 50;
 			font = new Font ("Broadway",fontsize,FontStyle.Regular);
 			size = _canvas.graphics.MeasureString (message, font);
 			brush = new SolidBrush (Color.Green);

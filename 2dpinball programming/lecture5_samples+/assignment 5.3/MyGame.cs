@@ -13,8 +13,9 @@ namespace GXPEngine
 		Level level;
 		Menu menu;
 		Highscores highscores;
-		StepStates _stepstate;
+		public StepStates _stepstate;
 		public States _state;
+
 
 
 		static void Main() {

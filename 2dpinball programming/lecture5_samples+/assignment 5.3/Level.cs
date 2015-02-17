@@ -55,7 +55,12 @@ namespace GXPEngine
 		public BasicBall linecap21;
 		public BasicBall linecap22;
 
+		ButtonMasher buttonmasher;
+
 		public Players _touched = Players.none;
+
+
+
 
 		public void Step(){
 			Player1Control ();
@@ -99,6 +104,9 @@ namespace GXPEngine
 			MakePaddles ();
 
 			_hud.UpdateHUD (Damage, _player1.score, _player2.score);
+
+			buttonmasher = new ButtonMasher (_game,this);
+			buttonmasher.Start ();
 		}
 
 		void MakeWalls(){
@@ -112,10 +120,11 @@ namespace GXPEngine
 		void MakeBall(){
 			//--------------------------------ball-------------------------------------------
 			_ball = new Ball (this, 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
-				position = new Vec2 (300, 400)};	//start position
+				position = new Vec2 (width/2, height/2)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(5);	//start velocity
 			_previousPosition = _ball.position.Clone ();
+			_ball.Step ();
 			//--------------------------------------------------------------------------------
 		}
 		void MakePaddles(){
@@ -182,6 +191,13 @@ namespace GXPEngine
 			_player1.score = 1000;
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 
+		}
+
+		public void ButtonMashPlayer1Win(){
+			_ball.position = new Vec2 (width/4, _player1.y);
+		}
+		public void ButtonMashPlayer2Win(){
+			_ball.position = new Vec2 (width/4*3, _player2.y);
 		}
 
 		public MyGame GetGame(){

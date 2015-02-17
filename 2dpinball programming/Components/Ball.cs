@@ -22,7 +22,7 @@ namespace GXPEngine
 
 		public Ball (Level level, int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
-			stuckmanager = new StuckManager (this);
+			//stuckmanager = new StuckManager (this);
 			_level = level;
 			overlay1 = new AnimSprite ("Electric Swirl.png",2,1);
 			overlay1.SetOrigin (width / 2, height / 2);

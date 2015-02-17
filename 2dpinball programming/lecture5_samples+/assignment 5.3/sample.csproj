@@ -141,6 +141,7 @@
     <Compile Include="BasicBall.cs" />
     <Compile Include="SoundManager.cs" />
     <Compile Include="StuckManager.cs" />
+    <Compile Include="ButtonMasher.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
