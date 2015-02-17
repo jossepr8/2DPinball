@@ -69,7 +69,7 @@ namespace GXPEngine
 		public void Step(bool skipVelocity = false, bool skipGravity = false, Vec2 pvelocity = null) {
 			//Console.WriteLine (velocity.Length ());
 			if (velocity.Length () > Properties.BallMaxSpeed) {
-				velocity.Scale (20/velocity.Length());
+				velocity.Scale (Properties.BallMaxSpeed/velocity.Length());
 			} 
 			overlay1.rotation-=10;
 			if (position == null || velocity == null)
