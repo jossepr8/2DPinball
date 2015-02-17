@@ -20,13 +20,12 @@ namespace GXPEngine
 			_game = game;
 			_playbutton = new Sprite ("thickmenu.png");
 
-			_playbutton.SetXY (460, 200);
+			//_playbutton.SetXY (460, 200);
 			_playbutton.SetScaleXY (1.4f, 1.4f);
 		
 
 			//_game = game;
 			_playbutton1 = new Sprite ("thickmenu.png");
-
 			_playbutton1.SetXY (460, 400);
 			_playbutton1.SetScaleXY (1.4f, 1.4f);
 
