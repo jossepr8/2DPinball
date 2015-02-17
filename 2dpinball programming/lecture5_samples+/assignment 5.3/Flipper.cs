@@ -25,15 +25,8 @@ namespace GXPEngine
 			get;
 			set;
 		}
-
-		public Vec2 Velocity {
-			get;
-			set;
-		}
-
-		private float oldrotation;
 			
-
+			
 		public Flipper () : base("paddle.png")
 		{
 			SetOrigin (width / 2, height/2 - 500);
@@ -42,17 +35,10 @@ namespace GXPEngine
 			MaxAngle = Properties.PaddleMaxAngle;
 			Bounce = Properties.PaddleBounce;
 			score = 0;
-			oldrotation = rotation;
-
-			Velocity = new Vec2 (0, 0);
 		}
 
 		void Update(){
-			Velocity.x = matrix [1] * width;
-			Velocity.y = matrix [2] * width;
-			Velocity.Scale (Math.Abs(rotation-oldrotation)/400);
-			oldrotation = rotation;
-			Console.WriteLine (Velocity.Length ());
+	
 		}
 
 	}
