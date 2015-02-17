@@ -6,7 +6,7 @@ namespace GXPEngine
 	public class HighscoreMenu : GameObject
 	{		
 		MyGame _game;
-		Highscores highscores;
+		public Highscores highscores;
 
 		new float x = 120;
 
@@ -22,8 +22,8 @@ namespace GXPEngine
 
 		public HighscoreMenu (MyGame game)
 		{
-			highscores = new Highscores ();
-			highscores.Read ();
+			highscores = new Highscores (game);
+			//highscores.Read ();
 
 			title = "Highscores:";
 
@@ -32,7 +32,7 @@ namespace GXPEngine
 
 			canvas.graphics.DrawString (title, fonttitle, brushpurple, 520, 100);
 
-			foreach (Score scorez in highscores.scorelist) 
+			foreach (Score scorez in _game.scorelist) 
 			{
 				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,480 ,x += 40);
 				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 740, x);

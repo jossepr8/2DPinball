@@ -3,6 +3,7 @@ using System;
 using System.Drawing.Text;
 using System.IO;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace GXPEngine
 {
@@ -14,6 +15,7 @@ namespace GXPEngine
 		Menu menu;
 		HighscoreMenu highscoremenu;
 		Manual manual;
+		public List<Score> scorelist;
 
 		public StepStates _stepstate;
 		public States _state;
@@ -23,9 +25,13 @@ namespace GXPEngine
 		static void Main() {
 			new MyGame().Start();
 		}
+		public void SAVE(){
+			highscoremenu.highscores.Save ();
+		}
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
+			scorelist = new List<Score>();
 			font = new Font ("Broadway",50,FontStyle.Regular);
 
 			//Console.Beep ();
@@ -38,7 +44,9 @@ namespace GXPEngine
 		}
 	
 	
-	
+		public void SortScores(){
+			scorelist.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
+		}
 		void Update () {
 			//Console.WriteLine (GetChildren ().Count);
 			if (level != null) 

@@ -71,6 +71,12 @@ namespace GXPEngine
 			colmanager.Step ();
 			wave.Step ();
 
+			if (_ball.y > height) {
+				_game._stepstate = StepStates.None;
+				_game.scorelist.Add (new Score (_player1.score + _player2.score, "PLAYERs"));
+				_game.SAVE ();
+				_game.SetState (States.Highscores);
+			}
 		
 		}
 
@@ -190,8 +196,8 @@ namespace GXPEngine
 			AddChild (linecap22);
 			_balls.Add (linecap22);
 
-			_player2.score = 1000;
-			_player1.score = 1000;
+			_player2.score = 5000;
+			_player1.score = 5000;
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 
 		}

@@ -12,8 +12,10 @@ namespace GXPEngine
 			get;
 			set;
 		}
-		public Score ()
+		public Score (int score, string name)
 		{
+			SCORE = score;
+			NAME = name;
 		}
 	}
 }

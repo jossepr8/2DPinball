@@ -7,36 +7,36 @@ namespace GXPEngine
 	public class Highscores : GameObject
 	{	
 	
-		public List<Score> scorelist;
+
 		XmlReader reader;
 		XmlWriter writer;
 		XmlWriterSettings settings = new XmlWriterSettings();
+		MyGame _game;
 
 
-
-		public Highscores ()
+		public Highscores (MyGame game)
 		{	
 
+			_game = game;
 
-			scorelist = new List<Score>();
 
-			Score s1 = new Score (){ SCORE = 0, NAME = "test" };
+			//Score s1 = new Score (){ SCORE = 0, NAME = "test" };
 		
-			for (int i = 0; i < 10; i++) {
-				scorelist.Add (s1);
-			}
+
 
 
 
 
 			settings.Indent = true;
 			//sort highscore list based on specified property
-			scorelist.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
+
 			Read ();
+			_game.SortScores ();
 
 		}
 
 		public void Read(){
+			_game.scorelist.Clear ();
 			using (reader = XmlReader.Create ("highscores.xml")) {
 
 				reader.ReadStartElement ("Highscores");
@@ -44,8 +44,7 @@ namespace GXPEngine
 
 				for (int i = 0; i < 10; i++) {
 					reader.ReadStartElement ("highscore");
-					scorelist[i].SCORE = readInt ("Score", reader);
-					scorelist[i].NAME = readString ("Name", reader);
+					_game.scorelist.Add (new Score (readInt ("Score", reader), readString ("Name", reader)));
 					reader.ReadEndElement ();
 				}
 					
@@ -58,6 +57,7 @@ namespace GXPEngine
 		}
 
 		public void Save(){
+			_game.SortScores ();
 			using (writer = XmlWriter.Create ("highscores.xml", settings)) {
 				//writer = XmlWriter.Create ("highscores.xml",settings);
 
@@ -66,26 +66,15 @@ namespace GXPEngine
 
 				for (int i = 0; i < 10; i++) {
 					writer.WriteStartElement ("highscore");
-					WriteScore (scorelist[i].SCORE, writer);
-					WriteName (scorelist[i].NAME, writer);
+					WriteScore (_game.scorelist [i].SCORE, writer);
+					WriteName (_game.scorelist [i].NAME, writer);
 					writer.WriteEndElement ();
 				}
-
 					
 				writer.WriteEndElement ();
 				writer.WriteEndElement ();
 
 			}
-
-
-			writer.WriteEndElement ();
-			writer.WriteEndElement ();
-
-			writer.Flush ();
-			writer.Close ();
-
-			writer.Dispose ();
-
 		}
 
 
