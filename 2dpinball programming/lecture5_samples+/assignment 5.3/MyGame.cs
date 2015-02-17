@@ -37,14 +37,11 @@ namespace GXPEngine
 			//targetFps = 5; //--test mode---
 
 		}
-		public override void Destroy()
-		{
-
-		}
+	
 	
 	
 		void Update () {
-			Console.WriteLine (GetChildren ().Count);
+			//Console.WriteLine (GetChildren ().Count);
 			if (level != null) 
 			{
 				PauseControl ();
