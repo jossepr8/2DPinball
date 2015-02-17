@@ -73,7 +73,9 @@ namespace GXPEngine
 
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
+
 				size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font);
+				size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font);
 
 				pnt1.X = _canvas.width - 1220 - size1.Width / 2;
 				pnt2.X = _canvas.width  - 120 - size2.Width / 2;
