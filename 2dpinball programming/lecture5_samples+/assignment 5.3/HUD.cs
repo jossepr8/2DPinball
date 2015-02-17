@@ -22,6 +22,7 @@ namespace GXPEngine
 		Sprite HudRed = new Sprite ("HudRed.png");
 
 		Font font = new Font ("Broadway",40,FontStyle.Regular);
+		Font font1 = new Font ("Broadway",30,FontStyle.Regular);
 
 		readonly SolidBrush brushred = new SolidBrush (Color.Red);
 		readonly SolidBrush brushblue = new SolidBrush (Color.Blue);
@@ -77,8 +78,10 @@ namespace GXPEngine
 				size1 = _centcanvas.graphics.MeasureString (score1.ToString (), font);
 				size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font);
 
-				pnt1.X = _canvas.width - 1220 - size1.Width / 2;
-				pnt2.X = _canvas.width  - 120 - size2.Width / 2;
+				pnt1.X = _canvas.width - 1210 - size1.Width / 2;
+				pnt2.X = _canvas.width  - 100 - size2.Width / 2;
+
+
 
 				_canvas.graphics.DrawString (score1.ToString (), font, brushblue, pnt1);
 				_canvas.graphics.DrawString (score2.ToString (), font, brushred, pnt2);

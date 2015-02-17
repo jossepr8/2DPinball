@@ -178,7 +178,8 @@ namespace GXPEngine
 			AddChild (linecap22);
 			_balls.Add (linecap22);
 
-			_player2.score = 100;
+			_player2.score = 1000;
+			_player1.score = 1000;
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 		}
 		public MyGame GetGame(){
