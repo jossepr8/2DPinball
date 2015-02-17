@@ -31,7 +31,7 @@ namespace GXPEngine
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
 			//SetState(States.MainMenu);
-			SetState (States.Level);	// start at "Level"
+			SetState (States.MainMenu);	// start at "Level"
 			//targetFps = 5; //--test mode---
 
 		}
@@ -106,7 +106,8 @@ namespace GXPEngine
 		None,
 		MainMenu,
 		Level,
-		Highscores
+		Highscores,
+		Manual
 	}
 	public enum StepStates
 	{

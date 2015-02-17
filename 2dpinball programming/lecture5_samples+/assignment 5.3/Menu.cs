@@ -7,54 +7,68 @@ namespace GXPEngine
 	{
 
 		MyGame _game;
-		Sprite _playbutton;
-		Sprite _playbutton1;
+		AnimSprite _start;
+		AnimSprite _highscore;
+		AnimSprite _manual;
+
+		Sprite _background;
+
 
 		int selectednumber = 0;
-		List<Sprite> buttonlist = new List<Sprite>();
+		List<AnimSprite> buttonlist = new List<AnimSprite>();
 
 
 		public Menu (MyGame game)
 		{	
-			SoundManager.Playmusic ("Testmusic.wav");
 			_game = game;
-			_playbutton = new Sprite ("thickmenu.png");
+			_background = new Sprite ("mainmenubackground.png");
+			AddChild (_background);
 
-			//_playbutton.SetXY (460, 200);
-			_playbutton.SetScaleXY (1.4f, 1.4f);
-		
+			SoundManager.Playmusic ("Testmusic.wav");
 
-			//_game = game;
-			_playbutton1 = new Sprite ("thickmenu.png");
-			_playbutton1.SetXY (460, 400);
-			_playbutton1.SetScaleXY (1.4f, 1.4f);
+			_start = new AnimSprite ("start.png",2,1);
+			_start.SetXY (460, 200);
+			_start.SetScaleXY (1.4f, 1.4f);
+
+			_manual = new AnimSprite("howtoplay.png",2,1);
+			_manual.SetXY (460, 300);
+			_manual.SetScaleXY (1.4f, 1.4f);
+
+	
+			_highscore = new AnimSprite ("highscore.png",2,1);
+			_highscore.SetXY (460, 400);
+			_highscore.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
 		}
 
 		void AddButtons()
 		{
-			AddChild (_playbutton);
-			buttonlist.Add (_playbutton);
+			AddChild (_start);
+			buttonlist.Add (_start);
 
-			AddChild (_playbutton1);
-			buttonlist.Add (_playbutton1);
+			AddChild (_highscore);
+			buttonlist.Add (_highscore);
+
+			AddChild (_manual);
+			buttonlist.Add (_manual);
 		}
 		private void SwitchMenu(int index)
 		{
 			switch (index) 
 			{
-
 			case 0:
 				_game.SetState (States.Level);
 				this.Destroy ();
 				return;
-
 			case 1:
 				_game.SetState (States.Highscores);
 				this.Destroy ();
 				return;
-
+			case 2:
+				_game.SetState (States.Manual);
+				this.Destroy ();
+				return;
 			}
 		}
 
@@ -73,7 +87,7 @@ namespace GXPEngine
 				{
 					selectednumber++;
 				} else 
-				{
+				{	
 					selectednumber = 0;
 				}
 			}
@@ -88,6 +102,29 @@ namespace GXPEngine
 				}
 			}
 			//Console.WriteLine (selectednumber);
+
+			if (selectednumber == 0) 
+			{	
+				_start.SetFrame (0);
+				_highscore.SetFrame (1);
+				_manual.SetFrame (1);
+			}
+
+
+			if (selectednumber == 1) 
+			{	
+				_start.SetFrame (1);
+				_highscore.SetFrame (1);
+				_manual.SetFrame (1);
+			}
+
+			if (selectednumber == 2) 
+			{	
+				_start.SetFrame (1);
+				_highscore.SetFrame (1);
+				_manual.SetFrame (0);
+			}
+
 
 		}
 	}
