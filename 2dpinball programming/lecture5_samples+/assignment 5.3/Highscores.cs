@@ -42,7 +42,7 @@ namespace GXPEngine
 				reader.ReadStartElement ("Highscores");
 				reader.ReadStartElement ("Solo");
 
-				for (int i = 0; i < 9; i++) {
+				for (int i = 0; i < 10; i++) {
 					reader.ReadStartElement ("highscore");
 					scorelist[i].SCORE = readInt ("Score", reader);
 					scorelist[i].NAME = readString ("Name", reader);
@@ -64,7 +64,7 @@ namespace GXPEngine
 				writer.WriteStartElement ("Highscores");
 				writer.WriteStartElement ("Solo");
 
-				for (int i = 0; i < 9; i++) {
+				for (int i = 0; i < 10; i++) {
 					writer.WriteStartElement ("highscore");
 					WriteScore (scorelist[i].SCORE, writer);
 					WriteName (scorelist[i].NAME, writer);

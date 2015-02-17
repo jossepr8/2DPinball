@@ -34,7 +34,7 @@ namespace GXPEngine
 
 			foreach (Score scorez in highscores.scorelist) 
 			{
-				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,480 ,x += 80);
+				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,480 ,x += 40);
 				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 740, x);
 			}
 
