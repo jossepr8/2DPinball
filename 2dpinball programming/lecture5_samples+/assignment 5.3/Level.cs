@@ -177,6 +177,11 @@ namespace GXPEngine
 			linecap22 = new BasicBall (2, new Vec2 (0, 0));
 			AddChild (linecap22);
 			_balls.Add (linecap22);
+
+			_player2.score = 1000;
+			_player1.score = 1000;
+			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
+
 		}
 
 		public MyGame GetGame(){
