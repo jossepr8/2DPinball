@@ -98,7 +98,7 @@ namespace GXPEngine
 			MakeBall ();
 			MakePaddles ();
 
-
+			_hud.UpdateHUD (Damage, _player1.score, _player2.score);
 		}
 
 		void MakeWalls(){
@@ -184,12 +184,6 @@ namespace GXPEngine
 		}
 		public Wave GetWave(){
 			return wave;
-		}
-		public List<Enemy> GetEnemyList(){
-			return enemylist;
-		}
-		public List<LineSegment> GetLineList(){
-			return _lines;
 		}
 		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
 			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);

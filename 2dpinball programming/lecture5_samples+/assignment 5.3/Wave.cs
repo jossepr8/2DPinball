@@ -24,21 +24,20 @@ namespace GXPEngine
 		}
 	
 		public void Step(){
-			Updatee ();
-		}
-		void Updatee(){
-			if (_level.GetEnemyList ().Count == 0 && _level.GetGame()._state == States.Level) {
+			if (_level.enemylist.Count == 0 && _level.GetGame()._state == States.Level) {
 				if (currentwave < preset_wavelist.Count) {
 					SpawnPresetWave (preset_wavelist [currentwave]);
 					currentwave++;
 				} else {
 					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 				}
+			}
 
-
-
+			foreach (Enemy e in _level.enemylist) {
+				e.Step ();
 			}
 		}
+
 
 		void SpawnWave(int[,] wave){
 			_level._player1.scaleX = 1;
@@ -73,28 +72,25 @@ namespace GXPEngine
 					}
 				}
 			}
-			//_level.DrawMessage (presetwave.endmessage);
 		}
 
-		static float readfloat(string name){
-			reader.ReadStartElement (name);
+		static float readfloat(string xmlvariablename){
+			reader.ReadStartElement (xmlvariablename);
 			float defloat = reader.ReadContentAsFloat ();
 			reader.ReadEndElement ();
 			return defloat;
 		}
-		static string readstring(string name){
-			reader.ReadStartElement (name);
+		static string readstring(string xmlvariablename){
+			reader.ReadStartElement (xmlvariablename);
 			string destring = reader.ReadContentAsString ();
 			reader.ReadEndElement ();
 			return destring;
 		}
 
-		public static void Read(){	//dont touch this
+		public static void Read(){
 
 			//------ first few waves-------------------------------------
 			using (reader = XmlReader.Create ("preset_waves.xml")) {
-				//reader = XmlReader.Create ("preset_waves.xml");
-			
 				reader.ReadStartElement ("preset_waves");
 				reader.ReadStartElement ("Config");
 				reader.ReadStartElement ("number_of_waves");
@@ -124,15 +120,12 @@ namespace GXPEngine
 				}
 				reader.ReadEndElement ();	//waves
 				reader.ReadEndElement ();	//preset_waves
-				//reader.Dispose();
 			}
-
-			//-------------------------------------------------------------
+				
 
 
 			//-----------all random waves----------------------------------
 			using (reader = XmlReader.Create ("waves.xml")) {
-				//reader = XmlReader.Create ("waves.xml");
 			
 				reader.ReadStartElement ("Waves");
 				for (int i = 0; i < 19; i++) {
@@ -153,10 +146,8 @@ namespace GXPEngine
 					wavelist.Add (wave);
 				}
 				reader.ReadEndElement ();
-				//reader.Dispose();
 			}
-			//---------------------------------------------------------------
-			//Console.WriteLine ("Done");
+	
 		}
 	}
 }

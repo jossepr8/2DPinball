@@ -16,9 +16,9 @@ namespace GXPEngine
 			SetOrigin (width / 2, height / 2);
 			speed = Properties.EnemyGravity;
 		}
+			
 
-		void Update()
-		{
+		public void Step(){
 			y += speed;
 		}
 

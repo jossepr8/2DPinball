@@ -178,8 +178,8 @@ namespace GXPEngine
 		/// </summary>
 		override public void Destroy ()
 		{
-			base.Destroy();
-			_glContext.Close();
+		//	base.Destroy();
+		//	_glContext.Close();
 		}
 
 		public int currentFps {

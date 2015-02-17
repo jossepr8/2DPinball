@@ -9,12 +9,12 @@ namespace GXPEngine
 
 	public class MyGame : Game
 	{	
-		public States _state;
 		public Font font;
 		Level level;
 		Menu menu;
 		Highscores highscores;
-		//bool switched = false;
+		StepStates _stepstate;
+		public States _state;
 
 
 		static void Main() {
@@ -23,12 +23,6 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
-			/* custom font doesnt work correctly, crashed after 3.5seconds
-			PrivateFontCollection pfc = new PrivateFontCollection ();	
-			pfc.AddFontFile ("Starjedi.ttf");
-			//font = new Font(pfc.Families[0], 16, FontStyle.Regular);
-			//pfc.Dispose ();
-			*/
 			font = new Font ("Broadway",50,FontStyle.Regular);
 
 
@@ -38,54 +32,44 @@ namespace GXPEngine
 			//SetState(States.MainMenu);
 			SetState (States.Level);	// start at "Level"
 			//targetFps = 5; //--test mode---
+
 		}
+		public override void Destroy(){
+
+		}
+	
+	
 
 
 			
 		void Update () {
-			//Console.WriteLine (GetChildren ().Count);
-			//---------test--------
-			if (Input.GetKeyDown (Key.G)) 
-			{	
-				SetState (States.MainMenu);
-			}
-			if (Input.GetKeyDown (Key.H)) 
-			{
-				SetState (States.Level);
-			}
-			if (Input.GetKeyDown (Key.J)) 
-			{
-				SetState (States.Highscores);
-			}
-			//--------------------
+
 			if (level != null) 
 			{
-				level.Step ();
-				//level.GetWave ().Step ();
-				//level._ball.stuckmanager.Step ();
+				PauseControl ();
 			}
 	
 		}
 
-		public void SetState(States state){
-			if (_state == state) {
-				//return;
+		void PauseControl(){
+			if (Input.GetKeyDown (Key.P)) {
+				if (_stepstate == StepStates.None) {
+					_stepstate = StepStates.All;
+				} else {
+					_stepstate = StepStates.None;
+				}
+			}
+			if (_stepstate != StepStates.None) {
+				level.Step ();
 			}
 
+		}
+
+		public void SetState(States state){
+			_state = state;
 			SoundManager.StopMusic ();
 			SoundManager.StopSound ();
 
-			_state = state;
-			/*
-			for (int i = 0; i < GetChildren().Count; i++) {	
-				if (GetChildren () [i] is Level ||	//remove level
-					GetChildren () [i] is Menu  ||	//remove menu
-					GetChildren () [i] is Highscores//remove highscore menu
-				){
-					GetChildren () [i].Destroy ();
-					//RemoveChild (GetChildren () [i]);
-				}
-			}*/
 			if (level != null) {
 				level.Destroy ();
 			}
@@ -95,11 +79,10 @@ namespace GXPEngine
 			if (highscores != null) {
 				highscores.Destroy ();
 			}
-			StartState (_state);
+			StartState (state);
 		}
 			
 		void StartState(States state){
-			//GameObject statevar = new GameObject();
 			switch (state) {
 			case States.MainMenu:
 				menu = new Menu (this);
@@ -114,7 +97,6 @@ namespace GXPEngine
 				AddChild (highscores);
 				break;
 			}
-			//AddChild (statevar);
 		}
 	}
 
@@ -124,6 +106,12 @@ namespace GXPEngine
 		MainMenu,
 		Level,
 		Highscores
+	}
+	public enum StepStates
+	{
+		All,
+		None,
+		MusicOnly
 	}
 
 }
