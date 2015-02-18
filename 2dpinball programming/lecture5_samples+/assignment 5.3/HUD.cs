@@ -36,7 +36,7 @@ namespace GXPEngine
 		readonly SolidBrush redBrush= new SolidBrush(Color.Red);
 
 		Rectangle rec = new Rectangle (500,30,300,20);
-		int maxhealth = 50;
+		public int maxhealth = 100;
 		Canvas _canvas;
 
 		public HUD ()

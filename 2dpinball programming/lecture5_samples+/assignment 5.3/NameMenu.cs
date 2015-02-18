@@ -90,10 +90,12 @@ namespace GXPEngine
 
 			if (state == NameOwner.writing) {
 				_canvas.graphics.DrawString (name, font, purpbrush, 1000, 230);
-				for (int i = 65; i < 90; i++) {
-					if (Input.GetKeyDown (i)) {
-						currentletter = i;
-						name += Alphabet [i - 65];
+				if (name == null || name.Length < 8) {
+					for (int i = 65; i < 90; i++) {
+						if (Input.GetKeyDown (i)) {
+							currentletter = i;
+							name += Alphabet [i - 65];
+						}
 					}
 				}
 				if (Input.GetKeyDown (Key.SPACE)) {

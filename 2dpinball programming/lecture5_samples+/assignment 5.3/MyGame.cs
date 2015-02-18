@@ -51,9 +51,9 @@ namespace GXPEngine
 			//SetState(States.MainMenu);
 			SetState (States.MainMenu);	// start at "Level"
 			//targetFps = 5; //--test mode---
-			player1name = namelist [0];
-			player2name = namelist [0];
-			teamname = namelist [0];
+			//player1name = namelist [0];
+			//player2name = namelist [0];
+			//teamname = namelist [0];
 		}
 	
 	
@@ -138,8 +138,12 @@ namespace GXPEngine
 				AddChild (menu);
 				break;
 			case States.Level:
-				level = new Level (this);
-				AddChild (level);
+				if (player1name == null || player2name == null || teamname == null) {
+					SetState (States.NameMenu);
+				} else {
+					level = new Level (this);
+					AddChild (level);
+				}
 				break;
 			case States.Highscores:
 				highscoremenu = new HighscoreMenu (this);

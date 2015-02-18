@@ -64,7 +64,14 @@ namespace GXPEngine
 		Sprite blackhole;
 
 
-
+		void GameOver(){
+			_game._stepstate = StepStates.None;
+			_game.scorelist.Add (new Score (_player1.score, _game.player1name));
+			_game.scorelist.Add (new Score (_player2.score, _game.player2name));
+			_game.scorelistteam.Add (new Score (_player2.score + _player1.score, _game.teamname));
+			_game.SAVE ();
+			_game.SetState (States.Highscores);
+		}
 
 		public void Step(){
 			Player1Control ();
@@ -76,15 +83,24 @@ namespace GXPEngine
 			wave.Step ();
 			blackholeStep ();
 			ExitStep ();
-			if (_ball.y > height) {
-				_game._stepstate = StepStates.None;
-				_game.scorelist.Add (new Score (_player1.score, _game.player1name));
-				_game.scorelist.Add (new Score (_player2.score, _game.player2name));
-				_game.scorelistteam.Add (new Score (_player2.score + _player1.score, _game.teamname));
-				_game.SAVE ();
-				_game.SetState (States.Highscores);
-			}
+			CheckBallHeight ();
+			CheckBar ();
 
+		}
+		void CheckBallHeight(){
+			if (_ball.y > height) {
+				Damage += _hud.maxhealth / 4;
+				_hud.UpdateHUD (Damage,_player1.score,_player2.score);
+				buttonmasher.Start ();
+
+				_ball.y = 2000;
+				_ball.velocity = new Vec2 (0, -10);
+			}
+		}
+		void CheckBar(){
+			if (Damage >= _hud.maxhealth) {
+				GameOver ();
+			}
 		}
 		void ExitStep(){
 			if (Input.GetKeyDown (Key.ESCAPE)) {
@@ -194,7 +210,7 @@ namespace GXPEngine
 			//-------line that represents paddle of player 1--------
 			matrixline1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
 			matrixline1.bounciness = _player1.Bounce;
-		//	AddChild (matrixline1);
+			//AddChild (matrixline1);
 			_lines.Add (matrixline1);
 			matrixvec1 = new Vec2 (0, 0);
 			//---------paddle 1 line caps------------------------
@@ -208,7 +224,7 @@ namespace GXPEngine
 			//-------line that represents paddle of player 2--------
 			matrixline2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
 			matrixline2.bounciness = _player2.Bounce;
-		//	AddChild (matrixline2);
+			//AddChild (matrixline2);
 			_lines.Add (matrixline2);
 			matrixvec2 = new Vec2 (0, 0);
 			//---------paddle 2 line caps--------------------

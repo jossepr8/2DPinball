@@ -34,7 +34,7 @@ namespace GXPEngine
 			StartAngle = Properties.PaddleStartAngle;
 			MaxAngle = Properties.PaddleMaxAngle;
 			Bounce = Properties.PaddleBounce;
-			score = 2000;
+			score = 2500;
 			//SetScaleXY (1, 5);
 			//scaleY = 5;
 		}
