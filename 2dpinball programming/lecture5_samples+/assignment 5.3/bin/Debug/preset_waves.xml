@@ -12,6 +12,7 @@
 <paddlewidth> 250 </paddlewidth>
 <ballsize> 250 </ballsize>
 <enemygravity> 1 </enemygravity>
+<wavemusic> Wave1.wav </wavemusic> 
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -30,6 +31,7 @@
 <paddlewidth> 200 </paddlewidth>
 <ballsize> 200 </ballsize>
 <enemygravity> 2 </enemygravity>
+<wavemusic> Wave2.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -49,6 +51,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave3.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -68,6 +71,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave4.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -86,6 +90,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave5.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
@@ -104,6 +109,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave6.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -122,6 +128,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave7.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,1,0,0,1,0,0,0 </row>
@@ -140,6 +147,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 2 </enemygravity>
+<wavemusic> Wave8.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,1,0,0,0,0,0,0,1,0 </row>
 <row> 0,0,1,0,0,0,0,1,0,0 </row>
@@ -158,6 +166,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave9.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
@@ -176,6 +185,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave10.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -194,6 +204,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave11.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,1,1,1,1,1,1,0,0 </row>
@@ -212,6 +223,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -230,6 +242,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,1,0,0,0,0,0,0,0 </row>
 <row> 0,1,1,1,0,0,0,0,0,0 </row>
 <row> 0,0,1,0,0,0,0,0,0,0 </row>
@@ -248,6 +261,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
@@ -266,6 +280,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -284,6 +299,7 @@
 <paddlewidth> 250 </paddlewidth>
 <ballsize> 250 </ballsize>
 <enemygravity> 1 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 1,0,1,0,0,1,0,0,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 1,0,0,0,1,0,0,1,0,1 </row>
@@ -302,6 +318,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,1,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,1,0,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
@@ -320,6 +337,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -338,6 +356,7 @@
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,1,1,0 </row>
 <row> 0,0,1,0,0,0,0,1,1,0 </row>
 <row> 0,0,1,0,0,0,0,0,0,0 </row>
@@ -356,6 +375,7 @@
 <paddlewidth> 300 </paddlewidth>
 <ballsize> 250 </ballsize>
 <enemygravity> 2 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,1,1,1,1,0,0,0 </row>
@@ -374,6 +394,7 @@
 <paddlewidth> 200 </paddlewidth>
 <ballsize> 200 </ballsize>
 <enemygravity> 1 </enemygravity>
+<wavemusic> Wave12.mp3 </wavemusic>
 <row> 0,1,0,0,0,0,0,0,0,0 </row>
 <row> 0,1,0,0,0,0,0,0,0,0 </row>
 <row> 0,1,0,0,0,0,1,1,1,1 </row>

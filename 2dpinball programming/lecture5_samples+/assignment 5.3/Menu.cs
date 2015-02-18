@@ -25,7 +25,6 @@ namespace GXPEngine
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
 
-			SoundManager.Playmusic ("Testmusic.wav");
 
 			_start = new AnimSprite ("startgame.png",2,1);
 			_start.SetXY (460, 200);

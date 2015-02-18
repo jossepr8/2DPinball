@@ -46,6 +46,8 @@ namespace GXPEngine
 		Sprite background;
 		Wave wave;
 
+		public string currentmusic;
+
 		public LineSegment matrixline1;
 		public LineSegment matrixline2;
 		Vec2 matrixvec1;
@@ -79,7 +81,7 @@ namespace GXPEngine
 				_game.SAVE ();
 				_game.SetState (States.Highscores);
 			}
-		
+
 		}
 
 		public Level (MyGame game)
@@ -116,6 +118,8 @@ namespace GXPEngine
 
 			buttonmasher = new ButtonMasher (_game,this);
 			buttonmasher.Start ();
+
+			//SoundManager.Playmusic ("Wave1.mp3");
 		}
 
 		void MakeWalls(){
@@ -343,8 +347,10 @@ namespace GXPEngine
 			linecap21.Step ();
 			linecap22.Step ();
 		}
-			
 
-
+		public void updateMusic(string music)
+		{
+			SoundManager.Playmusic (music);
+		}
 	}
 }

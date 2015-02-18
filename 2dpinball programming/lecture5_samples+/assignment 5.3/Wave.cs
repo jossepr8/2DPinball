@@ -9,6 +9,7 @@ namespace GXPEngine
 		Level _level;
 		MyGame _game;
 
+
 		static List<int[,]> wavelist = new List<int[,]>();
 		static List<PresetWave> preset_wavelist = new List<PresetWave> ();
 		static List<int> enemycountlist = new List<int> ();
@@ -62,6 +63,7 @@ namespace GXPEngine
 			_level._player1.scaleX = presetwave.paddlewidth / 100;
 			_level._player2.scaleX = presetwave.paddlewidth / 100;
 			_level._ball.SetScaleXY (presetwave.ballsize/100, presetwave.ballsize/100);
+			_level.updateMusic(presetwave.wavemusic);
 			int[,] wave = presetwave.wave;
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
@@ -109,6 +111,7 @@ namespace GXPEngine
 					presetwave.paddlewidth = Wave.readfloat ("paddlewidth");
 					presetwave.ballsize = Wave.readfloat ("ballsize");
 					presetwave.enemygravity = Wave.readfloat ("enemygravity");
+					presetwave.wavemusic = Wave.readstring ("wavemusic");
 					for (int a = 0; a < 10; a++) {
 						reader.ReadStartElement ("row");
 						string[] cols = reader.ReadContentAsString ().Split (',');
