@@ -87,6 +87,10 @@ namespace GXPEngine
 			if (Input.GetKeyDown (Key.N)) {
 				SetState (States.NameMenu);
 			}
+
+
+
+
 	
 		}
 

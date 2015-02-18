@@ -20,7 +20,6 @@ namespace GXPEngine
 		int selectednumber = 0;
 		List<AnimSprite> buttonlist = new List<AnimSprite>();
 
-		NameMenu namemenu;
 
 		public Menu (MyGame game)
 		{	
@@ -92,7 +91,7 @@ namespace GXPEngine
 		void Update()
 		{	
 			if (Input.GetKeyDown (Key.ESCAPE)) {
-				_game.SetState (States.MainMenu);
+				Environment.Exit (0);
 			}
 			_ball.MenuStep ();
 			//namemenu.Step ();

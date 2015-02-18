@@ -78,9 +78,9 @@ namespace GXPEngine
 			ExitStep ();
 			if (_ball.y > height) {
 				_game._stepstate = StepStates.None;
-				_game.scorelist.Add (new Score (_player1.score, "PLAYER1"));
-				_game.scorelist.Add (new Score (_player2.score, "PLAYER2"));
-				_game.scorelistteam.Add (new Score (_player2.score + _player1.score, "TEAM"));
+				_game.scorelist.Add (new Score (_player1.score, _game.player1name));
+				_game.scorelist.Add (new Score (_player2.score, _game.player2name));
+				_game.scorelistteam.Add (new Score (_player2.score + _player1.score, _game.teamname));
 				_game.SAVE ();
 				_game.SetState (States.Highscores);
 			}

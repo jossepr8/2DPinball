@@ -2,6 +2,14 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>2000</Score>
+      <Name>QWEQWEQ</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>M</Name>
+    </highscore>
+    <highscore>
       <Score>1043</Score>
       <Name>willem</Name>
     </highscore>
@@ -33,16 +41,12 @@
       <Score>1024</Score>
       <Name>PLAYER1</Name>
     </highscore>
-    <highscore>
-      <Score>1019</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1016</Score>
-      <Name>josse</Name>
-    </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>4000</Score>
+      <Name>NNN</Name>
+    </highscore>
     <highscore>
       <Score>2065</Score>
       <Name>TEAM</Name>
@@ -77,10 +81,6 @@
     </highscore>
     <highscore>
       <Score>2025</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2024</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>
