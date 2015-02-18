@@ -6,6 +6,14 @@
       <Name>PLAYER1</Name>
     </highscore>
     <highscore>
+      <Score>126</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>123</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
       <Score>117</Score>
       <Name>PLAYER1</Name>
     </highscore>
@@ -30,19 +38,15 @@
       <Name>PLAYER1</Name>
     </highscore>
     <highscore>
-      <Score>104</Score>
+      <Score>107</Score>
       <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>103</Score>
-      <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>103</Score>
-      <Name>PLAYER1</Name>
     </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>249</Score>
+      <Name>TEAM</Name>
+    </highscore>
     <highscore>
       <Score>244</Score>
       <Name>TEAM</Name>
@@ -64,23 +68,19 @@
       <Name>TEAM</Name>
     </highscore>
     <highscore>
+      <Score>210</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>208</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
       <Score>204</Score>
       <Name>TEAM</Name>
     </highscore>
     <highscore>
       <Score>203</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>201</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>200</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>200</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>
