@@ -13,6 +13,7 @@ namespace GXPEngine
 		float yvalue2 = 120;
 
 		string title;
+		Sprite _background = new Sprite ("mainmenubackground.png");
 
 		Canvas canvas = new Canvas (1280,720);
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
@@ -28,6 +29,7 @@ namespace GXPEngine
 		{
 			highscores = new Highscores (game);
 			//highscores.Read ();
+			AddChild (_background);
 
 			_esc = new Sprite ("esc.png");
 			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);

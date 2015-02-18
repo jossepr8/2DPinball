@@ -21,6 +21,7 @@ namespace GXPEngine
 		Font font = new Font ("Broadway",18,FontStyle.Regular);
 		readonly SolidBrush brushred = new SolidBrush (purpleish);
 
+
 		Canvas canvas = new Canvas (1280,720);
 		 
 		public Manual (MyGame game)
