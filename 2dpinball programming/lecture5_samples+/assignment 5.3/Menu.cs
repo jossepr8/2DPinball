@@ -78,7 +78,7 @@ namespace GXPEngine
 
 		void Update()
 		{	
-			namemenu.Step ();
+			//namemenu.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 
 			{

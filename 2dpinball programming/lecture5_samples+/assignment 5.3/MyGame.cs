@@ -54,9 +54,11 @@ namespace GXPEngine
 			scorelistteam.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
 		}
 		public void SortNames(){
-			namelist.Sort ((name1, name2) => name1.CompareTo (name2));
+		//	namelist.Sort ((name1, name2) => name1.CompareTo (name2));
+			namelist.Sort ();
 		}
 		void Update () {
+			Console.WriteLine (namelist.Count);
 			//Console.WriteLine (GetChildren ().Count);
 			if (level != null) 
 			{
