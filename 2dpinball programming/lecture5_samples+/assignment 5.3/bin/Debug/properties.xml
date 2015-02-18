@@ -9,7 +9,7 @@
 
 <Paddle>
 	<Speed> 	2 </Speed>
-	<Bounce> 	1.3 </Bounce>
+	<Bounce> 	3.3 </Bounce>
 	<StartAngle> 	25 </StartAngle>
 	<MaxAngle> 	60 </MaxAngle>
 </Paddle>

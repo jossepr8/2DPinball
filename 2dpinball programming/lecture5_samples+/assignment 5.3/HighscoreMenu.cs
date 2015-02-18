@@ -48,7 +48,7 @@ namespace GXPEngine
 			}
 
 			foreach (string name in _game.namelist) {
-				Console.WriteLine (name);
+				//Console.WriteLine (name);
 			}
 		
 			//Console.Beep ();

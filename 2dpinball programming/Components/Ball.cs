@@ -17,13 +17,13 @@ namespace GXPEngine
 		float Frame = 1;
 		public AnimSprite overlay2;
 		public AnimSprite overlay1;
-		Level _level;
+		//Level _level;
 		public StuckManager stuckmanager;
 
-		public Ball (Level level, int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
+		public Ball ( int pRadius, Vec2 pPosition = null, Vec2 pVelocity = null, Color? pColor = null):base (pRadius*2, pRadius*2)
 		{
 			//stuckmanager = new StuckManager (this);
-			_level = level;
+			//_level = level;
 			overlay1 = new AnimSprite ("Electric Swirl.png",2,1);
 			overlay1.SetOrigin (width / 2, height / 2);
 			overlay1.SetFrame (0);
@@ -83,6 +83,21 @@ namespace GXPEngine
 			//stuckmanager.Step ();
 			//_level.CheckCollision ();
 			//draw ();
+		}
+
+		public void MenuStep(){
+			if (velocity.Length () > Properties.BallMaxSpeed) {
+				velocity.Scale (Properties.BallMaxSpeed/velocity.Length());
+			} 
+			overlay1.rotation-=10;
+			if (position == null || velocity == null)
+				return;
+
+			position.Add (velocity);
+			//if(!skipGravity) velocity.Add (Gravity);
+			x = position.x;
+			y = position.y;
+			rotation += velocity.Length() + 1;
 		}
 
 		public Color ballColor {

@@ -15,12 +15,17 @@ namespace GXPEngine
 		Menu menu;
 		HighscoreMenu highscoremenu;
 		Manual manual;
+		NameMenu namemenu;
 		public List<Score> scorelist;
 		public List<Score> scorelistteam;
 		public List<string> namelist;
 
 		public StepStates _stepstate;
 		public States _state;
+
+		public string player1name;
+		public string player2name;
+		public string teamname;
 
 
 		static void Main() {
@@ -58,8 +63,11 @@ namespace GXPEngine
 			namelist.Sort ();
 		}
 		void Update () {
-			Console.WriteLine (namelist.Count);
+			//Console.WriteLine (namelist.Count);
 			//Console.WriteLine (GetChildren ().Count);
+			if (_state == States.NameMenu) {
+				namemenu.Step ();
+			}
 			if (level != null) 
 			{
 				PauseControl ();
@@ -72,6 +80,9 @@ namespace GXPEngine
 			}
 			if (Input.GetKeyDown (Key.H)) {
 				SetState (States.Highscores);
+			}
+			if (Input.GetKeyDown (Key.N)) {
+				SetState (States.NameMenu);
 			}
 	
 		}
@@ -107,6 +118,9 @@ namespace GXPEngine
 			if (manual != null) {
 				manual.Destroy ();
 			}
+			if (namemenu != null) {
+				namemenu.Destroy ();
+			}
 			StartState (state);
 		}
 			
@@ -128,6 +142,10 @@ namespace GXPEngine
 				manual = new Manual (this);
 				AddChild (manual);
 				break;
+			case States.NameMenu:
+				namemenu = new NameMenu (this);
+				AddChild (namemenu);
+				break;
 			}
 		}
 	}
@@ -138,7 +156,8 @@ namespace GXPEngine
 		MainMenu,
 		Level,
 		Highscores,
-		Manual
+		Manual,
+		NameMenu
 	}
 	public enum StepStates
 	{

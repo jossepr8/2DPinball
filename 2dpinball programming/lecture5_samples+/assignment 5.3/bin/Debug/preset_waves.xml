@@ -11,7 +11,7 @@
 <messagetimer> 1 </messagetimer>
 <paddlewidth> 250 </paddlewidth>
 <ballsize> 250 </ballsize>
-<enemygravity> 1 </enemygravity>
+<enemygravity> 10 </enemygravity>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
