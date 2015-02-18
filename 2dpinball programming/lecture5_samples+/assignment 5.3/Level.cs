@@ -90,7 +90,7 @@ namespace GXPEngine
 
 			colmanager = new CollisionManager2(this);
 
-			background = new Sprite ("nebula.png");
+			background = new Sprite ("nebula2.png");
 			background.SetScaleXY (0.75f,0.75f);
 			AddChild (background);
 
@@ -232,7 +232,7 @@ namespace GXPEngine
 			AddChild (enemy);
 			enemylist.Add (enemy);
 			BasicBall ball = new BasicBall (25, new Vec2 (0, 0));
-			ball.SetColor (0, 200, 0);
+			ball.SetColor (0, 0, 0);
 			AddChild (ball);
 			_enemyballs.Add (ball);
 		}

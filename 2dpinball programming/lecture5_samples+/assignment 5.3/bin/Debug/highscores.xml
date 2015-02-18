@@ -2,47 +2,79 @@
 <Highscores>
   <Solo>
     <highscore>
-      <Score>100</Score>
+      <Score>117</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>117</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>114</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>113</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>104</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>103</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>103</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>103</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>101</Score>
       <Name>PLAYER1</Name>
     </highscore>
     <highscore>
       <Score>100</Score>
       <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>100</Score>
-      <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>100</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>20</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
     </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>227</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>221</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>220</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>204</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>203</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>200</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>200</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>200</Score>
+      <Name>TEAM</Name>
+    </highscore>
     <highscore>
       <Score>200</Score>
       <Name>TEAM</Name>
@@ -50,38 +82,6 @@
     <highscore>
       <Score>100</Score>
       <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>100</Score>
-      <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>20</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYER2</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>PLAYERs</Name>
     </highscore>
   </Team>
 </Highscores>

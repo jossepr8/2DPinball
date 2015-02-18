@@ -1,7 +1,7 @@
 <preset_waves>
 
 <Config>
-<number_of_waves> 3 </number_of_waves>
+<number_of_waves> 21 </number_of_waves>
 </Config>
 
 <Waves>
@@ -61,6 +61,330 @@
 <row> 0,0,1,1,1,0,0,0,0,0 </row>
 </Wave>
 
+
+<Wave>
+<start_message> wave four </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> the line </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> the lazy line </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> =| </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> X </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 2 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,0,0,0,0,0,0,1,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,0,0,0,0,0,0,1,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> boxes </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 1,1,0,0,0,0,0,0,0,0 </row>
+<row> 1,1,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,1,1,0 </row>
+<row> 0,0,0,0,0,0,0,1,1,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,1,0,0,0,0,0,0,0,0 </row>
+<row> 1,1,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> O </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> the box </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> bowl </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,0,0,0,0,0,0,0,0,1 </row>
+<row> 0,1,0,0,0,0,0,0,1,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> plus plus plus </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,1,0,0,0,0,0,0,0 </row>
+<row> 0,1,1,1,0,0,0,0,0,0 </row>
+<row> 0,0,1,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,1,0,0,0 </row>
+<row> 0,0,1,0,0,1,1,1,0,0 </row>
+<row> 0,1,1,1,0,0,1,0,0,0 </row>
+<row> 0,0,1,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,0,0,1,1,1,0 </row>
+<row> 0,0,0,0,0,0,0,1,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> the gap </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> 3x box </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,1,0,1,1,0,1,1,0 </row>
+<row> 0,1,1,0,1,1,0,1,1,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> minefield </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 250 </paddlewidth>
+<ballsize> 250 </ballsize>
+<enemygravity> 1 </enemygravity>
+<row> 1,0,1,0,0,1,0,0,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,0,0,0,1,0,0,1,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,0,1,0,0,1,0,0,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,0,0,0,1,0,0,1,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,0,1,0,0,1,0,0,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> banana </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,0,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,1,1,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,1,1,0,0,0 </row>
+<row> 0,0,0,0,0,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> taco </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,1,1,1,1,1,1,1,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> sticks and stones </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,1,1,0 </row>
+<row> 0,0,1,0,0,0,0,1,1,0 </row>
+<row> 0,0,1,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,1,1,0,1,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,1,1,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> hat </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 300 </paddlewidth>
+<ballsize> 250 </ballsize>
+<enemygravity> 2 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> SNAKES! </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 200 </paddlewidth>
+<ballsize> 200 </ballsize>
+<enemygravity> 1 </enemygravity>
+<row> 0,1,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,0,0,0,0,0,0,0,0 </row>
+<row> 0,1,0,0,0,0,1,1,1,1 </row>
+<row> 0,1,0,0,0,0,1,0,0,0 </row>
+<row> 0,1,1,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,1,1,0,0,1,1,1 </row>
+<row> 0,0,0,1,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,0,0,0,0 </row>
+</Wave>
 
 
 

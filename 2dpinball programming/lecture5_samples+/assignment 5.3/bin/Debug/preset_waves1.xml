@@ -1,0 +1,68 @@
+<preset_waves>
+
+<Config>
+<number_of_waves> 3 </number_of_waves>
+</Config>
+
+<Waves>
+
+<Wave>
+<start_message> first wave </start_message>
+<messagetimer> 1 </messagetimer>
+<paddlewidth> 250 </paddlewidth>
+<ballsize> 250 </ballsize>
+<enemygravity> 1 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,1,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> second wave </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 200 </paddlewidth>
+<ballsize> 200 </ballsize>
+<enemygravity> 2 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,1,0,0,0,0 </row>
+<row> 0,0,1,0,0,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,1,0,0,0,0 </row>
+</Wave>
+
+
+<Wave>
+<start_message> third wave </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 150 </paddlewidth>
+<ballsize> 150 </ballsize>
+<enemygravity> 3 </enemygravity>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,0,0,0,0,0 </row>
+</Wave>
+
+
+
+
+</Waves>
+</preset_waves>

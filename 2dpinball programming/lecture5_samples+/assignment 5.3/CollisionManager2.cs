@@ -17,7 +17,9 @@ namespace GXPEngine
 			}
 			Vec2 differenceVector = _level._ball.position.Clone ().Sub (ball.position);
 			if (differenceVector.Length () <= ball.radius + _level._ball.radius * _level._ball.scaleX) {
-				if (checkonly) {
+				if (checkonly) 
+				{
+					HitBall (ball);
 				} else {
 					Reflect (differenceVector,ball);
 				}
@@ -68,8 +70,6 @@ namespace GXPEngine
 				HitPlayer1 ();
 			} else if (ball.Equals (_level.linecap21) || ball.Equals (_level.linecap22)) {
 				HitPlayer2 ();
-			} else {
-				HitBall (ball);
 			}
 		}
 		void HitWall(){
@@ -152,8 +152,10 @@ namespace GXPEngine
 				}
 			}
 
-			foreach (BasicBall ball in _level._enemyballs) {
-				if (CheckCollision (ball)) {
+			foreach (BasicBall ball in _level._enemyballs) 
+			{
+				if (CheckCollision (ball,true)) 
+				{
 					return;
 				}
 			}
