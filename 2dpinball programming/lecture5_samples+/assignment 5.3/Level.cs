@@ -30,7 +30,7 @@ namespace GXPEngine
 		Canvas _layer1canvas;
 		int width;
 		int height;
-		Sprite blackhole;
+
 		public HUD _hud;
 
 		public Flipper _player1;
@@ -46,6 +46,8 @@ namespace GXPEngine
 		Sprite background;
 		Wave wave;
 
+		public string currentmusic;
+
 		public LineSegment matrixline1;
 		public LineSegment matrixline2;
 		Vec2 matrixvec1;
@@ -59,7 +61,7 @@ namespace GXPEngine
 
 		public Players _touched = Players.none;
 
-		Vec2 _middle;
+
 
 
 		public void Step(){
@@ -73,23 +75,17 @@ namespace GXPEngine
 
 			if (_ball.y > height) {
 				_game._stepstate = StepStates.None;
-				_game.scorelist.Add (new Score (_player1.score, "player1"));
-				_game.scorelist.Add (new Score (_player2.score, "player2"));
+				_game.scorelist.Add (new Score (_player1.score, "PLAYER1"));
+				_game.scorelist.Add (new Score (_player2.score, "PLAYER2"));
 				_game.scorelistteam.Add (new Score (_player2.score + _player1.score, "TEAM"));
 				_game.SAVE ();
 				_game.SetState (States.Highscores);
 			}
 
-			blackhole.rotation-=10;
-			//blackhole.SetScaleXY (blackhole.scaleX + 0.001f,blackhole.scaleY + 0.001f);
-
-		
 		}
 
 		public Level (MyGame game)
 		{
-			_middle = new Vec2 (width / 2, 0);
-
 			_lines = new List<LineSegment> ();
 			_balls = new List<BasicBall> ();
 			_enemyballs = new List<BasicBall> ();
@@ -99,10 +95,6 @@ namespace GXPEngine
 			background = new Sprite ("nebula2.png");
 			background.SetScaleXY (0.75f,0.75f);
 			AddChild (background);
-			blackhole = new Sprite ("blackhole.png");
-			AddChild (blackhole);
-			blackhole.SetXY (600, 100);
-			blackhole.SetOrigin (blackhole.width / 2, blackhole.height / 2);
 
 			_game = game;
 			width = _game.width;
@@ -126,6 +118,8 @@ namespace GXPEngine
 
 			buttonmasher = new ButtonMasher (_game,this);
 			buttonmasher.Start ();
+
+			//SoundManager.Playmusic ("Wave1.mp3");
 		}
 
 		void MakeWalls(){
@@ -140,7 +134,7 @@ namespace GXPEngine
 		}
 		void MakeBall(){
 			//--------------------------------ball-------------------------------------------
-			_ball = new Ball ( 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
+			_ball = new Ball (this, 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
 				position = new Vec2 (width/2, height/2)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(5);	//start velocity
@@ -353,8 +347,10 @@ namespace GXPEngine
 			linecap21.Step ();
 			linecap22.Step ();
 		}
-			
 
-
+		public void updateMusic(string music)
+		{
+			SoundManager.Playmusic (music);
+		}
 	}
 }

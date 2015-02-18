@@ -6,32 +6,25 @@ namespace GXPEngine
 	public class Menu : GameObject
 	{
 
-		List<LineSegment> _lines;
 		MyGame _game;
 		AnimSprite _start;
 		AnimSprite _highscore;
 		AnimSprite _manual;
 
 		Sprite _background;
-		Ball _ball;
+
 
 		int selectednumber = 0;
 		List<AnimSprite> buttonlist = new List<AnimSprite>();
-		//CollisionManager2 colmanager;
 
-		//NameMenu namemenu;
+		NameMenu namemenu;
 
 		public Menu (MyGame game)
 		{	
-
-			_lines = new List<LineSegment> ();
 			_game = game;
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
 
-			_ball = new Ball (30, new Vec2 (500, 300)){ velocity = new Vec2 (5, 5) };
-			AddChild (_ball);
-			SoundManager.Playmusic ("Testmusic.wav");
 
 			_start = new AnimSprite ("startgame.png",2,1);
 			_start.SetXY (460, 200);
@@ -47,25 +40,10 @@ namespace GXPEngine
 			_manual.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
-			//namemenu = new NameMenu(_game);
-			//AddChild (namemenu);
-			//MakeWalls ();
+			namemenu = new NameMenu(_game);
+			AddChild (namemenu);
 		}
-		void MakeWalls(){
-			//-----------------------outer walls----------------------
-			AddLine (new Vec2 (0, 0), new Vec2 (_game.width, 0));				//top
-			AddLine (new Vec2 (_game.width, 0), new Vec2 (_game.width, _game.height));		//right
-			AddLine (new Vec2 (_game.width, _game.height), new Vec2 (0, _game.height));		//bottom
-			AddLine (new Vec2 (0, _game.height), new Vec2 (0,0));				//left
-			//AddLine (new Vec2 (width, 0), new Vec2 (width, height/2));		//right2
-			//AddLine (new Vec2 (0, height/2), new Vec2 (0,0));				//left2
-			//--------------------------------------------------------
-		}
-		void AddLine (Vec2 start, Vec2 end, float bounciness = 1) {
-			LineSegment line = new LineSegment (start, end, 0xff00ff00, 4, false, bounciness);
-			AddChild (line);
-			_lines.Add (line);
-		}
+
 		void AddButtons()
 		{
 			AddChild (_start);
@@ -100,8 +78,6 @@ namespace GXPEngine
 		void Update()
 		{	
 			//namemenu.Step ();
-			_ball.MenuStep ();
-			//colmanager.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 
 			{

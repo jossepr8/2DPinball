@@ -24,7 +24,13 @@ namespace GXPEngine
 			get;
 			set;
 		}
+
 		public float enemygravity {
+			get;
+			set;
+		}
+
+		public string wavemusic {
 			get;
 			set;
 		}
