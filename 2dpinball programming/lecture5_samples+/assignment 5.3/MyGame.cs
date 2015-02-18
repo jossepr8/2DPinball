@@ -52,8 +52,8 @@ namespace GXPEngine
 			SetState (States.MainMenu);	// start at "Level"
 			//targetFps = 5; //--test mode---
 			player1name = namelist [0];
-			player2name = namelist [1];
-			teamname = namelist [2];
+			player2name = namelist [0];
+			teamname = namelist [0];
 		}
 	
 	

@@ -19,13 +19,18 @@ namespace GXPEngine
 		NameOwner state;
 		int currentnumber = 0;
 
-
+		Sprite arrow = new Sprite("arrow.png");
 
 
 		public NameMenu (MyGame game)
 		{ 
 			AddChild (background);
+			AddChild (arrow);
+			arrow.SetScaleXY (0.5f,0.5f);
+			arrow.y = 100;
+			//SetState (NameOwner.player1);
 			state = NameOwner.player1;
+			arrow.x = 120;
 			_game = game;
 			_canvas = new Canvas (2000, 1000);
 			AddChild (_canvas);
@@ -49,12 +54,18 @@ namespace GXPEngine
 			switch (namer) {
 			case NameOwner.player1:
 				ResetCounter (_game.player1name);
+				arrow.x = 120;
 				break;
 			case NameOwner.player2:
 				ResetCounter (_game.player2name);
+				arrow.x = 420;
 				break;
 			case NameOwner.team:
 				ResetCounter (_game.teamname);
+				arrow.x = 720;
+				break;
+			case NameOwner.writing:
+				arrow.x = 1020;
 				break;
 			}
 		}
