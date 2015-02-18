@@ -51,6 +51,9 @@ namespace GXPEngine
 			//SetState(States.MainMenu);
 			SetState (States.MainMenu);	// start at "Level"
 			//targetFps = 5; //--test mode---
+			player1name = namelist [0];
+			player2name = namelist [1];
+			teamname = namelist [2];
 		}
 	
 	
@@ -88,7 +91,7 @@ namespace GXPEngine
 		}
 
 		void PauseControl(){
-			if (Input.GetKeyDown (Key.ESCAPE)) {
+			if (Input.GetKeyDown (Key.P)) {
 				if (_stepstate == StepStates.None) {
 					_stepstate = StepStates.All;
 				} else {
