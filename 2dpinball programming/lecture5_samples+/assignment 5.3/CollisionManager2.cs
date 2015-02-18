@@ -10,7 +10,7 @@ namespace GXPEngine
 		{
 			_level = level;
 		}
-
+		//aaa
 		bool CheckCollision(BasicBall ball, bool checkonly = false){
 			//if (_level._ball == null) {
 			//	return false;
