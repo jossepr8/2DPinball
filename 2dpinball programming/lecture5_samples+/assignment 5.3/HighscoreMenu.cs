@@ -64,9 +64,10 @@ namespace GXPEngine
 		void Update()
 		{
 
-			if (Input.GetKeyDown (Key.ESCAPE)) {
+			if (Input.GetKeyDown(Key.ESCAPE))
+			{
 				_game.SetState (States.MainMenu);
-			}
+			};
 		}
 	}
 }
