@@ -1,19 +1,20 @@
 ﻿<Properties StartupItem="sample.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Level.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MyGame.cs">
     <Files>
-      <File FileName="MyGame.cs" Line="1" Column="1" />
-      <File FileName="Menu.cs" Line="1" Column="1" />
-      <File FileName="Level.cs" Line="1" Column="1" />
-      <File FileName="..\..\gxpengine\sources\gxpengine\Core\Transformable.cs" Line="1" Column="1" />
-      <File FileName="Vec2.cs" Line="1" Column="1" />
-      <File FileName="Flipper.cs" Line="1" Column="1" />
-      <File FileName="..\..\Components\LineSegment.cs" Line="1" Column="1" />
-      <File FileName="PresetWave.cs" Line="1" Column="1" />
-      <File FileName="Properties.cs" Line="1" Column="1" />
-      <File FileName="Message.cs" Line="1" Column="1" />
-      <File FileName="CollisionManager2.cs" Line="1" Column="1" />
-      <File FileName="Enemy.cs" Line="1" Column="1" />
+      <File FileName="MyGame.cs" Line="3" Column="3" />
+      <File FileName="Menu.cs" Line="24" Column="24" />
+      <File FileName="Level.cs" Line="16" Column="16" />
+      <File FileName="CollisionManager2.cs" Line="8" Column="8" />
+      <File FileName="Enemy.cs" Line="2" Column="2" />
+      <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\Highscores.cs" Line="50" Column="50" />
+      <File FileName="HighscoreMenu.cs" Line="34" Column="34" />
+      <File FileName="NameMenu.cs" Line="34" Column="34" />
+      <File FileName="SoundManager.cs" Line="30" Column="30" />
+      <File FileName="Wave.cs" Line="1" Column="1" />
+      <File FileName="PresetWave.cs" Line="4" Column="4" />
+      <File FileName="Flipper.cs" Line="14" Column="14" />
+      <File FileName="HUD.cs" Line="10" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
