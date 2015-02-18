@@ -12,9 +12,9 @@ namespace GXPEngine
 		}
 
 		bool CheckCollision(BasicBall ball, bool checkonly = false){
-			if (_level._ball == null) {
-				return false;
-			}
+			//if (_level._ball == null) {
+			//	return false;
+			//}
 			Vec2 differenceVector = _level._ball.position.Clone ().Sub (ball.position);
 			if (differenceVector.Length () <= ball.radius + _level._ball.radius * _level._ball.scaleX) {
 				if (checkonly) 
@@ -66,6 +66,7 @@ namespace GXPEngine
 				}
 			}
 			_level._ball.velocity.Reflect(normal,1.3f);
+			//_level._ball.velocity.Add (_level._ball.position.Clone ().Sub (_middle).Scale (0.2f));
 			if (ball.Equals (_level.linecap11) || ball.Equals (_level.linecap12)) {
 				HitPlayer1 ();
 			} else if (ball.Equals (_level.linecap21) || ball.Equals (_level.linecap22)) {
@@ -117,6 +118,7 @@ namespace GXPEngine
 			float ballDistance = differenceVector.Dot (lineNormal);
 			float ballDistanceNormal = differenceVector.Dot (lineNormalNormal);
 			_level._ball.velocity.Reflect (lineNormal, line.bounciness);
+	
 			if (line.Equals (_level.matrixline1)) {
 				HitPlayer1 ();
 			} else if (line.Equals (_level.matrixline2)) {
