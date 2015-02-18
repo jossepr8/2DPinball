@@ -13,7 +13,7 @@ namespace GXPEngine
 	
 		public SizeF size;
 
-		public Message (int fps, string message, float timer,float fontsize = 50)
+		public Message (int fps, string message, float timer,float fontsize = 50, string musicfile = null)
 		{
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
 			font = new Font ("Broadway",fontsize,FontStyle.Regular);
@@ -24,8 +24,8 @@ namespace GXPEngine
 			_canvas = new Canvas ((int)size.Width, (int)size.Height);
 			AddChild (_canvas);
 			_canvas.graphics.DrawString (message,font,brush,point);
-
 		}
+
 
 
 		public void Step(){

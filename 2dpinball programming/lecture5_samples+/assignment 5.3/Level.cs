@@ -46,7 +46,7 @@ namespace GXPEngine
 		Sprite background;
 		Wave wave;
 
-		public string currentmusic;
+		//public string currentmusic;
 
 		public LineSegment matrixline1;
 		public LineSegment matrixline2;
@@ -61,6 +61,8 @@ namespace GXPEngine
 
 		public Players _touched = Players.none;
 
+		Sprite blackhole;
+
 
 
 
@@ -72,6 +74,7 @@ namespace GXPEngine
 			UpdatePaddles ();
 			colmanager.Step ();
 			wave.Step ();
+			blackholeStep ();
 
 			if (_ball.y > height) {
 				_game._stepstate = StepStates.None;
@@ -82,6 +85,9 @@ namespace GXPEngine
 				_game.SetState (States.Highscores);
 			}
 
+		}
+		void blackholeStep(){
+			blackhole.rotation -= 5;
 		}
 
 		public Level (MyGame game)
@@ -95,6 +101,11 @@ namespace GXPEngine
 			background = new Sprite ("nebula2.png");
 			background.SetScaleXY (0.75f,0.75f);
 			AddChild (background);
+
+			blackhole = new Sprite ("blackhole.png");
+			blackhole.SetOrigin (blackhole.width / 2, blackhole.height / 2);
+			blackhole.SetXY (640, 100);
+			AddChild (blackhole);
 
 			_game = game;
 			width = _game.width;

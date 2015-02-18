@@ -103,8 +103,8 @@ namespace GXPEngine
 
 		public void SetState(States state){
 			_state = state;
-			SoundManager.StopMusic ();
-			SoundManager.StopSound ();
+			//SoundManager.StopMusic ();
+			//SoundManager.StopSound ();
 
 			if (level != null) {
 				level.Destroy ();

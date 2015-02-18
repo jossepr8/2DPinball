@@ -6,8 +6,28 @@
       <Name>willem</Name>
     </highscore>
     <highscore>
+      <Score>1033</Score>
+      <Name>PLAYER2</Name>
+    </highscore>
+    <highscore>
+      <Score>1032</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>1025</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>1019</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
       <Score>1016</Score>
       <Name>josse</Name>
+    </highscore>
+    <highscore>
+      <Score>1016</Score>
+      <Name>PLAYER1</Name>
     </highscore>
     <highscore>
       <Score>1015</Score>
@@ -18,33 +38,25 @@
       <Name>josse</Name>
     </highscore>
     <highscore>
-      <Score>1012</Score>
-      <Name>josse</Name>
-    </highscore>
-    <highscore>
-      <Score>1011</Score>
-      <Name>josse</Name>
-    </highscore>
-    <highscore>
-      <Score>1011</Score>
-      <Name>willem</Name>
-    </highscore>
-    <highscore>
-      <Score>1011</Score>
-      <Name>willem</Name>
-    </highscore>
-    <highscore>
-      <Score>1010</Score>
-      <Name>willem</Name>
-    </highscore>
-    <highscore>
-      <Score>1010</Score>
-      <Name>josse</Name>
+      <Score>1013</Score>
+      <Name>PLAYER2</Name>
     </highscore>
   </Solo>
   <Team>
     <highscore>
+      <Score>2065</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
       <Score>2054</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>2031</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>2029</Score>
       <Name>TEAM</Name>
     </highscore>
     <highscore>
@@ -64,23 +76,11 @@
       <Name>TEAM</Name>
     </highscore>
     <highscore>
-      <Score>2019</Score>
+      <Score>2021</Score>
       <Name>TEAM</Name>
     </highscore>
     <highscore>
-      <Score>2014</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2005</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2005</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2004</Score>
+      <Score>2020</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>

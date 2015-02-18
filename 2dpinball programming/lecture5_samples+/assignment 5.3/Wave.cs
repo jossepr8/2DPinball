@@ -57,13 +57,14 @@ namespace GXPEngine
 			}
 		}
 		void SpawnPresetWave(PresetWave presetwave){
+			SoundManager.StopMusic ();
 			message = new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer);
 			message.SetXY (_level.GetWidth()/2 - message.size.Width/2 , 150);
 			_level.AddChild (message);
 			_level._player1.scaleX = presetwave.paddlewidth / 100;
 			_level._player2.scaleX = presetwave.paddlewidth / 100;
 			_level._ball.SetScaleXY (presetwave.ballsize/100, presetwave.ballsize/100);
-			_level.updateMusic(presetwave.wavemusic);
+			SoundManager.Playmusic (presetwave.wavemusic);
 			int[,] wave = presetwave.wave;
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
