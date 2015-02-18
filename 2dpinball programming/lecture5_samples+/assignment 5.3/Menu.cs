@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace GXPEngine
 {
@@ -11,6 +12,7 @@ namespace GXPEngine
 		AnimSprite _highscore;
 		AnimSprite _manual;
 
+		Ball _ball;
 		Sprite _background;
 
 
@@ -24,6 +26,13 @@ namespace GXPEngine
 			_game = game;
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
+
+			_ball = new Ball ( 32, new Vec2 (game.width / 8, 3 * game.height / 4), null, Color.Green){
+				position = new Vec2 (game.width/2, game.height/2)};	//start position
+			AddChild (_ball);
+			_ball.velocity = new Vec2 (5,5);	//start velocity
+
+
 
 
 			_start = new AnimSprite ("startgame.png",2,1);
@@ -77,6 +86,7 @@ namespace GXPEngine
 
 		void Update()
 		{	
+			_ball.MenuStep ();
 			//namemenu.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 

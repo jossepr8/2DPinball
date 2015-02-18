@@ -134,7 +134,7 @@ namespace GXPEngine
 		}
 		void MakeBall(){
 			//--------------------------------ball-------------------------------------------
-			_ball = new Ball (this, 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
+			_ball = new Ball ( 32, new Vec2 (width / 8, 3 * height / 4), null, Color.Green){
 				position = new Vec2 (width/2, height/2)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (0,-200).Normalize().Scale(5);	//start velocity
