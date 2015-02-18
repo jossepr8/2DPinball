@@ -2,6 +2,22 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>2020</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2016</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2011</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2010</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
       <Score>2000</Score>
       <Name>QWEQWEQ</Name>
     </highscore>
@@ -25,24 +41,16 @@
       <Score>1028</Score>
       <Name>PLAYER1</Name>
     </highscore>
-    <highscore>
-      <Score>1025</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>4031</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>4026</Score>
+      <Name>aaa</Name>
+    </highscore>
     <highscore>
       <Score>4000</Score>
       <Name>NNN</Name>
@@ -73,14 +81,6 @@
     </highscore>
     <highscore>
       <Score>2029</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2029</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2025</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>

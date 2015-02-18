@@ -55,12 +55,6 @@ namespace GXPEngine
 				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 800, yvalue2);
 			}
 
-			foreach (string name in _game.namelist) {
-				//Console.WriteLine (name);
-			}
-		
-			//Console.Beep ();
-
 		}
 
 		void Update()
