@@ -7,6 +7,8 @@ namespace GXPEngine
 	{
 		Canvas _canvas;
 		int currentletter;
+		Sprite _esc;
+
 		string[] Alphabet;
 		new string name;
 		MyGame _game;
@@ -40,6 +42,12 @@ namespace GXPEngine
 				"Q", "R", "S", "T", "U", "V", "W", "X" ,
 				"Y", "Z"
 			};
+
+			_esc = new Sprite ("esc.png");
+			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);
+			_esc.SetXY (75, 45);
+			AddChild (_esc);
+
 
 		}
 		void ResetCounter(string namee){
