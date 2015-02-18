@@ -9,19 +9,19 @@ namespace GXPEngine
 		public Highscores highscores;
 		Sprite _esc;
 
-		float yvalue1 = 120;
-		float yvalue2 = 120;
+		float yvalue1 = 160;
+		float yvalue2 = 160;
 
 		string title;
 		Sprite _background = new Sprite ("mainmenubackground.png");
 
 		Canvas canvas = new Canvas (1280,720);
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
-		Font font = new Font ("Broadway",20,FontStyle.Regular);
 
+		Font font = new Font ("Broadway",20,FontStyle.Regular);
 		Font fonttitle = new Font ("Broadway",30,FontStyle.Regular);
 
-		readonly SolidBrush brushpurple = new SolidBrush (purpleish);
+		SolidBrush brushpurple = new SolidBrush (purpleish);
 
 
 
@@ -40,8 +40,11 @@ namespace GXPEngine
 
 			_game = game;
 			AddChild (canvas);
+			canvas.graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
 
-			canvas.graphics.DrawString (title, fonttitle, brushpurple, 520, 100);
+			canvas.graphics.DrawString (title, fonttitle, brushpurple, 520, 50);
+			canvas.graphics.DrawString ("Solo", fonttitle, brushpurple, 200, 140);
+			canvas.graphics.DrawString ("Team", fonttitle, brushpurple, 800, 140);
 
 			foreach (Score scorez in _game.scorelist) 
 			{
@@ -51,15 +54,11 @@ namespace GXPEngine
 			}
 			foreach (Score scorez in _game.scorelistteam) 
 			{
-				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,600,yvalue2 += 40);
-				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 800, yvalue2);
+				canvas.graphics.DrawString (scorez.NAME,font,brushpurple,800,yvalue2 += 40);
+				canvas.graphics.DrawString	(scorez.SCORE.ToString (), font, brushpurple, 1000, yvalue2);
 			}
 
-			foreach (string name in _game.namelist) {
-				//Console.WriteLine (name);
-			}
 		
-			//Console.Beep ();
 
 		}
 

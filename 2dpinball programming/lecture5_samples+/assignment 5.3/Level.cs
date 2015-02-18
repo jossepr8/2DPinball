@@ -88,6 +88,7 @@ namespace GXPEngine
 		}
 		void ExitStep(){
 			if (Input.GetKeyDown (Key.ESCAPE)) {
+				_game._stepstate = StepStates.None;
 				_game.SetState (States.MainMenu);
 			}
 		}

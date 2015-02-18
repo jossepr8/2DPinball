@@ -3,11 +3,35 @@
   <Solo>
     <highscore>
       <Score>2000</Score>
-      <Name>QWEQWEQ</Name>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>aaa</Name>
     </highscore>
     <highscore>
       <Score>2000</Score>
       <Name>M</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>QWEQWEQ</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>2000</Score>
+      <Name>aaa</Name>
     </highscore>
     <highscore>
       <Score>1043</Score>
@@ -17,35 +41,23 @@
       <Score>1033</Score>
       <Name>PLAYER2</Name>
     </highscore>
-    <highscore>
-      <Score>1032</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1028</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1025</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1024</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
   </Solo>
   <Team>
     <highscore>
       <Score>4000</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>4000</Score>
+      <Name>aaa</Name>
+    </highscore>
+    <highscore>
+      <Score>4000</Score>
       <Name>NNN</Name>
+    </highscore>
+    <highscore>
+      <Score>4000</Score>
+      <Name>aaa</Name>
     </highscore>
     <highscore>
       <Score>2065</Score>
@@ -69,18 +81,6 @@
     </highscore>
     <highscore>
       <Score>2029</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2029</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2029</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2025</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>
