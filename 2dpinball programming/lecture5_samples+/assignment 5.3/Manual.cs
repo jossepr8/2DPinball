@@ -9,6 +9,7 @@ namespace GXPEngine
 	public class Manual : GameObject
 	{	
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
+		Sprite _esc;
 
 		MyGame _game;
 
@@ -27,6 +28,11 @@ namespace GXPEngine
 			_game = game;
 			AddChild (_background);
 			AddChild (canvas);
+
+			_esc = new Sprite ("esc.png");
+			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);
+			_esc.SetXY (75, 45);
+			AddChild (_esc);
 
 			canvas.graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 

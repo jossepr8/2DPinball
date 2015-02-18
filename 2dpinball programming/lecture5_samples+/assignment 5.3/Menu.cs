@@ -11,6 +11,7 @@ namespace GXPEngine
 		AnimSprite _start;
 		AnimSprite _highscore;
 		AnimSprite _manual;
+		Sprite _esc;
 
 		Ball _ball;
 		Sprite _background;
@@ -33,6 +34,10 @@ namespace GXPEngine
 			_ball.velocity = new Vec2 (5,5);	//start velocity
 
 
+			_esc = new Sprite ("esc.png");
+			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);
+			_esc.SetXY (75, 45);
+			AddChild (_esc);
 
 
 			_start = new AnimSprite ("startgame.png",2,1);

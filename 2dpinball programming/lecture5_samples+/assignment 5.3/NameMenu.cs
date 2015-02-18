@@ -15,6 +15,9 @@ namespace GXPEngine
 		SolidBrush purpbrush = new SolidBrush (purpleish);
 		NameOwner state;
 
+
+
+
 		public NameMenu (MyGame game)
 		{
 			state = NameOwner.writing;
@@ -27,6 +30,7 @@ namespace GXPEngine
 				"Q", "R", "S", "T", "U", "V", "W", "X" ,
 				"Y", "Z"
 			};
+
 		}
 
 		public void Step(){

@@ -7,6 +7,7 @@ namespace GXPEngine
 	{		
 		MyGame _game;
 		public Highscores highscores;
+		Sprite _esc;
 
 		float yvalue1 = 120;
 		float yvalue2 = 120;
@@ -27,6 +28,11 @@ namespace GXPEngine
 		{
 			highscores = new Highscores (game);
 			//highscores.Read ();
+
+			_esc = new Sprite ("esc.png");
+			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);
+			_esc.SetXY (75, 45);
+			AddChild (_esc);
 
 			title = "Highscores:";
 

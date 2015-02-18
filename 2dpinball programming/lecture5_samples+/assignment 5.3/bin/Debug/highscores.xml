@@ -14,7 +14,23 @@
       <Name>PLAYER1</Name>
     </highscore>
     <highscore>
+      <Score>1028</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
       <Score>1025</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>1024</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>1024</Score>
+      <Name>PLAYER1</Name>
+    </highscore>
+    <highscore>
+      <Score>1024</Score>
       <Name>PLAYER1</Name>
     </highscore>
     <highscore>
@@ -24,22 +40,6 @@
     <highscore>
       <Score>1016</Score>
       <Name>josse</Name>
-    </highscore>
-    <highscore>
-      <Score>1016</Score>
-      <Name>PLAYER1</Name>
-    </highscore>
-    <highscore>
-      <Score>1015</Score>
-      <Name>willem</Name>
-    </highscore>
-    <highscore>
-      <Score>1013</Score>
-      <Name>josse</Name>
-    </highscore>
-    <highscore>
-      <Score>1013</Score>
-      <Name>PLAYER2</Name>
     </highscore>
   </Solo>
   <Team>
@@ -52,6 +52,14 @@
       <Name>TEAM</Name>
     </highscore>
     <highscore>
+      <Score>2041</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>2037</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
       <Score>2031</Score>
       <Name>TEAM</Name>
     </highscore>
@@ -60,27 +68,19 @@
       <Name>TEAM</Name>
     </highscore>
     <highscore>
-      <Score>2024</Score>
+      <Score>2029</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>2029</Score>
+      <Name>TEAM</Name>
+    </highscore>
+    <highscore>
+      <Score>2025</Score>
       <Name>TEAM</Name>
     </highscore>
     <highscore>
       <Score>2024</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2024</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2023</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2021</Score>
-      <Name>TEAM</Name>
-    </highscore>
-    <highscore>
-      <Score>2020</Score>
       <Name>TEAM</Name>
     </highscore>
   </Team>

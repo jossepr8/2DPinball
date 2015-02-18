@@ -4,6 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Resources;
 using System.Drawing.Text;
 using System.Collections.Generic;
+using System.Globalization;
 
 
 namespace GXPEngine
@@ -24,9 +25,6 @@ namespace GXPEngine
 		Font font = new Font ("Broadway",40,FontStyle.Regular);
 		Font font1 = new Font ("Broadway",25,FontStyle.Regular);
 
-		readonly SolidBrush brushred = new SolidBrush (Color.Red);
-		readonly SolidBrush brushblue = new SolidBrush (Color.Blue);
-
 		PointF pnt1 = new PointF (50, 10);
 		PointF pnt2 = new PointF (1160, 10);
 
@@ -35,6 +33,8 @@ namespace GXPEngine
 
 		readonly Pen redPen = new Pen(Color.Red, 3);
 		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
+		readonly SolidBrush redBrush= new SolidBrush(Color.Red);
+
 		Rectangle rec = new Rectangle (500,30,300,20);
 		int maxhealth = 50;
 		Canvas _canvas;
@@ -63,6 +63,7 @@ namespace GXPEngine
 			overlayHealthbar.SetScaleXY (0.1f,0.75f);
 		}
 
+	
 		public void UpdateHUD(float health, int score1, int score2)
 		{	
 			if (health >= maxhealth)
@@ -110,20 +111,20 @@ namespace GXPEngine
 
 				if (score1 >= 1000) 
 				{
-					_canvas.graphics.DrawString (score1.ToString (), font1, brushblue, pnt1);
+					_canvas.graphics.DrawString (score1.ToString (), font1, blueBrush, pnt1);
 				} 
 				else 
 				{
-					_canvas.graphics.DrawString (score1.ToString (), font, brushblue, pnt1);
+					_canvas.graphics.DrawString (score1.ToString (), font, blueBrush, pnt1);
 				}
 
 				if (score2 >= 1000) 
 				{
-					_canvas.graphics.DrawString (score2.ToString (), font1, brushred, pnt2);
+					_canvas.graphics.DrawString (score2.ToString (), font1, redBrush, pnt2);
 				} 
 				else 
 				{
-					_canvas.graphics.DrawString (score2.ToString (), font, brushred, pnt2);
+					_canvas.graphics.DrawString (score2.ToString (), font, redBrush, pnt2);
 				}
 
 
