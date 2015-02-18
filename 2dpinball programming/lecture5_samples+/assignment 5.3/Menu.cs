@@ -49,8 +49,8 @@ namespace GXPEngine
 			_manual.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
-			namemenu = new NameMenu(_game);
-			AddChild (namemenu);
+		//	namemenu = new NameMenu(_game);
+		//	AddChild (namemenu);
 		}
 
 		void AddButtons()
@@ -86,6 +86,9 @@ namespace GXPEngine
 
 		void Update()
 		{	
+			if (Input.GetKeyDown (Key.ESCAPE)) {
+				_game.SetState (States.MainMenu);
+			}
 			_ball.MenuStep ();
 			//namemenu.Step ();
 

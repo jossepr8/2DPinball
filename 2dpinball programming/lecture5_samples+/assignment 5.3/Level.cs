@@ -75,7 +75,7 @@ namespace GXPEngine
 			colmanager.Step ();
 			wave.Step ();
 			blackholeStep ();
-
+			ExitStep ();
 			if (_ball.y > height) {
 				_game._stepstate = StepStates.None;
 				_game.scorelist.Add (new Score (_player1.score, "PLAYER1"));
@@ -85,6 +85,11 @@ namespace GXPEngine
 				_game.SetState (States.Highscores);
 			}
 
+		}
+		void ExitStep(){
+			if (Input.GetKeyDown (Key.ESCAPE)) {
+				_game.SetState (States.MainMenu);
+			}
 		}
 		void blackholeStep(){
 			blackhole.rotation -= 5;
