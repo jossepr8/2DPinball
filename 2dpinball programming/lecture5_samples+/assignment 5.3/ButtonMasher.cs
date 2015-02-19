@@ -11,6 +11,8 @@ namespace GXPEngine
 		LastPressed Player1Last;
 		LastPressed Player2Last;
 
+	
+
 		public bool enabled {
 			get;
 			set;
@@ -20,12 +22,18 @@ namespace GXPEngine
 
 		Message message;
 		Message message2;
-		Message message3;
-		Message message4;
+
+		AnimSprite spriteAD = new AnimSprite("AandD.png",2,1);
+		AnimSprite spriteArrows = new AnimSprite("Arrows2.png",2,1);
 
 		Sprite bar1 = new Sprite("mashbar.png");
 		Sprite bar2 = new Sprite("mashindicator.png");
+
 		float bar2startx;
+
+		float frame = 0;
+		float minframe = 0;
+		float maxframe = 2;
 
 		public ButtonMasher (MyGame game, Level level)
 		{
@@ -44,25 +52,20 @@ namespace GXPEngine
 
 			_game._stepstate = StepStates.None;
 
-			message = new Message (_game.currentFps, "Press:", 7,20);
-			message.AddPicture ("ad.png",120,-225,1.2f,1.2f);
+			message = new Message (_game.currentFps, "Press:", 0,20);
 			message.SetXY (_level.GetWidth() / 4 - message.size.Width/2, 200);
+			spriteAD.SetXY (_level.GetWidth() / 4 + 30,125);
+			_level.AddChild (spriteAD);
 			_level.AddChild (message);
 
-			message3 = new Message (_game.currentFps, "Press:", 7,20);
-			message3.AddPicture ("ad1.png",120,-225,1.2f,1.2f);
-			message3.SetXY (_level.GetWidth() / 4 - message3.size.Width/2, 200);
-			_level.AddChild (message3);
 
 			message2 = new Message (_game.currentFps, "Press:", 0,20);
-			message2.AddPicture ("arrows.png",(int)message2.x + 130,(int)message2.y - 78,0.7f,0.7f);
 			message2.SetXY (_level.GetWidth() / 4*3 - message.size.Width/2, 200);
+			spriteArrows.SetXY (_level.GetWidth() / 4*3 - 50 + 100,147);
+			spriteArrows.SetScaleXY (0.7f, 0.7f);
+			_level.AddChild (spriteArrows);
 			_level.AddChild (message2);
 
-			message4 = new Message (_game.currentFps, "Press:", 0,20);
-			message4.AddPicture ("arrows1.png",(int)message4.x + 130,(int)message4.y - 78,0.7f,0.7f);
-			message4.SetXY (_level.GetWidth() / 4*3 - message.size.Width/2, 200);
-			_level.AddChild (message4);
 
 			bar2.SetXY (game.width/2 - bar2.width/2, 300);
 			bar2startx = bar2.x;
@@ -76,11 +79,19 @@ namespace GXPEngine
 		public void Stop(){
 			enabled = false;
 			_game._stepstate = StepStates.All;
+			spriteAD.Destroy ();
+			spriteArrows.Destroy ();
 			message.Step ();
 			message2.Step ();
 			bar1.Destroy ();
 			bar2.Destroy ();
 		}
+
+		private void SetFrames(int min, int max){
+			minframe = min;
+			maxframe = max;
+		}
+
 		void Update(){
 			if (enabled) {
 				bar2.x = bar2startx + totalcounter * 10;
@@ -114,7 +125,22 @@ namespace GXPEngine
 				
 				}
 
+				frame += 0.12f;
 
+				SetFrames (0, 2);
+
+				if (frame >= maxframe + 1) {
+					frame = minframe;
+				}
+				if (frame < minframe) {
+					frame = maxframe;
+				}
+
+				spriteArrows.SetFrame ((int)frame);
+				spriteAD.SetFrame ((int)frame);
+			
+			
+			
 			}
 		}
 
