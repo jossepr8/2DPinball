@@ -156,7 +156,7 @@ namespace GXPEngine
 				if (line == _level.matrixline1 || line == _level.matrixline2) {
 					if (CheckCollision (line, true)) {
 						//_level._ball.y -= 50;
-						return;
+						//return;
 					}
 				} else {
 					if (line == _level.matrixlineV1) {

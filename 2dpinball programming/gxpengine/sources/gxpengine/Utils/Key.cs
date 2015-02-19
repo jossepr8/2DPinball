@@ -69,9 +69,9 @@ namespace GXPEngine
 		public const int NINE		= 57;
 		public const int ESCAPE		= 257;
 		public const int SPACE		= 32;
-		public const int ENTER		= 13;
+		public const int ENTER		= 294;
 		public const int DELETE		= 127;
-		public const int BACKSPACE	= 8;
+		public const int BACKSPACE	= 295;
 		public const int LEFT_CTRL  = 289;
 		public const int RIGHT_CTRL = 290;
 		public const int NUMPAD_1   = 303;

@@ -37,7 +37,7 @@ namespace GXPEngine
 			
 		public MyGame () : base(1280, 720, false, false)
 		{
-
+			//SetScaleXY (0.5f, 0.5f);
 			scorelist = new List<Score>();
 			scorelistteam = new List<Score> ();
 			namelist = new List<string> ();

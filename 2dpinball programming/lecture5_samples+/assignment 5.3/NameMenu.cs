@@ -98,7 +98,18 @@ namespace GXPEngine
 						}
 					}
 				}
-				if (Input.GetKeyDown (Key.SPACE)) {
+				if (Input.GetKeyDown (295)) {
+					//name.TrimEnd(name[name.Length - 1]);
+					Char[] chars = name.ToCharArray ();
+					Char[] chars2 = new Char[chars.Length - 1];
+					for (int i = 0; i < chars.Length-1; i++) {
+						chars2 [i] = chars [i];
+					}
+					name = new string (chars2);
+
+
+				}
+				if (Input.GetKeyDown (Key.ENTER)) {
 					if (name != null) {
 						_game.namelist.Add (name);
 			

@@ -90,6 +90,12 @@ namespace GXPEngine
 
 		void Update()
 		{	
+			//for (int i = 0; i < 1000; i++) {
+			//	if(Input.GetKeyDown(i)){
+			//		Console.WriteLine (i);
+			//	}
+			//}
+
 			if (Input.GetKeyDown (Key.ESCAPE)) {
 				Environment.Exit (0);
 			}
