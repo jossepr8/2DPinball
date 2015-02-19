@@ -219,35 +219,35 @@ namespace GXPEngine
 			//-------line that represents paddle of player 1--------
 			matrixline1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
 			matrixline1.bounciness = _player1.Bounce;
-			AddChild (matrixline1);
+			//AddChild (matrixline1);
 			_lines.Add (matrixline1);
 			matrixvec1 = new Vec2 (0, 0);
 			//---------paddle 1 line caps------------------------
 			linecap11 = new BasicBall (3, new Vec2 (0, 0));
-			AddChild (linecap11);
+			//AddChild (linecap11);
 			_balls.Add (linecap11);
 			linecap12 = new BasicBall (3, new Vec2 (0, 0));
-			AddChild (linecap12);
+			//AddChild (linecap12);
 			_balls.Add (linecap12);
 			matrixlineV1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
-			AddChild (matrixlineV1);
+			//AddChild (matrixlineV1);
 			_lines.Add (matrixlineV1);
 
 			//-------line that represents paddle of player 2--------
 			matrixline2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
 			matrixline2.bounciness = _player2.Bounce;
-			AddChild (matrixline2);
+			//AddChild (matrixline2);
 			_lines.Add (matrixline2);
 			matrixvec2 = new Vec2 (0, 0);
 			//---------paddle 2 line caps--------------------
 			linecap21 = new BasicBall (3, new Vec2 (0, 0));
-			AddChild (linecap21);
+			//AddChild (linecap21);
 			_balls.Add (linecap21);
 			linecap22 = new BasicBall (3, new Vec2 (0, 0));
-			AddChild (linecap22);
+			//AddChild (linecap22);
 			_balls.Add (linecap22);
 			matrixlineV2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
-			AddChild (matrixlineV2);
+			//AddChild (matrixlineV2);
 			_lines.Add (matrixlineV2);
 
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
