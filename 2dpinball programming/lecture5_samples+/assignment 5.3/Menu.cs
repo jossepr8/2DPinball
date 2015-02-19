@@ -52,6 +52,10 @@ namespace GXPEngine
 			_manual.SetXY (460, 400);
 			_manual.SetScaleXY (1.4f, 1.4f);
 
+			//_names = new AnimSprite ("Names2.png",2,1);
+			//_names.SetXY (460, 500);
+			//_names.SetScaleXY (1.4f, 1.4f);
+
 			AddButtons ();
 		//	namemenu = new NameMenu(_game);
 		//	AddChild (namemenu);

@@ -20,7 +20,7 @@ namespace GXPEngine
 			speed = Properties.EnemyGravity;
 		}
 
-		private void SetFrames(int min, int max){
+		void SetFrames(int min, int max){
 			minframe = min;
 			maxframe = max;
 		}
