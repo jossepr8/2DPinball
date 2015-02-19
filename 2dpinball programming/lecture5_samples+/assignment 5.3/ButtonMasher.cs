@@ -34,6 +34,7 @@ namespace GXPEngine
 		float frame = 0;
 		float minframe = 0;
 		float maxframe = 2;
+		CountDown cd;
 
 		public ButtonMasher (MyGame game, Level level)
 		{
@@ -41,6 +42,8 @@ namespace GXPEngine
 			_game = game;
 			_level = level;
 			StopEvent += Stop;
+			cd = new CountDown (3,level);
+			AddChild (cd);
 		}
 
 
