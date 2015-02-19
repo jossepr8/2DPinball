@@ -12,9 +12,6 @@ namespace GXPEngine
 		}
 		//aaa
 		bool CheckCollision(BasicBall ball, bool checkonly = false){
-			//if (_level._ball == null) {
-			//	return false;
-			//}
 			Vec2 differenceVector = _level._ball.position.Clone ().Sub (ball.position);
 			if (differenceVector.Length () <= ball.radius + _level._ball.radius * _level._ball.scaleX) {
 				if (checkonly) 
@@ -155,8 +152,6 @@ namespace GXPEngine
 			foreach (LineSegment line in _level._lines) {
 				if (line == _level.matrixline1 || line == _level.matrixline2) {
 					if (CheckCollision (line, true)) {
-						//_level._ball.y -= 50;
-						//return;
 					}
 				} else {
 					if (line == _level.matrixlineV1) {

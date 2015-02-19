@@ -37,24 +37,17 @@ namespace GXPEngine
 	
 		public MyGame () : base(1280, 720, false, false)
 		{
-			//SetScaleXY (0.5f, 0.5f);
-
 			scorelist = new List<Score>();
 			scorelistteam = new List<Score> ();
 			namelist = new List<string> ();
 			font = new Font ("broadway BT",50,FontStyle.Regular);
 
 			highscoremenu = new HighscoreMenu (this);
-			//Console.Beep ();
 
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
-			//SetState(States.MainMenu);
-			SetState (States.MainMenu);	// start at "Level"
-			//targetFps = 5; //--test mode---
-			//player1name = namelist [0];
-			//player2name = namelist [0];
-			//teamname = namelist [0];
+			SetState (States.MainMenu);	// start at "menu"
+
 		}
 	
 	
@@ -63,12 +56,9 @@ namespace GXPEngine
 			scorelistteam.Sort((score2,score1) => score1.SCORE.CompareTo(score2.SCORE));
 		}
 		public void SortNames(){
-		//	namelist.Sort ((name1, name2) => name1.CompareTo (name2));
 			namelist.Sort ();
 		}
 		void Update () {
-			//Console.WriteLine (namelist.Count);
-			//Console.WriteLine (GetChildren ().Count);
 			if (_state == States.NameMenu) {
 				namemenu.Step ();
 			}
