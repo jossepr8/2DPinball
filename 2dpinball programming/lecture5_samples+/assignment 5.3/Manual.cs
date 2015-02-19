@@ -18,7 +18,7 @@ namespace GXPEngine
 		Sprite _background = new Sprite ("mainmenubackground.png");
 
 		//5a5492
-		Font font = new Font ("Broadway",18,FontStyle.Regular);
+		Font font = new Font ("Broadway BT",18,FontStyle.Regular);
 		readonly SolidBrush brushred = new SolidBrush (purpleish);
 
 
