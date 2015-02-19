@@ -21,7 +21,7 @@ namespace GXPEngine
 				{
 					HitBall (ball);
 				} else {
-					Reflect (differenceVector,ball);
+					//Reflect (differenceVector,ball);
 				}
 				return true;
 			}
@@ -57,14 +57,7 @@ namespace GXPEngine
 			Reflect (line, flipnormal);
 		}
 		void Reflect(Vec2 normal, BasicBall ball){
-
-			for (int i = 0; i < 10; i++) {
-				if (CheckCollision (ball, true)) {
-					//_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.2f));
-				} else {
-					break;
-				}
-			}
+		/*
 			_level._ball.velocity.Reflect(normal,1.3f);
 			//_level._ball.velocity.Add (_level._ball.position.Clone ().Sub (_middle).Scale (0.2f));
 			if (ball.Equals (_level.linecap11) || ball.Equals (_level.linecap12)) {
@@ -72,6 +65,7 @@ namespace GXPEngine
 			} else if (ball.Equals (_level.linecap21) || ball.Equals (_level.linecap22)) {
 				HitPlayer2 ();
 			}
+			*/
 		}
 		void HitWall(){
 			SoundManager.Playsound(SoundEffect.bounce);
@@ -131,7 +125,7 @@ namespace GXPEngine
 			//_level._ball.position.Sub (lineNormal.Scale (ballDistance - _level._ball.radius));
 			for (int i = 0; i < 10; i++) {	//put the ball back untill he doesnt hit the line anymore
 				if(CheckCollision(line,flipNormal,true)){
-				_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.1f));
+				_level._ball.position.Sub (_level._ball.velocity.Clone ().Scale (-0.2f));
 				} else{
 					break;
 				}
@@ -143,16 +137,51 @@ namespace GXPEngine
 
 		public void Step(){
 			foreach (BasicBall ball in _level._balls) {
-				if (CheckCollision (ball)) {
-					return;
+				if (CheckCollision (ball,true)) {
+					if (ball == _level.linecap11 || ball == _level.linecap12) {
+						Reflect (_level.matrixline1, true);
+						_level._ball.y -= 10;
+						//return;
+					}
+					if (ball == _level.linecap21 || ball == _level.linecap22) {
+						Reflect (_level.matrixline2, true);
+						_level._ball.y -= 10;
+					//	return;
+					}
+
+
 				}
 			}
 			foreach (LineSegment line in _level._lines) {
-				if (CheckCollision (line, false)) {
-					return;
-				}
-				if (CheckCollision (line, true)) {
-					return;
+				if (line == _level.matrixline1 || line == _level.matrixline2) {
+					if (CheckCollision (line, true)) {
+						//_level._ball.y -= 50;
+						return;
+					}
+				} else {
+					if (line == _level.matrixlineV1) {
+						if (CheckCollision (line, true,true)) {
+							Reflect (_level.matrixline1, true);
+							_level._ball.y -= 50;
+							return;
+						}
+					} else {
+						if (line == _level.matrixlineV2) {
+							if (CheckCollision (line, true,true)) {
+								Reflect (_level.matrixline2, true);
+								_level._ball.y -= 50;
+								return;
+							}
+						} else {
+							// normal collision
+							if (CheckCollision (line, true)) {
+								return;
+							}
+							//if (CheckCollision (line, false)) {
+							//	return;
+							//}
+						}
+					}
 				}
 			}
 

@@ -50,12 +50,16 @@ namespace GXPEngine
 
 		public LineSegment matrixline1;
 		public LineSegment matrixline2;
-		Vec2 matrixvec1;
-		Vec2 matrixvec2;
+
+		public LineSegment matrixlineV1;
+		public LineSegment matrixlineV2;
 		public BasicBall linecap11;
 		public BasicBall linecap12;
 		public BasicBall linecap21;
 		public BasicBall linecap22;
+		Vec2 matrixvec1;
+		Vec2 matrixvec2;
+
 
 		ButtonMasher buttonmasher;
 
@@ -91,15 +95,20 @@ namespace GXPEngine
 			if (_ball.y > height) {
 				Damage += _hud.maxhealth / 4;
 				_hud.UpdateHUD (Damage,_player1.score,_player2.score);
-				buttonmasher.Start ();
+				if (!CheckBar()) {
+					buttonmasher.Start ();
+				}
 
 				_ball.y = 2000;
 				_ball.velocity = new Vec2 (0, -10);
 			}
 		}
-		void CheckBar(){
+		bool CheckBar(){
 			if (Damage >= _hud.maxhealth) {
 				GameOver ();
+				return true;
+			} else {
+				return false;
 			}
 		}
 		void ExitStep(){
@@ -214,12 +223,15 @@ namespace GXPEngine
 			_lines.Add (matrixline1);
 			matrixvec1 = new Vec2 (0, 0);
 			//---------paddle 1 line caps------------------------
-			linecap11 = new BasicBall (2, new Vec2 (0, 0));
-			AddChild (linecap11);
+			linecap11 = new BasicBall (3, new Vec2 (0, 0));
+			//AddChild (linecap11);
 			_balls.Add (linecap11);
-			linecap12 = new BasicBall (2, new Vec2 (0, 0));
-			AddChild (linecap12);
+			linecap12 = new BasicBall (3, new Vec2 (0, 0));
+			//AddChild (linecap12);
 			_balls.Add (linecap12);
+			matrixlineV1 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
+			//AddChild (matrixlineV1);
+			_lines.Add (matrixlineV1);
 
 			//-------line that represents paddle of player 2--------
 			matrixline2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
@@ -228,12 +240,15 @@ namespace GXPEngine
 			_lines.Add (matrixline2);
 			matrixvec2 = new Vec2 (0, 0);
 			//---------paddle 2 line caps--------------------
-			linecap21 = new BasicBall (2, new Vec2 (0, 0));
-			AddChild (linecap21);
+			linecap21 = new BasicBall (3, new Vec2 (0, 0));
+			//AddChild (linecap21);
 			_balls.Add (linecap21);
-			linecap22 = new BasicBall (2, new Vec2 (0, 0));
-			AddChild (linecap22);
+			linecap22 = new BasicBall (3, new Vec2 (0, 0));
+			//AddChild (linecap22);
 			_balls.Add (linecap22);
+			matrixlineV2 = new LineSegment (new Vec2 (0, 0), new Vec2 (0, 0));
+			//AddChild (matrixlineV2);
+			_lines.Add (matrixlineV2);
 
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 
@@ -346,13 +361,21 @@ namespace GXPEngine
 			matrixvec1.x = _player1.matrix[0];	
 			matrixvec1.y = _player1.matrix [1];
 			matrixline1.start = 
-				DEBUGdistance.end.Clone()
-					.Sub(matrixvec1.Clone()
-						.Scale(_player1.width/(float)_player1.scaleX/2));
+				DEBUGdistance.end.Clone ()
+					.Sub (matrixvec1.Clone ()
+						.Scale (_player1.width / (float)_player1.scaleX / 2))
+							.Sub (new Vec2 (_player1.matrix [4], _player1.matrix [5]).Scale (_player1.height / 2));
 			matrixline1.end = 
 				matrixvec1.Clone()
 					.Scale (_player1.width/(float)_player1.scaleX)
 					.Add (matrixline1.start);
+
+			matrixlineV1.start = matrixline1.start.Clone ()
+				.Add (new Vec2 (_player1.matrix [4], _player1.matrix [5]).Scale (_player1.height))
+				.Sub (matrixvec1.Clone().Scale (_player1.width / 12));
+			matrixlineV1.end = matrixline1.end.Clone ()
+				.Add (new Vec2 (_player1.matrix [4], _player1.matrix [5]).Scale (_player1.height))
+				.Add (matrixvec1.Clone().Scale (_player1.width / 12));
 			//--------------------------------------------------------------------
 			//------------line that represents paddle 2---------------------------
 			//matrixvec represents the angle of the paddle
@@ -362,11 +385,21 @@ namespace GXPEngine
 			matrixline2.start = 
 				DEBUGdistance2.end.Clone()
 					.Sub(matrixvec2.Clone()
-						.Scale(_player2.width/(float)_player2.scaleX/2));
+						.Scale(_player2.width/(float)_player2.scaleX/2))
+							.Sub (new Vec2 (_player2.matrix [4], _player2.matrix [5]).Scale (_player2.height / 2));	
 			matrixline2.end = 
-				matrixvec2.Clone()
-					.Scale (_player2.width/(float)_player2.scaleX)
+				matrixvec2.Clone ()
+					.Scale (_player2.width / (float)_player2.scaleX)
 					.Add (matrixline2.start);
+
+			matrixlineV2.start = matrixline2.start.Clone ()
+				.Add (new Vec2 (_player2.matrix [4], _player2.matrix [5]).Scale (_player2.height))
+					.Sub (matrixvec2.Clone().Scale (_player2.width / 12));
+			matrixlineV2.end = matrixline2.end.Clone ()
+				.Add (new Vec2 (_player2.matrix [4], _player2.matrix [5]).Scale (_player2.height))
+					.Add (matrixvec2.Clone().Scale (_player2.width / 12));
+
+					
 			//--------------------------------------------------------------------
 
 
