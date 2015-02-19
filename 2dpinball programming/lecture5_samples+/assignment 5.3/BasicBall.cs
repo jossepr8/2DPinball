@@ -14,7 +14,7 @@ namespace GXPEngine
 			radius = pRadius;
 
 			Step ();
-			//draw ();
+			draw ();
 			SetOrigin (width / 2, height / 2);
 		}
 
