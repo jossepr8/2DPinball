@@ -28,6 +28,8 @@ namespace GXPEngine
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
 
+			SoundManager.Playmusic ("mainmenu.mp3");
+
 			_ball = new Ball ( 32, new Vec2 (game.width / 8, 3 * game.height / 4), null, Color.Green){
 				position = new Vec2 (-100, -100)};	//start position
 			AddChild (_ball);

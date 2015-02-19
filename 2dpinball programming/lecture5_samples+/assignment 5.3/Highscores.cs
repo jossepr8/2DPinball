@@ -19,7 +19,7 @@ namespace GXPEngine
 
 			_game = game;
 			settings.Indent = true;
-
+			SoundManager.Playmusic ("mainmenu.mp3");
 			Read ();
 			//_game.SortScores ();
 

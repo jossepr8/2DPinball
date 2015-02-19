@@ -48,6 +48,7 @@ namespace GXPEngine
 			_esc.SetXY (75, 45);
 			AddChild (_esc);
 
+			SoundManager.Playmusic ("mainmenu.mp3");
 
 		}
 		void ResetCounter(string namee){

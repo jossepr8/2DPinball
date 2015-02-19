@@ -30,6 +30,8 @@ namespace GXPEngine
 			AddChild (_background);
 			AddChild (canvas);
 
+			SoundManager.Playmusic ("mainmenu.mp3");
+
 			_esc = new Sprite ("esc.png");
 			_esc.SetOrigin (_esc.width / 2, _esc.height / 2);
 			_esc.SetXY (75, 45);
