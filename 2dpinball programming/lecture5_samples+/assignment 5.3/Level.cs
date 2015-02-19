@@ -185,17 +185,17 @@ namespace GXPEngine
 		}
 		void MakePaddles(){
 			//--------------------------------flippers/paddles/players------------------------
-			_player1 = new Flipper ();
+			_player1 = new Flipper ("Paddle Blue.png");
 			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
-			_player1.SetColor (0, 0, 200);	//blue
+			//_player1.SetColor (0, 0, 200);	//blue
 			_player1.scaleX = 2;
 			AddChild (_player1);
 
-			_player2 = new Flipper ();
+			_player2 = new Flipper ("Paddle Red.png");
 			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
-			_player2.SetColor (200, 0, 0);	//red
+			//_player2.SetColor (200, 0, 0);	//red
 			_player2.scaleX = 3;
 			AddChild (_player2);
 			//--------------------------------------------------------------------------------

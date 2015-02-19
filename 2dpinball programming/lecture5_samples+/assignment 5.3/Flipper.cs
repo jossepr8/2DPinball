@@ -27,7 +27,7 @@ namespace GXPEngine
 		}
 			
 			
-		public Flipper () : base("paddletest.png")
+		public Flipper (string image = "paddletest.png") : base(image)
 		{
 			SetOrigin (width / 2, height/2 - 500);
 			rotationspeed = Properties.PaddleSpeed;
