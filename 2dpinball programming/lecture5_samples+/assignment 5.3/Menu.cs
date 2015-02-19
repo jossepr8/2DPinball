@@ -11,6 +11,7 @@ namespace GXPEngine
 		AnimSprite _start;
 		AnimSprite _highscore;
 		AnimSprite _manual;
+		AnimSprite _names;
 		Sprite _esc;
 
 		Ball _ball;
@@ -52,13 +53,12 @@ namespace GXPEngine
 			_manual.SetXY (460, 400);
 			_manual.SetScaleXY (1.4f, 1.4f);
 
-			//_names = new AnimSprite ("Names2.png",2,1);
-			//_names.SetXY (460, 500);
-			//_names.SetScaleXY (1.4f, 1.4f);
+			_names = new AnimSprite ("Names2.png",2,1);
+			_names.SetXY (460, 500);
+			_names.SetScaleXY (1.4f, 1.4f);
 
 			AddButtons ();
-		//	namemenu = new NameMenu(_game);
-		//	AddChild (namemenu);
+
 		}
 
 		void AddButtons()
@@ -71,7 +71,11 @@ namespace GXPEngine
 
 			AddChild (_manual);
 			buttonlist.Add (_manual);
+
+			AddChild (_names);
+			buttonlist.Add (_names);
 		}
+
 		private void SwitchMenu(int index)
 		{
 			switch (index) 
@@ -86,6 +90,10 @@ namespace GXPEngine
 				return;
 			case 2:
 				_game.SetState (States.Manual);
+				this.Destroy ();
+				return;
+			case 3:
+				_game.SetState (States.NameMenu);
 				this.Destroy ();
 				return;
 			}
@@ -138,6 +146,7 @@ namespace GXPEngine
 				_start.SetFrame (0);
 				_highscore.SetFrame (1);
 				_manual.SetFrame (1);
+				_names.SetFrame (1);
 			}
 
 
@@ -147,6 +156,7 @@ namespace GXPEngine
 				_highscore.SetFrame (0);
 				_highscore.SetXY (459,300);
 				_manual.SetFrame (1);
+				_names.SetFrame (1);
 			}
 
 			if (selectednumber == 2) 
@@ -154,6 +164,15 @@ namespace GXPEngine
 				_start.SetFrame (1);
 				_highscore.SetFrame (1);
 				_manual.SetFrame (0);
+				_names.SetFrame (1);
+			}
+
+			if (selectednumber == 3) 
+			{	
+				_start.SetFrame (1);
+				_highscore.SetFrame (1);
+				_manual.SetFrame (1);
+				_names.SetFrame (0);
 			}
 
 
