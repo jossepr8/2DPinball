@@ -103,14 +103,14 @@ namespace GXPEngine
 		void Update()
 		{	
 			if (_ball.y > _game.height + 50) {
-				_ball.position = new Vec2 (100, 100);
+				_ball.position = new Vec2 (-100, -100);
 				_ball.velocity = new Vec2 (Utils.Random (2, 7), Utils.Random (2, 7));
 				int randomscale = Utils.Random (1, 3);
 				_ball.SetScaleXY (randomscale,randomscale);
 
 
 			}
-			_ball.rotation += 10;
+			//_ball.rotation += 10;
 
 			//for (int i = 0; i < 1000; i++) {
 			//	if(Input.GetKeyDown(i)){

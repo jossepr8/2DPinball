@@ -2,47 +2,63 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>662</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>662</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>467</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>467</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>115</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>115</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
       <Score>106</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
-      <Score>41</Score>
+      <Score>68</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>68</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
       <Score>41</Score>
       <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>12</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>11</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>11</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>4</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>4</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
     </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>1129</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>1129</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>183</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>183</Score>
+      <Name>AA</Name>
+    </highscore>
     <highscore>
       <Score>118</Score>
       <Name>AA</Name>
@@ -56,7 +72,7 @@
       <Name>AA</Name>
     </highscore>
     <highscore>
-      <Score>4</Score>
+      <Score>42</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
@@ -64,24 +80,8 @@
       <Name>AA</Name>
     </highscore>
     <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
+      <Score>4</Score>
+      <Name>AA</Name>
     </highscore>
   </Team>
 </Highscores>
