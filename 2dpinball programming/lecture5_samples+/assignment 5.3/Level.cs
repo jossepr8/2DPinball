@@ -88,8 +88,8 @@ namespace GXPEngine
 			wave.Step ();
 			blackholeStep ();
 			ExitStep ();
-			CheckBallHeight ();
 			CheckBar ();
+			CheckBallHeight ();
 
 		}
 		void CheckBallHeight(){

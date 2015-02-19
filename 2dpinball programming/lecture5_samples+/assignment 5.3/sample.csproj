@@ -152,7 +152,4 @@
     <Reference Include="System.Xml" />
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Starjedi.ttf" />
-  </ItemGroup>
 </Project>
