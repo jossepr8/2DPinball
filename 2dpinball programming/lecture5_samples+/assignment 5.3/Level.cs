@@ -61,7 +61,7 @@ namespace GXPEngine
 		Vec2 matrixvec2;
 
 
-		ButtonMasher buttonmasher;
+		public ButtonMasher buttonmasher;
 
 		public Players _touched = Players.none;
 
@@ -159,7 +159,10 @@ namespace GXPEngine
 			_hud.UpdateHUD (Damage, _player1.score, _player2.score);
 
 			buttonmasher = new ButtonMasher (_game,this);
-			buttonmasher.Start ();
+			//buttonmasher.Start ();
+
+			CountDown cd = new CountDown (3,this);
+			AddChild (cd);
 
 			//SoundManager.Playmusic ("Wave1.mp3");
 		}

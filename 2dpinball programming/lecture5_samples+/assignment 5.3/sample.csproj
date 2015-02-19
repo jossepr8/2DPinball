@@ -145,6 +145,7 @@
     <Compile Include="Manual.cs" />
     <Compile Include="HighscoreMenu.cs" />
     <Compile Include="NameMenu.cs" />
+    <Compile Include="CountDown.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

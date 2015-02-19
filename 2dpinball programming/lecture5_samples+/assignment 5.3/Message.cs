@@ -12,6 +12,7 @@ namespace GXPEngine
 		PointF point;
 	
 		public SizeF size;
+		public bool auto = false;
 
 		public Message (int fps, string message, float timer,float fontsize = 50, string musicfile = null)
 		{
@@ -33,6 +34,12 @@ namespace GXPEngine
 			Addedpicture.SetOrigin (Addedpicture.x/2,Addedpicture.y/2);
 			Addedpicture.SetScaleXY (scalex,scaley);
 			AddChild (Addedpicture);
+		}
+
+		void Update(){
+			if (auto) {
+				Step ();
+			}
 		}
 
 		public void Step()
