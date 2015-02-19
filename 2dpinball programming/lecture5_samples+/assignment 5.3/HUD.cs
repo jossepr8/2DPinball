@@ -52,15 +52,14 @@ namespace GXPEngine
 			AddChild (HudRed);
 			HudRed.SetXY (1120, 10);
 
-			AddChild (HealthBar);
-			HealthBar.SetXY (500,30);
-
-
 			AddChild (overlayHealthbar);
 			overlayHealthbar.SetXY (650,55);
 			overlayHealthbar.SetOrigin (overlayHealthbar.width / 2, overlayHealthbar.height / 2);
-			overlayHealthbar.alpha = 0.65f;
 			overlayHealthbar.SetScaleXY (0.1f,0.75f);
+
+			AddChild (HealthBar);
+			HealthBar.SetXY (500,30);
+
 		}
 
 	
@@ -72,14 +71,10 @@ namespace GXPEngine
 			}
 
 			overlayHealthbar.SetScaleXY ((health / maxhealth),0.9f);
+			HealthBar.SetXY (500,30);
 
 			if (GetChildren ().Contains (_canvas)) {
 				_canvas.graphics.Clear (Color.Empty);
-
-		
-
-
-					
 
 				if (score1 >= 1000) 
 				{
@@ -100,14 +95,8 @@ namespace GXPEngine
 					size2 = _centcanvas.graphics.MeasureString (score2.ToString (), font);
 				}
 
-
 				pnt1.X = _canvas.width - 1210 - size1.Width / 2;
 				pnt2.X = _canvas.width  - 100 - size2.Width / 2;
-
-
-
-
-
 
 				if (score1 >= 1000) 
 				{

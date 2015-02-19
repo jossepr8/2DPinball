@@ -26,17 +26,22 @@ namespace GXPEngine
 			_canvas.graphics.DrawString (message,font,brush,point);
 		}
 
+		public void AddPicture(string image,int x, int y, float scalex = 1, float scaley = 1)
+		{
+			Sprite Addedpicture = new Sprite(image);
+			Addedpicture.SetXY (x,y);
+			Addedpicture.SetOrigin (Addedpicture.x/2,Addedpicture.y/2);
+			Addedpicture.SetScaleXY (scalex,scaley);
+			AddChild (Addedpicture);
+		}
 
-
-		public void Step(){
+		public void Step()
+		{
 			_timer--;
-			if (_timer <= 0) {
+			if (_timer <= 0) 
+			{
 				this.Destroy ();
 			}
 		}
-
-	
-
 	}
 }
-

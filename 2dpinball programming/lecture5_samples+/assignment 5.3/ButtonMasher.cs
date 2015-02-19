@@ -20,6 +20,8 @@ namespace GXPEngine
 
 		Message message;
 		Message message2;
+		Message message3;
+		Message message4;
 
 		Sprite bar1 = new Sprite("mashbar.png");
 		Sprite bar2 = new Sprite("mashindicator.png");
@@ -39,15 +41,28 @@ namespace GXPEngine
 			Player2Last = LastPressed.none;
 			totalcounter = 0;
 			enabled = true;
+
 			_game._stepstate = StepStates.None;
-			message = new Message (_game.currentFps, "Press A and D", 0,20);
+
+			message = new Message (_game.currentFps, "Press:", 7,20);
+			message.AddPicture ("ad.png",120,-225,1.2f,1.2f);
 			message.SetXY (_level.GetWidth() / 4 - message.size.Width/2, 200);
 			_level.AddChild (message);
 
-			message2 = new Message (_game.currentFps, "Press LEFT and RIGHT", 0,20);
+			message3 = new Message (_game.currentFps, "Press:", 7,20);
+			message3.AddPicture ("ad1.png",120,-225,1.2f,1.2f);
+			message3.SetXY (_level.GetWidth() / 4 - message3.size.Width/2, 200);
+			_level.AddChild (message3);
+
+			message2 = new Message (_game.currentFps, "Press:", 0,20);
+			message2.AddPicture ("arrows.png",(int)message2.x + 130,(int)message2.y - 78,0.7f,0.7f);
 			message2.SetXY (_level.GetWidth() / 4*3 - message.size.Width/2, 200);
 			_level.AddChild (message2);
 
+			message4 = new Message (_game.currentFps, "Press:", 0,20);
+			message4.AddPicture ("arrows1.png",(int)message4.x + 130,(int)message4.y - 78,0.7f,0.7f);
+			message4.SetXY (_level.GetWidth() / 4*3 - message.size.Width/2, 200);
+			_level.AddChild (message4);
 
 			bar2.SetXY (game.width/2 - bar2.width/2, 300);
 			bar2startx = bar2.x;
