@@ -2,11 +2,19 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>106</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
       <Score>41</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
       <Score>41</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
+      <Score>12</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
@@ -27,23 +35,19 @@
     </highscore>
     <highscore>
       <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>
       <Score>0</Score>
-      <Name>AA</Name>
+      <Name>EMPTY</Name>
     </highscore>
   </Solo>
   <Team>
     <highscore>
+      <Score>118</Score>
+      <Name>AA</Name>
+    </highscore>
+    <highscore>
       <Score>52</Score>
       <Name>AA</Name>
     </highscore>
@@ -57,10 +61,6 @@
     </highscore>
     <highscore>
       <Score>4</Score>
-      <Name>AA</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
       <Name>AA</Name>
     </highscore>
     <highscore>

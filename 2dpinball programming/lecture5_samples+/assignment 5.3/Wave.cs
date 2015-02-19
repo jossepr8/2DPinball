@@ -12,6 +12,7 @@ namespace GXPEngine
 
 		static List<int[,]> wavelist = new List<int[,]>();
 		static List<PresetWave> preset_wavelist = new List<PresetWave> ();
+		static List<PresetWave> random_wavelist = new List<PresetWave> ();
 		static List<int> enemycountlist = new List<int> ();
 		static XmlReader reader;
 		static Random rnd;
@@ -31,7 +32,9 @@ namespace GXPEngine
 					SpawnPresetWave (preset_wavelist [currentwave]);
 					currentwave++;
 				} else {
-					SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
+					//SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
+					SpawnPresetWave (random_wavelist [rnd.Next (0, random_wavelist.Count)]);
+					currentwave++;
 				}
 			}
 			message.Step ();
@@ -52,6 +55,7 @@ namespace GXPEngine
 						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
 						enemy.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
 						_level.Addenemy (enemy);
+						enemy.speed += currentwave;
 					}
 				}
 			}
@@ -130,7 +134,41 @@ namespace GXPEngine
 				
 
 
+			using (reader = XmlReader.Create ("random_waves.xml")) 
+			{
+				reader.ReadStartElement ("preset_waves");
+				reader.ReadStartElement ("Config");
+				reader.ReadStartElement ("number_of_waves");
+				int numberofwaves = reader.ReadContentAsInt ();
+				reader.ReadEndElement ();	//number of waves
+				reader.ReadEndElement ();	//config
+				reader.ReadStartElement ("Waves");
+				for (int i = 0; i < numberofwaves; i++) {
+					PresetWave presetwave = new PresetWave ();
+					presetwave.wave = new int[10, 10];
+					reader.ReadStartElement ("Wave");
+					presetwave.startmessage = Wave.readstring ("start_message");
+					presetwave.messagetimer = Wave.readfloat ("messagetimer");
+					presetwave.paddlewidth = Wave.readfloat ("paddlewidth");
+					presetwave.ballsize = Wave.readfloat ("ballsize");
+					presetwave.enemygravity = Wave.readfloat ("enemygravity");
+					presetwave.wavemusic = Wave.readstring ("wavemusic");
+					for (int a = 0; a < 10; a++) {
+						reader.ReadStartElement ("row");
+						string[] cols = reader.ReadContentAsString ().Split (',');
+						for (int b = 0; b < 10; b++) {
+							presetwave.wave [a, b] = int.Parse (cols [b]);
+						}
+						reader.ReadEndElement ();	//row
+					}
+					reader.ReadEndElement ();	//wave
+					random_wavelist.Add (presetwave);
+				}
+				reader.ReadEndElement ();	//waves
+				reader.ReadEndElement ();	//preset_waves
+			}
 			//-----------all random waves----------------------------------
+			/*
 			using (reader = XmlReader.Create ("waves.xml")) 
 			{
 				reader.ReadStartElement ("Waves");
@@ -153,6 +191,7 @@ namespace GXPEngine
 				}
 				reader.ReadEndElement ();
 			}
+			*/
 	
 		}
 	}

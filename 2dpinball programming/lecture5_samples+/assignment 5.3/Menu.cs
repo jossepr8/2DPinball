@@ -29,7 +29,7 @@ namespace GXPEngine
 			AddChild (_background);
 
 			_ball = new Ball ( 32, new Vec2 (game.width / 8, 3 * game.height / 4), null, Color.Green){
-				position = new Vec2 (game.width/2, game.height/2)};	//start position
+				position = new Vec2 (-100, -100)};	//start position
 			AddChild (_ball);
 			_ball.velocity = new Vec2 (5,5);	//start velocity
 
@@ -102,6 +102,16 @@ namespace GXPEngine
 
 		void Update()
 		{	
+			if (_ball.y > _game.height + 50) {
+				_ball.position = new Vec2 (100, 100);
+				_ball.velocity = new Vec2 (Utils.Random (2, 7), Utils.Random (2, 7));
+				int randomscale = Utils.Random (1, 3);
+				_ball.SetScaleXY (randomscale,randomscale);
+
+
+			}
+			_ball.rotation += 10;
+
 			//for (int i = 0; i < 1000; i++) {
 			//	if(Input.GetKeyDown(i)){
 			//		Console.WriteLine (i);

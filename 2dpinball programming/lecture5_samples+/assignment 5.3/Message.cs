@@ -19,7 +19,7 @@ namespace GXPEngine
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
 			font = new Font ("Broadway BT",fontsize,FontStyle.Regular);
 			size = _canvas.graphics.MeasureString (message, font);
-			brush = new SolidBrush (Color.ForestGreen);
+			brush = new SolidBrush (Color.MediumPurple);
 			point = new PointF (0, 0);
 			_timer = timer * fps;
 			_canvas = new Canvas ((int)size.Width, (int)size.Height);

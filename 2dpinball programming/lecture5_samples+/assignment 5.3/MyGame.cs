@@ -47,7 +47,7 @@ namespace GXPEngine
 			Properties.Read ();
 			Wave.Read ();	//read enemie wave patterns from xml
 			SetState (States.MainMenu);	// start at "menu"
-
+			ShowMouse (false);
 		}
 	
 	
