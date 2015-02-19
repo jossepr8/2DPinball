@@ -96,7 +96,7 @@ namespace GXPEngine
 			if (_ball.y > height) {
 				Damage += _hud.maxhealth / 4;
 				_hud.UpdateHUD (Damage,_player1.score,_player2.score);
-				if (!CheckBar()) {
+				if (!CheckBar(true)) {
 					buttonmasher = new ButtonMasher (_game, this);
 				}
 
@@ -104,9 +104,11 @@ namespace GXPEngine
 				_ball.velocity = new Vec2 (0, -10);
 			}
 		}
-		bool CheckBar(){
+		bool CheckBar(bool checkonly = false){
 			if (Damage >= _hud.maxhealth) {
-				GameOver ();
+				if (!checkonly) {
+					GameOver ();
+				}
 				return true;
 			} else {
 				return false;
@@ -133,6 +135,7 @@ namespace GXPEngine
 			background = new Sprite ("nebula2.png");
 			background.SetScaleXY (0.75f,0.75f);
 			AddChild (background);
+
 
 			blackhole = new Sprite ("blackhole.png");
 			blackhole.SetOrigin (blackhole.width / 2, blackhole.height / 2);
@@ -185,14 +188,14 @@ namespace GXPEngine
 		}
 		void MakePaddles(){
 			//--------------------------------flippers/paddles/players------------------------
-			_player1 = new Flipper ("Paddle Blue.png");
+			_player1 = new Flipper ("paddleblueaa.jpg");
 			_player1.SetXY (width/2-width/10, 150);
 			_player1.rotation = _player1.StartAngle;
 			//_player1.SetColor (0, 0, 200);	//blue
 			_player1.scaleX = 2;
 			AddChild (_player1);
 
-			_player2 = new Flipper ("Paddle Red.png");
+			_player2 = new Flipper ("paddleredaa.jpg");
 			_player2.SetXY (width/2+width/10, 150);
 			_player2.rotation = -_player2.StartAngle;
 			//_player2.SetColor (200, 0, 0);	//red

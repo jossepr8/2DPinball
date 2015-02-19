@@ -10,7 +10,19 @@
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-     <Score>0</Score>
+      <Score>0</Score>
+      <Name>EMPTY</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>RANDY</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
+      <Name>JOSSE</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
@@ -18,23 +30,11 @@
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-       <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-     <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-    <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-  <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-     <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
@@ -44,11 +44,7 @@
   </Solo>
   <Team>
     <highscore>
-       <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-    <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
@@ -56,27 +52,31 @@
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-       <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-   <Score>0</Score>
+      <Score>0</Score>
+      <Name>TIM</Name>
+    </highscore>
+    <highscore>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-  <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-   <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-  <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>
-  <Score>0</Score>
+      <Score>0</Score>
       <Name>EMPTY</Name>
     </highscore>
     <highscore>

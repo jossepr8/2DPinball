@@ -2,7 +2,7 @@
 
 namespace GXPEngine
 {
-	public class Flipper : Sprite
+	public class Flipper : AnimSprite
 	{
 		public float rotationspeed {
 			get;
@@ -25,9 +25,11 @@ namespace GXPEngine
 			get;
 			set;
 		}
+
+		int frametimer = 0;
+		int timer = 10;
 			
-			
-		public Flipper (string image = "paddletest.png") : base(image)
+		public Flipper (string image = "paddletest.png") : base(image,2,1)
 		{
 			SetOrigin (width / 2, height/2 - 500);
 			rotationspeed = Properties.PaddleSpeed;
@@ -36,10 +38,22 @@ namespace GXPEngine
 			Bounce = Properties.PaddleBounce;
 			score = 0;
 		}
+		public void UpdateColor(){
+			frametimer = timer;
+			SetFrame (1);
+		}
 
 		void Update(){
-	
+			if (frametimer > 0) {
+				frametimer--;
+			}
+			if (frametimer <= 0) {
+				SetFrame (0);
+			}
+		
+
 		}
+			
 
 	}
 }
