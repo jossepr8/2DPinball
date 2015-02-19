@@ -30,11 +30,8 @@ namespace GXPEngine
 				currentmessage.SetXY (_level.GetWidth()/2 - currentmessage.size.Width/2 , 150);
 			}
 			if (timer == messagelist.Count) {
-				Console.WriteLine (timer);
-				Console.WriteLine (messagelist.Count);
 				_level.buttonmasher.Start ();
 				this.Destroy ();
-				//currentmessage.Destroy ();
 				currentmessage.auto = true;
 
 			}

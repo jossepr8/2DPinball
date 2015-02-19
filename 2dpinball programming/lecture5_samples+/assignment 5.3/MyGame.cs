@@ -34,14 +34,15 @@ namespace GXPEngine
 		public void SAVE(){
 			highscoremenu.highscores.Save ();
 		}
-			
+	
 		public MyGame () : base(1280, 720, false, false)
 		{
 			//SetScaleXY (0.5f, 0.5f);
+
 			scorelist = new List<Score>();
 			scorelistteam = new List<Score> ();
 			namelist = new List<string> ();
-			font = new Font ("Broadway",50,FontStyle.Regular);
+			font = new Font ("broadway BT",50,FontStyle.Regular);
 
 			highscoremenu = new HighscoreMenu (this);
 			//Console.Beep ();

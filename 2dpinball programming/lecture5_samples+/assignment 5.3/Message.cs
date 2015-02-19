@@ -17,7 +17,7 @@ namespace GXPEngine
 		public Message (int fps, string message, float timer,float fontsize = 50, string musicfile = null)
 		{
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
-			font = new Font ("Broadway",fontsize,FontStyle.Regular);
+			font = new Font ("Broadway BT",fontsize,FontStyle.Regular);
 			size = _canvas.graphics.MeasureString (message, font);
 			brush = new SolidBrush (Color.ForestGreen);
 			point = new PointF (0, 0);

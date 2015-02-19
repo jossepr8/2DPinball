@@ -60,7 +60,6 @@ namespace GXPEngine
 		Vec2 matrixvec1;
 		Vec2 matrixvec2;
 
-		CountDown cd;
 
 
 		public ButtonMasher buttonmasher;
@@ -98,9 +97,7 @@ namespace GXPEngine
 				Damage += _hud.maxhealth / 4;
 				_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 				if (!CheckBar()) {
-					//buttonmasher.Start ();
 					buttonmasher = new ButtonMasher (_game, this);
-					//AddChild (cd);
 				}
 
 				_ball.y = 2000;
@@ -163,11 +160,7 @@ namespace GXPEngine
 			_hud.UpdateHUD (Damage, _player1.score, _player2.score);
 
 			buttonmasher = new ButtonMasher (_game,this);
-			//buttonmasher.Start ();
 
-
-
-			//SoundManager.Playmusic ("Wave1.mp3");
 		}
 
 		void MakeWalls(){

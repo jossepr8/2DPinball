@@ -18,8 +18,8 @@ namespace GXPEngine
 		Canvas canvas = new Canvas (1280,720);
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
 
-		Font font = new Font ("Broadway",20,FontStyle.Regular);
-		Font fonttitle = new Font ("Broadway",30,FontStyle.Regular);
+		Font font = new Font ("Broadway BT",20,FontStyle.Regular);
+		Font fonttitle = new Font ("Broadway BT",30,FontStyle.Regular);
 
 		SolidBrush brushpurple = new SolidBrush (purpleish);
 

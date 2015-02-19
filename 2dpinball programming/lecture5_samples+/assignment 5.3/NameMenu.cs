@@ -12,7 +12,7 @@ namespace GXPEngine
 		string[] Alphabet;
 		new string name;
 		MyGame _game;
-		Font font = new Font ("Broadway",20,FontStyle.Regular);
+		Font font = new Font ("Broadway BT",20,FontStyle.Regular);
 
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
 		SolidBrush purpbrush = new SolidBrush (purpleish);

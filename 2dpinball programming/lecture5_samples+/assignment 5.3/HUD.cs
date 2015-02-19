@@ -22,8 +22,8 @@ namespace GXPEngine
 		Sprite HudBlue = new Sprite ("HudBlue.png");
 		Sprite HudRed = new Sprite ("HudRed.png");
 
-		Font font = new Font ("Broadway",40,FontStyle.Regular);
-		Font font1 = new Font ("Broadway",25,FontStyle.Regular);
+		Font font = new Font ("Broadway BT",40,FontStyle.Regular);
+		Font font1 = new Font ("Broadway BT",25,FontStyle.Regular);
 
 		PointF pnt1 = new PointF (50, 10);
 		PointF pnt2 = new PointF (1160, 10);
