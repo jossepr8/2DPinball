@@ -1,38 +1,26 @@
 ﻿<Properties StartupItem="sample.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ButtonMasher.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SoundManager.cs">
     <Files>
-      <File FileName="MyGame.cs" Line="11" Column="11" />
-      <File FileName="Menu.cs" Line="31" Column="31" />
-      <File FileName="Level.cs" Line="4" Column="4" />
-      <File FileName="CollisionManager2.cs" Line="4" Column="4" />
+      <File FileName="MyGame.cs" Line="1" Column="1" />
+      <File FileName="Menu.cs" Line="1" Column="1" />
+      <File FileName="Level.cs" Line="1" Column="1" />
+      <File FileName="CollisionManager2.cs" Line="1" Column="1" />
       <File FileName="Enemy.cs" Line="1" Column="1" />
       <File FileName="c:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\Highscores.cs" Line="1" Column="1" />
-      <File FileName="HighscoreMenu.cs" Line="42" Column="42" />
-      <File FileName="NameMenu.cs" Line="5" Column="5" />
-      <File FileName="SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Wave.cs" Line="15" Column="15" />
-      <File FileName="PresetWave.cs" Line="2" Column="2" />
-      <File FileName="Flipper.cs" Line="17" Column="17" />
-      <File FileName="HUD.cs" Line="38" Column="38" />
-      <File FileName="Message.cs" Line="46" Column="46" />
-      <File FileName="CountDown.cs" Line="5" Column="5" />
+      <File FileName="HighscoreMenu.cs" Line="1" Column="1" />
+      <File FileName="NameMenu.cs" Line="1" Column="1" />
+      <File FileName="SoundManager.cs" Line="3" Column="3" />
+      <File FileName="Wave.cs" Line="1" Column="1" />
+      <File FileName="PresetWave.cs" Line="1" Column="1" />
+      <File FileName="Flipper.cs" Line="1" Column="1" />
+      <File FileName="HUD.cs" Line="1" Column="1" />
+      <File FileName="Message.cs" Line="1" Column="1" />
+      <File FileName="CountDown.cs" Line="1" Column="1" />
       <File FileName="..\..\Components\Ball.cs" Line="1" Column="1" />
-      <File FileName="Manual.cs" Line="37" Column="37" />
+      <File FileName="Manual.cs" Line="24" Column="24" />
       <File FileName="ButtonMasher.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="sample" expanded="True">
-            <Node name="gxpengine" expanded="True">
-              <Node name="Core" expanded="True" />
-            </Node>
-            <Node name="ButtonMasher.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

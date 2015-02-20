@@ -156,7 +156,7 @@ namespace GXPEngine
 			AddChild (_hud);
 
 
-			MakeWalls ();
+			//MakeWalls ();
 			MakeBall ();
 			MakePaddles ();
 

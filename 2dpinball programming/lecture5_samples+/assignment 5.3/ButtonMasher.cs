@@ -26,8 +26,8 @@ namespace GXPEngine
 		AnimSprite spriteAD = new AnimSprite("AandD.png",2,1);
 		AnimSprite spriteArrows = new AnimSprite("Arrows2.png",2,1);
 
-		Sprite bar1 = new Sprite("mashbar.png");
-		Sprite bar2 = new Sprite("mashindicator.png");
+		Sprite tug = new Sprite("tug of war.png");
+		Sprite bar = new Sprite("bar.png");
 
 		float bar2startx;
 
@@ -70,14 +70,22 @@ namespace GXPEngine
 			_level.AddChild (message2);
 
 
-			bar2.SetXY (game.width/2 - bar2.width/2, 300);
-			bar2startx = bar2.x;
+			tug.SetOrigin (tug.width / 2, tug.height / 2);
+			tug.SetXY (game.width/2, 300);
+			tug.SetScaleXY (1.6f, 1.0f);
 
-			bar1.width = bar2.width * 20;
-			bar1.SetXY (game.width/2 - bar1.width/2, 300);
+			bar.SetOrigin (bar.width / 2, bar.height / 2);
+			bar.SetXY (game.width/2, 300);
 
-			_level.AddChild (bar1);
-			_level.AddChild (bar2);
+			//bar2startx = bar.x;
+
+			//bar1.width = bar2.width * 20;
+
+			//tug.SetScaleXY (3, 1);
+
+
+			_level.AddChild (tug);
+			_level.AddChild (bar);
 		}
 		public void Stop(){
 			enabled = false;
@@ -86,8 +94,8 @@ namespace GXPEngine
 			spriteArrows.Destroy ();
 			message.Step ();
 			message2.Step ();
-			bar1.Destroy ();
-			bar2.Destroy ();
+			bar.Destroy ();
+			tug.Destroy ();
 		}
 
 		private void SetFrames(int min, int max){
@@ -97,7 +105,7 @@ namespace GXPEngine
 
 		void Update(){
 			if (enabled) {
-				bar2.x = bar2startx + totalcounter * 10;
+				bar.x = _level.GetWidth()/2 + totalcounter * 10;
 				if (Input.GetKeyDown (Key.A) && Player1Last != LastPressed.left) {
 					Player1Last = LastPressed.left;
 					totalcounter--;

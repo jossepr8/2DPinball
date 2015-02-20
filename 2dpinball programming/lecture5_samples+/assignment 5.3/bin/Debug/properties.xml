@@ -4,7 +4,7 @@
 <Ball>
 	<Gravity> 	0.75 </Gravity>
 	<Speed> 	0 </Speed>
-	<MaxSpeed>	20 </MaxSpeed>
+	<MaxSpeed>	22 </MaxSpeed>
 </Ball>
 
 <Paddle>

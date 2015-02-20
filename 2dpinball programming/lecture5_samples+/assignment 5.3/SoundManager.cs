@@ -9,8 +9,10 @@ namespace GXPEngine
 	{
 
 		static SoundChannel musicChannel = new SoundChannel(0);
-		static SoundChannel soundChannel = new SoundChannel(1);
+		static SoundChannel musicChannel2 = new SoundChannel(1);
+		static SoundChannel soundChannel = new SoundChannel(2);
 		private static Timer Fadetimer;
+		private static Timer FadeIntimer;
 
 		public delegate void AfterFadeout(Object sender, EventArgs e);
 		static public event AfterFadeout fadeoutevent;
@@ -31,15 +33,32 @@ namespace GXPEngine
 
 		public static void Playmusic(String soundfile)
 		{
-		Sound sound = new Sound (soundfile,true,true);
-		musicChannel = sound.Play ();
+			Sound sound = new Sound (soundfile,true,true);
+			musicChannel = sound.Play ();
+			musicChannel.Volume = 0f;
+			if (FadeIntimer != null) {
+				FadeIntimer.Dispose ();
+			}
+			FadeIntimer = new Timer (500);
+			FadeIntimer.Elapsed += OnTimedEventStart;
+			FadeIntimer.Start ();
+
 		}
 
+		public static void OnTimedEventStart(Object source, ElapsedEventArgs e){
+			if (musicChannel.Volume < 1) {
+				musicChannel.Volume += 0.1f;
+			} else {
+				FadeIntimer.Stop ();
+				FadeIntimer.Dispose ();
+			}
+		}
 		public static void OnTimedEvent(Object source, ElapsedEventArgs e)
 		{
 			musicChannel.Volume -= 0.1f;
 			if (musicChannel.Volume <= 0) {
 				Fadetimer.Stop ();
+				Fadetimer.Dispose ();
 				musicChannel.Stop ();
 				fadeoutevent.Invoke (source, e);
 
@@ -52,6 +71,7 @@ namespace GXPEngine
 				Fadetimer = new Timer (500);
 				Fadetimer.Elapsed += OnTimedEvent;
 				Fadetimer.Start ();
+				//FadeIntimer.Stop ();
 			} else {
 				musicChannel.Stop ();
 			}

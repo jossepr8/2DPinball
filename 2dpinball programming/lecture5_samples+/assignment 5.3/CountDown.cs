@@ -16,6 +16,9 @@ namespace GXPEngine
 			_level.GetGame ()._stepstate = StepStates.None;
 			for (int i = countdown; i >= 0; i--) {
 				Message message = new Message (60, i.ToString(), 1, 90);
+				if (i == 0) {
+					message = new Message (60, "GO", 1, 90);
+				}
 				messagelist.Add (message);
 			}
 		}
@@ -27,7 +30,7 @@ namespace GXPEngine
 				timer++;
 
 				_level.AddChild (currentmessage);
-				currentmessage.SetXY (_level.GetWidth()/2 - currentmessage.size.Width/2 , 150);
+				currentmessage.SetXY (_level.GetWidth()/2 - currentmessage.size.Width/2 , 120);
 			}
 			if (timer == messagelist.Count) {
 				_level.buttonmasher.Start ();

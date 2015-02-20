@@ -133,6 +133,13 @@ namespace GXPEngine
 				
 
 		}
+		void AddBallVelocity(){
+			if (_level._ball.x < _level.GetWidth ()/2) {
+				_level._ball.velocity.Add (new Vec2 (0, -20));
+			} else {
+				_level._ball.velocity.Add (new Vec2 (0, -20));
+			}
+		}
 
 		public void Step(){
 			foreach (BasicBall ball in _level._balls) {
@@ -154,12 +161,14 @@ namespace GXPEngine
 			foreach (LineSegment line in _level._lines) {
 				if (line == _level.matrixline1 || line == _level.matrixline2) {
 					if (CheckCollision (line, true)) {
+						AddBallVelocity ();
 					}
 				} else {
 					if (line == _level.matrixlineV1) {
 						if (CheckCollision (line, true,true)) {
 							Reflect (_level.matrixline1, true);
 							_level._ball.y -= 50;
+							AddBallVelocity ();
 							return;
 						}
 					} else {
@@ -167,6 +176,7 @@ namespace GXPEngine
 							if (CheckCollision (line, true,true)) {
 								Reflect (_level.matrixline2, true);
 								_level._ball.y -= 50;
+								AddBallVelocity ();
 								return;
 							}
 						} else {

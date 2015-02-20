@@ -1,76 +1,76 @@
 <preset_waves>
 
 <Config>
-<number_of_waves> 21 </number_of_waves>
+<number_of_waves> 20 </number_of_waves>
 </Config>
 
 <Waves>
 
 <Wave>
-<start_message> first wave </start_message>
-<messagetimer> 1 </messagetimer>
-<paddlewidth> 250 </paddlewidth>
-<ballsize> 250 </ballsize>
+<start_message> Small Fry </start_message>
+<messagetimer> 2 </messagetimer>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 75 </ballsize>
 <enemygravity> 1 </enemygravity>
 <wavemusic>Wave1.wav</wavemusic> 
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 1,0,0,0,0,0,0,0,0,1 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 1,0,0,0,0,0,0,0,0,1 </row>
+<row> 0,0,0,1,0,0,1,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,1,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,1,1,1,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> second wave </start_message>
+<start_message> Look a Hat </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 200 </paddlewidth>
+<paddlewidth> 150 </paddlewidth>
 <ballsize> 200 </ballsize>
-<enemygravity> 2 </enemygravity>
+<enemygravity> 1 </enemygravity>
 <wavemusic>Wave2.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,1,1,1,1,1,1,1,1,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,1,0,0,0,0 </row>
-<row> 0,0,1,0,0,1,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,1,1,0,0,0,0 </row>
 </Wave>
 
 
 <Wave>
-<start_message> third wave </start_message>
+<start_message> GL HF </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 200 </paddlewidth>
+<ballsize> 25 </ballsize>
+<enemygravity> 1 </enemygravity>
 <wavemusic>Wave3.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,1,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,1,1,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,0,0,1,0,0,0,0,0 </row>
-<row> 0,0,1,1,1,0,0,0,0,0 </row>
 </Wave>
 
 
 <Wave>
-<start_message> wave four </start_message>
+<start_message> Box </start_message>
 <messagetimer> 3 </messagetimer>
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<enemygravity> 6 </enemygravity>
 <wavemusic>Wave4.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -85,37 +85,37 @@
 </Wave>
 
 <Wave>
-<start_message> the line </start_message>
+<start_message> The Line </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 100 </ballsize>
+<enemygravity> 2 </enemygravity>
 <wavemusic>Wave5.mp3</wavemusic>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
 </Wave>
 
 <Wave>
 <start_message> the lazy line </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 100 </ballsize>
+<enemygravity> 2 </enemygravity>
 <wavemusic>Wave6.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,1,1,1,1,1,1,0,0 </row>
-<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -125,43 +125,43 @@
 <Wave>
 <start_message> =| </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
+<paddlewidth> 125 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 3 </enemygravity>
 <wavemusic>Wave7.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
+<row> 0,0,1,1,0,0,1,1,0,0 </row>
+<row> 0,0,1,1,0,0,1,1,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,0,0 </row>
 <row> 0,0,1,1,1,1,1,1,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> X </start_message>
+<start_message> C-C-COMBO </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 2 </enemygravity>
+<paddlewidth> 50 </paddlewidth>
+<ballsize> 325 </ballsize>
+<enemygravity> 3 </enemygravity>
 <wavemusic>Wave8.mp3</wavemusic>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,0,0,0,0,0,0,1,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,0,0,1,1,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,0,0,0,0,0,0,1,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
 </Wave>
 
 <Wave>
-<start_message> boxes </start_message>
+<start_message> Boxing Time </start_message>
 <messagetimer> 3 </messagetimer>
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
@@ -180,37 +180,37 @@
 </Wave>
 
 <Wave>
-<start_message> O </start_message>
+<start_message> destrOy </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 100 </paddlewidth>
+<ballsize> 75 </ballsize>
+<enemygravity> 2 </enemygravity>
 <wavemusic>Wave10.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,1,1,0,0,1,1,0,0 </row>
+<row> 0,0,1,1,0,0,1,1,0,0 </row>
 <row> 0,0,0,1,1,1,1,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> the box </start_message>
+<start_message> it's a face </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 125 </paddlewidth>
+<ballsize> 75 </ballsize>
+<enemygravity> 1 </enemygravity>
 <wavemusic>Wave11.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,1,1,1,1,1,1,0,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,1,1,1,0,0,1,1,1,0 </row>
+<row> 0,1,1,0,0,0,0,1,1,0 </row>
+<row> 0,0,1,0,1,1,0,1,0,0 </row>
 <row> 0,0,1,0,0,0,0,1,0,0 </row>
 <row> 0,0,1,1,1,1,1,1,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -218,49 +218,49 @@
 </Wave>
 
 <Wave>
-<start_message> bowl </start_message>
+<start_message> Corner Camping </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 125 </paddlewidth>
+<ballsize> 125 </ballsize>
+<enemygravity> 2 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
+<row> 1,1,0,0,0,0,0,0,1,1 </row>
+<row> 1,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 1,0,0,0,0,0,0,0,0,1 </row>
-<row> 0,1,0,0,0,0,0,0,1,0 </row>
-<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 1,1,0,0,0,0,0,0,1,1 </row>
+</Wave>
+
+<Wave>
+<start_message> 2fast2furious </start_message>
+<messagetimer> 1 </messagetimer>
+<paddlewidth> 222 </paddlewidth>
+<ballsize> 222 </ballsize>
+<enemygravity> 7 </enemygravity>
+<wavemusic>Wave12.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,1,1,1,1,0,0,0 </row>
+<row> 0,0,1,1,1,1,1,1,1,0 </row>
+<row> 1,1,1,1,1,1,1,1,1,1 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> plus plus plus </start_message>
+<start_message> Mind the Gap </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
-<wavemusic>Wave12.mp3</wavemusic>
-<row> 0,0,1,0,0,0,0,0,0,0 </row>
-<row> 0,1,1,1,0,0,0,0,0,0 </row>
-<row> 0,0,1,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,1,0,0,0 </row>
-<row> 0,0,1,0,0,1,1,1,0,0 </row>
-<row> 0,1,1,1,0,0,1,0,0,0 </row>
-<row> 0,0,1,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,1,0,0 </row>
-<row> 0,0,0,0,0,0,1,1,1,0 </row>
-<row> 0,0,0,0,0,0,0,1,0,0 </row>
-</Wave>
-
-<Wave>
-<start_message> the gap </start_message>
-<messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 75 </ballsize>
+<enemygravity> 2 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
@@ -275,56 +275,37 @@
 </Wave>
 
 <Wave>
-<start_message> 3x box </start_message>
+<start_message> Techies </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
+<paddlewidth> 75 </paddlewidth>
 <ballsize> 150 </ballsize>
-<enemygravity> 3 </enemygravity>
-<wavemusic>Wave12.mp3</wavemusic>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,1,0,1,1,0,1,1,0 </row>
-<row> 0,1,1,0,1,1,0,1,1,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-</Wave>
-
-<Wave>
-<start_message> minefield </start_message>
-<messagetimer> 3 </messagetimer>
-<paddlewidth> 250 </paddlewidth>
-<ballsize> 250 </ballsize>
 <enemygravity> 1 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
 <row> 1,0,1,0,0,1,0,0,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 1,0,0,0,1,0,0,1,0,1 </row>
+<row> 1,0,1,0,1,0,0,1,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 1,0,1,0,0,1,0,0,0,1 </row>
+<row> 1,0,1,0,0,1,0,1,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 1,0,0,0,1,0,0,1,0,1 </row>
+<row> 1,0,1,0,1,0,0,1,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 1,0,1,0,0,1,0,0,0,1 </row>
+<row> 1,0,1,0,0,1,0,1,0,1 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> banana </start_message>
+<start_message> BANANA </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
+<paddlewidth> 25 </paddlewidth>
+<ballsize> 300 </ballsize>
 <enemygravity> 3 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
 <row> 0,0,0,0,1,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,1,0,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
-<row> 0,0,0,0,0,0,1,1,0,0 </row>
-<row> 0,0,0,0,0,0,1,1,0,0 </row>
+<row> 0,0,0,0,0,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,1,1,1,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
 <row> 0,0,0,0,0,1,1,0,0,0 </row>
 <row> 0,0,0,0,0,1,0,0,0,0 </row>
@@ -332,10 +313,10 @@
 </Wave>
 
 <Wave>
-<start_message> taco </start_message>
+<start_message> Me Gusta Taco </start_message>
 <messagetimer> 3 </messagetimer>
-<paddlewidth> 150 </paddlewidth>
-<ballsize> 150 </ballsize>
+<paddlewidth> 175 </paddlewidth>
+<ballsize> 125 </ballsize>
 <enemygravity> 3 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -364,47 +345,47 @@
 <row> 0,0,0,0,0,0,0,1,0,0 </row>
 <row> 0,0,0,0,1,1,0,1,0,0 </row>
 <row> 0,0,0,0,1,1,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,1,1,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,1 </row>
+<row> 0,1,1,1,0,0,0,0,0,1 </row>
+<row> 0,0,0,0,0,0,0,0,0,1 </row>
 </Wave>
 
 <Wave>
-<start_message> hat </start_message>
-<messagetimer> 3 </messagetimer>
-<paddlewidth> 300 </paddlewidth>
-<ballsize> 250 </ballsize>
-<enemygravity> 2 </enemygravity>
+<start_message> WHAT'S GOING ON </start_message>
+<messagetimer> 1 </messagetimer>
+<paddlewidth> 1000 </paddlewidth>
+<ballsize> 1000 </ballsize>
+<enemygravity> 8 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
+<row> 0,0,0,0,1,1,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,1,1,1,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,0,1,0,0,1,0,0,0 </row>
-<row> 0,0,1,1,1,1,1,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
 
 <Wave>
-<start_message> SNAKES! </start_message>
+<start_message> ez points ez life </start_message>
 <messagetimer> 3 </messagetimer>
 <paddlewidth> 200 </paddlewidth>
-<ballsize> 200 </ballsize>
+<ballsize> 300 </ballsize>
 <enemygravity> 1 </enemygravity>
 <wavemusic>Wave12.mp3</wavemusic>
-<row> 0,1,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,0,0,0,0,0,0,0,0 </row>
-<row> 0,1,0,0,0,0,1,1,1,1 </row>
-<row> 0,1,0,0,0,0,1,0,0,0 </row>
 <row> 0,1,1,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,0,0,0,0,1,0,0 </row>
-<row> 0,0,0,1,1,0,0,1,1,1 </row>
-<row> 0,0,0,1,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,0,0,0,0 </row>
-<row> 0,0,0,1,0,0,0,0,0,0 </row>
+<row> 0,1,1,0,0,0,0,0,0,0 </row>
+<row> 0,1,1,0,0,0,1,1,1,1 </row>
+<row> 0,1,1,0,0,0,1,1,1,1 </row>
+<row> 0,1,1,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,1,1,1,1 </row>
+<row> 0,0,0,1,1,0,1,1,1,1 </row>
+<row> 0,0,0,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,1,0,0,0,0,0 </row>
 </Wave>
 
 
