@@ -133,20 +133,11 @@ namespace GXPEngine
 					break;
 				}
 			}
-			//_ball.rotation += 10;
-
-			/*
-			for (int i = 0; i < 1000; i++) {
-				if(Input.GetKeyDown(i)){
-					Console.WriteLine (i);
-				}
-			}*/
 
 			if (Input.GetKeyDown (Key.ESCAPE)) {
 				Environment.Exit (0);
 			}
 		
-			//namemenu.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 
 			{

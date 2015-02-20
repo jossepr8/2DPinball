@@ -35,3 +35,8 @@ C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignmen
 C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.exe
 C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\bin\Debug\GXPEngine.pdb
 C:\Users\Tim\Desktop\2DPinball\2dpinball programming\lecture5_samples+\assignment 5.3\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\PAVATI\PAVATI\bin\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\PAVATI\PAVATI\bin\Debug\GXPEngine.pdb
+C:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\PAVATI\PAVATI\obj\x86\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\PAVATI\PAVATI\obj\x86\Debug\GXPEngine.exe
+C:\Users\Josse\Desktop\map\2DPinball\2dpinball programming\PAVATI\PAVATI\obj\x86\Debug\GXPEngine.pdb
