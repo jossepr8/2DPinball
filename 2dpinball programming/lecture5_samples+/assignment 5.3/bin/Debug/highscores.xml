@@ -10,12 +10,24 @@
       <Name>AHRI</Name>
     </highscore>
     <highscore>
+      <Score>259</Score>
+      <Name>SAMPLE</Name>
+    </highscore>
+    <highscore>
+      <Score>227</Score>
+      <Name>TEXT</Name>
+    </highscore>
+    <highscore>
       <Score>226</Score>
       <Name>ACER</Name>
     </highscore>
     <highscore>
       <Score>168</Score>
       <Name>ACER</Name>
+    </highscore>
+    <highscore>
+      <Score>163</Score>
+      <Name>BART</Name>
     </highscore>
     <highscore>
       <Score>141</Score>
@@ -29,23 +41,15 @@
       <Score>130</Score>
       <Name>ACER</Name>
     </highscore>
-    <highscore>
-      <Score>129</Score>
-      <Name>ALLAHU</Name>
-    </highscore>
-    <highscore>
-      <Score>125</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>124</Score>
-      <Name>AKBAR</Name>
-    </highscore>
   </Solo>
   <Team>
     <highscore>
       <Score>751</Score>
       <Name>AKBAR</Name>
+    </highscore>
+    <highscore>
+      <Score>486</Score>
+      <Name>VODKA</Name>
     </highscore>
     <highscore>
       <Score>356</Score>
@@ -68,19 +72,15 @@
       <Name>ANT</Name>
     </highscore>
     <highscore>
+      <Score>212</Score>
+      <Name>CAT</Name>
+    </highscore>
+    <highscore>
       <Score>190</Score>
       <Name>ANT</Name>
     </highscore>
     <highscore>
       <Score>164</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>126</Score>
-      <Name>AHRI</Name>
-    </highscore>
-    <highscore>
-      <Score>94</Score>
       <Name>ANT</Name>
     </highscore>
   </Team>

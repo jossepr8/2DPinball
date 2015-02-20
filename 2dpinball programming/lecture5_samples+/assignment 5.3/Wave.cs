@@ -41,7 +41,6 @@ namespace GXPEngine
 						SpawnPresetWave (preset_wavelist [currentwave]);
 						currentwave++;
 					} else {
-						//SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 						int number = rnd.Next (0, random_wavelist.Count);
 						if (random_wavelist [number] == lastwave) {
 							return;
@@ -56,8 +55,6 @@ namespace GXPEngine
 				}
 			} else {
 				if (_menu.enemylist.Count == 0 && _menu.GetGame ()._state == States.MainMenu) {
-
-						//SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
 						int number = rnd.Next (0, random_wavelist.Count);
 						if (random_wavelist [number] == lastwave) {
 							return;
@@ -131,14 +128,6 @@ namespace GXPEngine
 						_level.Addenemy (enemy);
 						break;
 					}
-					/*
-					if (wave [a, i] == 1) {
-						Enemy enemy = new Enemy (){speed = presetwave.enemygravity};
-						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
-						enemy.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
-						_level.Addenemy (enemy);
-					}
-					*/
 				}
 			}
 			_level.FixHud ();
@@ -146,14 +135,8 @@ namespace GXPEngine
 
 		void SpawnPresetWaveMenu(PresetWave presetwave){
 			lastwave = presetwave;
-			//SoundManager.StopMusic ();
 			message = new Message (60, presetwave.startmessage, presetwave.messagetimer);
 			message.SetXY (_menu.GetGame().width/2 - message.size.Width/2 , 150);
-			//_menu.AddChild (message);
-			//_level._player1.scaleX = presetwave.paddlewidth / 100;
-			//_level._player2.scaleX = presetwave.paddlewidth / 100;
-			//_level._ball.SetScaleXY (presetwave.ballsize/100, presetwave.ballsize/100);
-			//SoundManager.Playmusic (presetwave.wavemusic);
 			int[,] wave = presetwave.wave;
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
@@ -276,31 +259,6 @@ namespace GXPEngine
 				reader.ReadEndElement ();	//waves
 				reader.ReadEndElement ();	//preset_waves
 			}
-			//-----------all random waves----------------------------------
-			/*
-			using (reader = XmlReader.Create ("waves.xml")) 
-			{
-				reader.ReadStartElement ("Waves");
-				for (int i = 0; i < 19; i++) {
-					int[,] wave = new int[10, 10];
-					reader.ReadStartElement ("Wave");
-					reader.ReadStartElement ("count");
-					enemycountlist.Add (reader.ReadContentAsInt ());
-					reader.ReadEndElement ();
-					for (int a = 0; a < 10; a++) {
-						reader.ReadStartElement ("row");
-						string[] cols = reader.ReadContentAsString ().Split (',');
-						for (int b = 0; b < 10; b++) {
-							wave [a, b] = int.Parse (cols [b]);
-						}
-						reader.ReadEndElement ();
-					}
-					reader.ReadEndElement ();
-					wavelist.Add (wave);
-				}
-				reader.ReadEndElement ();
-			}
-			*/
 	
 		}
 	}
