@@ -40,7 +40,7 @@ namespace GXPEngine
 				"A", "B", "C", "D", "E", "F", "G", "H" , 
 				"I", "J", "K", "L", "M", "N", "O", "P" ,
 				"Q", "R", "S", "T", "U", "V", "W", "X" ,
-				"Y", "Z"
+				"Y", "Z", ".", " "
 			};
 
 			_esc = new Sprite ("esc.png");
@@ -98,9 +98,14 @@ namespace GXPEngine
 							name += Alphabet [i - 65];
 						}
 					}
+					if (Input.GetKeyDown (Key.SPACE)) {
+						name += Alphabet [27];
+					}
+					if (Input.GetKeyDown (46)) {	//dot
+						name += Alphabet [26];
+					}
 				}
-				if (Input.GetKeyDown (295)) {
-					//name.TrimEnd(name[name.Length - 1]);
+				if (Input.GetKeyDown (295) && name != null && name.Length > 0) {	//backspace
 					Char[] chars = name.ToCharArray ();
 					Char[] chars2 = new Char[chars.Length - 1];
 					for (int i = 0; i < chars.Length-1; i++) {

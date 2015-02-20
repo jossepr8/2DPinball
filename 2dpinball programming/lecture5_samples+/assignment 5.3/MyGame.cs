@@ -66,6 +66,7 @@ namespace GXPEngine
 			{
 				PauseControl ();
 			}
+			/*
 			if (Input.GetKeyDown (Key.G)) {
 				SetState (States.Level);
 			}
@@ -78,6 +79,7 @@ namespace GXPEngine
 			if (Input.GetKeyDown (Key.N)) {
 				SetState (States.NameMenu);
 			}
+			*/
 
 		
 
@@ -103,8 +105,8 @@ namespace GXPEngine
 
 		public void SetState(States state){
 			_state = state;
-			//SoundManager.StopMusic ();
-			//SoundManager.StopSound ();
+			SoundManager.StopMusic ();
+			SoundManager.StopSound ();
 
 			if (level != null) {
 				level.Destroy ();
@@ -135,6 +137,10 @@ namespace GXPEngine
 			case States.Level:
 				if (player1name == null || player2name == null || teamname == null) {
 					SetState (States.NameMenu);
+					Message m = new Message (60, "You need to choose your names first", 3, 30);
+					m.SetXY (width / 2 - m.size.Width / 2, 0);
+					m.auto = true;
+					namemenu.AddChild (m);
 				} else {
 					level = new Level (this);
 					AddChild (level);
