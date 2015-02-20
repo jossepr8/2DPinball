@@ -1,10 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <names>
-  <amount>49</amount>
+  <amount>103</amount>
   <Name>ANT</Name>
+  <Name>DROW</Name>
+  <Name>KALISTA</Name>
+  <Name>RANGER</Name>
+  <Name>ANNIE</Name>
+  <Name>ASHE</Name>
+  <Name>MEEPO</Name>
+  <Name>TECHIES</Name>
+  <Name>SQUEE</Name>
+  <Name>SPLEEN</Name>
+  <Name>SPOON</Name>
+  <Name>AHRI</Name>
+  <Name>YASUO</Name>
+  <Name>TRISTANA</Name>
+  <Name>BANE</Name>
+  <Name>CIA</Name>
+  <Name>PAVEL</Name>
+  <Name>RUI</Name>
+  <Name>RICK</Name>
+  <Name>DOCTOR</Name>
+  <Name>PEPPER</Name>
+  <Name>VODKA</Name>
+  <Name>TEQUILLA</Name>
+  <Name>SAMPLE</Name>
+  <Name>TEXT</Name>
+  <Name>LITHUANIA</Name>
+  <Name>ALLAHU</Name>
+  <Name>AKBAR</Name>
+  <Name>SKELETOR</Name>
+  <Name>CHEEKI</Name>
+  <Name>BREEKI</Name>
+  <Name>BANDIT</Name>
+  <Name>STALKER</Name>
+  <Name>APPLE</Name>
+  <Name>GORDON</Name>
+  <Name>RAMSAY</Name>
+  <Name>ACER</Name>
+  <Name>DELL</Name>
+  <Name>MSI</Name>
+  <Name>SANDWICH</Name>
+  <Name>DOUGHNUT</Name>
+  <Name>XBOX</Name>
+  <Name>PLAYSTATION</Name>
+  <Name>NINTENDO</Name>
+  <Name>ARBITER</Name>
+  <Name>KRAKEN</Name>
+  <Name>BAD</Name>
+  <Name>GOOD</Name>
+  <Name>GAME</Name>
+  <Name>ALIEN</Name>
+  <Name>PREDATOR</Name>
+  <Name>ARNOLD</Name>
+  <Name>MAX</Name>
   <Name>APPOLO</Name>
   <Name>BART</Name>
   <Name>BAT</Name>
+  <Name>PAYNE</Name>
   <Name>BRAM</Name>
   <Name>CAT</Name>
   <Name>CLARKSON</Name>
@@ -17,6 +70,7 @@
   <Name>FRANKLIN</Name>
   <Name>GABE</Name>
   <Name>GAMES</Name>
+  <Name>GG</Name>
   <Name>GREEN</Name>
   <Name>HALO</Name>
   <Name>JEREMY</Name>
