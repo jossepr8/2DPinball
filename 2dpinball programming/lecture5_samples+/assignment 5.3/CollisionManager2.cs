@@ -67,24 +67,37 @@ namespace GXPEngine
 		void HitWall(){
 			SoundManager.Playsound(SoundEffect.bounce);
 		}
+		void AddScore(Enemy enemy, Flipper player){
+			switch (enemy._type) {
+			case Types.Normal:
+				player.score++;
+				break;
+			case Types.Green:
+				player.score += 3;
+				break;
+			case Types.Purple:
+				player.score += 5;
+				break;
+			}
+
+		}
 		void HitBall(BasicBall ball){
 			//hit enemy
 			for (int i = 0; i < _level._enemyballs.Count; i++) {
 				if (ball == _level._enemyballs [i]) {
 					_level._enemyballs [i].Destroy ();
 					_level._enemyballs.Remove (_level._enemyballs [i]);
-					_level.enemylist [i].Destroy ();
-					_level.enemylist.Remove (_level.enemylist [i]);
 					if (_level._touched == Players._player1) {
 						SoundManager.Playsound (SoundEffect.enemyhit);
-						_level._player1.score++;
-						_level._hud.UpdateHUD (_level.Damage,_level._player1.score,_level._player2.score);
+						AddScore (_level.enemylist [i], _level._player1);
 					}
 					if (_level._touched == Players._player2) {
 						SoundManager.Playsound (SoundEffect.enemyhit2);
-						_level._player2.score++;
-						_level._hud.UpdateHUD (_level.Damage,_level._player1.score,_level._player2.score);
+						AddScore (_level.enemylist [i], _level._player2);
 					}
+					_level.enemylist [i].Destroy ();
+					_level.enemylist.Remove (_level.enemylist [i]);
+					_level._hud.UpdateHUD (_level.Damage, _level._player1.score, _level._player2.score);
 				}
 			}
 

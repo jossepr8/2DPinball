@@ -6,6 +6,14 @@
       <Name>KAZUYA</Name>
     </highscore>
     <highscore>
+      <Score>125</Score>
+      <Name>ANT</Name>
+    </highscore>
+    <highscore>
+      <Score>116</Score>
+      <Name>ANT</Name>
+    </highscore>
+    <highscore>
       <Score>114</Score>
       <Name>ANT</Name>
     </highscore>
@@ -33,18 +41,14 @@
       <Score>33</Score>
       <Name>DMITRIJ</Name>
     </highscore>
-    <highscore>
-      <Score>25</Score>
-      <Name>BRAM</Name>
-    </highscore>
-    <highscore>
-      <Score>12</Score>
-      <Name>JOSSE</Name>
-    </highscore>
   </Solo>
   <Team>
     <highscore>
       <Score>255</Score>
+      <Name>ANT</Name>
+    </highscore>
+    <highscore>
+      <Score>241</Score>
       <Name>ANT</Name>
     </highscore>
     <highscore>
@@ -62,10 +66,6 @@
     <highscore>
       <Score>45</Score>
       <Name>MONKEYS</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
     </highscore>
     <highscore>
       <Score>0</Score>

@@ -72,12 +72,38 @@ namespace GXPEngine
 			int[,] wave = presetwave.wave;
 			for (int i = 0; i < wave.GetLength(0); i++) {
 				for (int a = 0; a < wave.GetLength(1); a++) {
+					Enemy enemy;
+					float WIDTH;
+					switch (wave [a, i]) {
+					case 1:
+						enemy = new Enemy (){ speed = presetwave.enemygravity };
+						WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
+						enemy.SetXY (WIDTH / 10 * i + WIDTH, a * 64 - 10 * 64);
+						_level.Addenemy (enemy);
+						break;
+					case 2:
+						enemy = new Enemy (Types.Green){ speed = presetwave.enemygravity };
+						WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
+						enemy.SetXY (WIDTH / 10 * i + WIDTH, a * 64 - 10 * 64);
+						_level.Addenemy (enemy);
+						break;
+					case 3:
+						enemy = new Enemy (Types.Purple){ speed = presetwave.enemygravity };
+						WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
+						enemy.SetXY (WIDTH / 10 * i + WIDTH, a * 64 - 10 * 64);
+						_level.Addenemy (enemy);
+						break;
+
+
+					}
+					/*
 					if (wave [a, i] == 1) {
 						Enemy enemy = new Enemy (){speed = presetwave.enemygravity};
 						float WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
 						enemy.SetXY (WIDTH/10 * i + WIDTH , a * 64 - 10 * 64);
 						_level.Addenemy (enemy);
 					}
+					*/
 				}
 			}
 		}

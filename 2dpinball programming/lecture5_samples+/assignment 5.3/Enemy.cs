@@ -12,12 +12,23 @@ namespace GXPEngine
 		private float frame = 0;
 		private float minframe = 0;
 		private float maxframe = 8;
+		public Types _type;
 
-		public Enemy () : base("sheet.png",8,1)
+		public Enemy (Types type = Types.Normal) : base("sheet.png",8,1)
 		{	
+			_type = type;
 			SetScaleXY (0.5f, 0.5f);
 			SetOrigin (width / 2, height / 2);
 			speed = Properties.EnemyGravity;
+			switch (type) {
+			case Types.Green:
+				SetColor (0, 200, 0);
+				break;
+			case Types.Purple:
+				SetColor (200, 0, 200);
+				break;
+			}
+
 		}
 
 		void SetFrames(int min, int max){
@@ -42,6 +53,11 @@ namespace GXPEngine
 			y += speed;
 		}
 
+	}
+	public enum Types{
+		Normal,
+		Green,
+		Purple
 	}
 
 }
