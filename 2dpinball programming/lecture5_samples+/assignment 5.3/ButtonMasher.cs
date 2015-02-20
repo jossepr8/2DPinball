@@ -57,7 +57,9 @@ namespace GXPEngine
 
 			message = new Message (_game.currentFps, "Press:", 0,20);
 			message.SetXY (_level.GetWidth() / 4 - message.size.Width/2, 200);
+			//spriteAD.SetScaleXY (2, 2);
 			spriteAD.SetXY (_level.GetWidth() / 4 + 30,125);
+
 			_level.AddChild (spriteAD);
 			_level.AddChild (message);
 
@@ -71,11 +73,11 @@ namespace GXPEngine
 
 
 			tug.SetOrigin (tug.width / 2, tug.height / 2);
-			tug.SetXY (game.width/2, 300);
+			tug.SetXY (game.width/2, 400);
 			tug.SetScaleXY (1.6f, 1.0f);
 
 			bar.SetOrigin (bar.width / 2, bar.height / 2);
-			bar.SetXY (game.width/2, 300);
+			bar.SetXY (game.width/2, 400);
 
 			//bar2startx = bar.x;
 

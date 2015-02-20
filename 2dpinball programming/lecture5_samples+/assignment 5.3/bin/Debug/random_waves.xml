@@ -1,7 +1,7 @@
 <preset_waves>
 
 <Config>
-<number_of_waves> 20 </number_of_waves>
+<number_of_waves> 26 </number_of_waves>
 </Config>
 
 <Waves>
@@ -388,6 +388,119 @@
 <row> 0,0,0,1,1,0,0,0,0,0 </row>
 </Wave>
 
+<Wave>
+<start_message> EAT YOUR VEGGIES </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 100 </paddlewidth>
+<ballsize> 75 </ballsize>
+<enemygravity> 1 </enemygravity>
+<wavemusic>Wave5.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,2,2,2,2,0,0,0 </row>
+<row> 0,0,2,1,1,1,1,2,0,0 </row>
+<row> 0,2,1,1,1,1,1,1,2,0 </row>
+<row> 0,0,2,2,1,1,2,2,0,0 </row>
+<row> 0,0,0,0,2,2,0,0,0,0 </row>
+<row> 0,0,0,0,2,2,0,0,0,0 </row>
+<row> 0,0,0,0,2,2,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> GREEN N PURPLE </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 50 </ballsize>
+<enemygravity> 1 </enemygravity>
+<wavemusic>Wave9.mp3</wavemusic>
+<row> 0,0,2,3,0,0,3,2,0,0 </row>
+<row> 0,0,3,2,2,2,2,3,0,0 </row>
+<row> 0,0,2,3,3,3,3,2,0,0 </row>
+<row> 0,0,1,0,0,0,0,1,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Purple Haze </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 100 </paddlewidth>
+<ballsize> 25 </ballsize>
+<enemygravity> 1 </enemygravity>
+<wavemusic>Wave8.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,2,2,0,0,0,0 </row>
+<row> 0,0,0,2,3,3,2,0,0,0 </row>
+<row> 0,0,0,2,3,3,2,0,0,0 </row>
+<row> 0,0,0,0,2,2,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Grove Street </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 300 </ballsize>
+<enemygravity> 2 </enemygravity>
+<wavemusic>Wave12.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> teertS evorG </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 75 </paddlewidth>
+<ballsize> 300 </ballsize>
+<enemygravity> 2 </enemygravity>
+<wavemusic>Wave12.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> THINK FAST </start_message>
+<messagetimer> 1 </messagetimer>
+<paddlewidth> 1000 </paddlewidth>
+<ballsize> 300 </ballsize>
+<enemygravity> 10 </enemygravity>
+<wavemusic>Wave5.mp3</wavemusic>
+<row> 0,0,0,3,3,3,3,0,0,0 </row>
+<row> 0,0,0,0,3,3,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
 
 
 </Waves>

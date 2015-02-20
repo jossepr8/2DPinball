@@ -12,6 +12,7 @@ namespace GXPEngine
 		AnimSprite _highscore;
 		AnimSprite _manual;
 		AnimSprite _names;
+		Sprite logo;
 		Sprite _esc;
 
 		Ball _ball;
@@ -27,6 +28,10 @@ namespace GXPEngine
 			_game = game;
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
+
+			logo = new Sprite ("PAVATI.png");
+			logo.SetXY (_game.width / 2 - logo.width / 2, -140);
+			AddChild (logo);
 
 			SoundManager.Playmusic ("mainmenu.mp3");
 

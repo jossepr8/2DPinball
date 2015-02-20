@@ -14,7 +14,7 @@ namespace GXPEngine
 		public SizeF size;
 		public bool auto = false;
 
-		public Message (int fps, string message, float timer,float fontsize = 50, string musicfile = null)
+		public Message (int fps, string message, float timer,float fontsize = 50, bool showmessage = true)
 		{
 			_canvas = new Canvas (1000,1000);	//random size that fits probably all messages
 			font = new Font ("Broadway BT",fontsize,FontStyle.Regular);
@@ -24,7 +24,9 @@ namespace GXPEngine
 			_timer = timer * fps;
 			_canvas = new Canvas ((int)size.Width, (int)size.Height);
 			AddChild (_canvas);
-			_canvas.graphics.DrawString (message,font,brush,point);
+			if (showmessage) {
+				_canvas.graphics.DrawString (message, font, brush, point);
+			}
 		}
 
 		public void AddPicture(string image,int x, int y, float scalex = 1, float scaley = 1)

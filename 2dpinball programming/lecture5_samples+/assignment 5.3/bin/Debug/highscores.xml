@@ -2,6 +2,10 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>168</Score>
+      <Name>ACER</Name>
+    </highscore>
+    <highscore>
       <Score>141</Score>
       <Name>KAZUYA</Name>
     </highscore>
@@ -22,6 +26,14 @@
       <Name>ANT</Name>
     </highscore>
     <highscore>
+      <Score>88</Score>
+      <Name>ACER</Name>
+    </highscore>
+    <highscore>
+      <Score>81</Score>
+      <Name>ACER</Name>
+    </highscore>
+    <highscore>
       <Score>69</Score>
       <Name>ANT</Name>
     </highscore>
@@ -29,20 +41,12 @@
       <Score>60</Score>
       <Name>ANT</Name>
     </highscore>
-    <highscore>
-      <Score>45</Score>
-      <Name>PATRICK</Name>
-    </highscore>
-    <highscore>
-      <Score>34</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>33</Score>
-      <Name>DMITRIJ</Name>
-    </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>256</Score>
+      <Name>ACER</Name>
+    </highscore>
     <highscore>
       <Score>255</Score>
       <Name>ANT</Name>
@@ -54,6 +58,10 @@
     <highscore>
       <Score>164</Score>
       <Name>ANT</Name>
+    </highscore>
+    <highscore>
+      <Score>126</Score>
+      <Name>AHRI</Name>
     </highscore>
     <highscore>
       <Score>94</Score>
@@ -69,19 +77,11 @@
     </highscore>
     <highscore>
       <Score>0</Score>
-      <Name>EMPTY</Name>
+      <Name>AHRI</Name>
     </highscore>
     <highscore>
       <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>EMPTY</Name>
+      <Name>ANT</Name>
     </highscore>
   </Team>
 </Highscores>

@@ -88,11 +88,11 @@ namespace GXPEngine
 					_level._enemyballs [i].Destroy ();
 					_level._enemyballs.Remove (_level._enemyballs [i]);
 					if (_level._touched == Players._player1) {
-						SoundManager.Playsound (SoundEffect.enemyhit);
+						SoundManager.Playsound (SoundEffect.enemyhit,0.8f);
 						AddScore (_level.enemylist [i], _level._player1);
 					}
 					if (_level._touched == Players._player2) {
-						SoundManager.Playsound (SoundEffect.enemyhit2);
+						SoundManager.Playsound (SoundEffect.enemyhit2,0.8f);
 						AddScore (_level.enemylist [i], _level._player2);
 					}
 					_level.enemylist [i].Destroy ();
@@ -105,7 +105,7 @@ namespace GXPEngine
 		void HitPlayer1(){
 			_level._ball.overlay1.SetColor (0, 0, 200);
 			_level._ball.overlay2.SetColor (0, 0, 200);
-			SoundManager.Playsound (SoundEffect.bounce2,0.7f,-1);
+			SoundManager.Playsound (SoundEffect.bounce2,0.5f,-1);
 			_level._touched = Players._player1;
 			_level._player1.UpdateColor ();
 
@@ -113,7 +113,7 @@ namespace GXPEngine
 		void HitPlayer2(){
 			_level._ball.overlay1.SetColor (200, 0, 0);
 			_level._ball.overlay2.SetColor (200, 0, 0);
-			SoundManager.Playsound (SoundEffect.bounce3,0.7f,1);
+			SoundManager.Playsound (SoundEffect.bounce3,0.5f,1);
 			_level._touched = Players._player2;
 			_level._player2.UpdateColor ();
 		

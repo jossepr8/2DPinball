@@ -90,6 +90,7 @@ namespace GXPEngine
 			{ SoundEffect.bounce3,"bounce3.wav" },
 			{ SoundEffect.enemyhit,"enemyhit.wav" },
 			{ SoundEffect.enemyhit2,"enemyhit2.wav" },
+			{ SoundEffect.gameover, "gameover.wav" },
 			{ SoundEffect.nyan,"nyan.wav" }
 		
 		};
@@ -105,7 +106,8 @@ namespace GXPEngine
 		bounce2,
 		bounce3,
 		enemyhit,
-		enemyhit2
+		enemyhit2,
+		gameover
 	}
 
 }

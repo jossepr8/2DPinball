@@ -75,7 +75,10 @@ namespace GXPEngine
 			_game.scorelist.Add (new Score (_player2.score, _game.player2name));
 			_game.scorelistteam.Add (new Score (_player2.score + _player1.score, _game.teamname));
 			_game.SAVE ();
-			_game.SetState (States.Highscores);
+			CountDown countdown = new CountDown (3, this, false);
+			AddChild (countdown);
+			SoundManager.Playsound (SoundEffect.gameover);
+			//_game.SetState (States.Highscores);
 		}
 
 		public void Step(){

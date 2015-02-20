@@ -32,7 +32,7 @@ namespace GXPEngine
 		SizeF size2;
 
 		readonly Pen redPen = new Pen(Color.Red, 3);
-		readonly SolidBrush blueBrush= new SolidBrush(Color.Blue);
+		readonly SolidBrush blueBrush= new SolidBrush(Color.LightBlue);
 		readonly SolidBrush redBrush= new SolidBrush(Color.Red);
 
 		Rectangle rec = new Rectangle (500,30,300,20);

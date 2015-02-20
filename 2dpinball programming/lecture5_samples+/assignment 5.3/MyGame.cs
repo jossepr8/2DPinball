@@ -103,11 +103,13 @@ namespace GXPEngine
 
 		public void SetState(States state){
 			_state = state;
-			SoundManager.StopMusic ();
-			SoundManager.StopSound ();
+			//SoundManager.StopMusic ();
+			//SoundManager.StopSound ();
 
 			if (level != null) {
 				level.Destroy ();
+				SoundManager.StopMusic ();
+				SoundManager.StopSound ();
 			}
 			if (menu != null) {
 				menu.Destroy ();
@@ -136,6 +138,8 @@ namespace GXPEngine
 				} else {
 					level = new Level (this);
 					AddChild (level);
+					SoundManager.StopMusic ();
+					SoundManager.StopSound ();
 				}
 				break;
 			case States.Highscores:
