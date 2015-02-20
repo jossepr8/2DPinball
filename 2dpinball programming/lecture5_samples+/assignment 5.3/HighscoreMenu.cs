@@ -13,15 +13,19 @@ namespace GXPEngine
 		float yvalue2 = 160;
 
 		string title;
-		Sprite _background = new Sprite ("mainmenubackground.png");
+		//Sprite _background = new Sprite ("mainmenubackground.png");
+		Sprite _background = new Sprite ("carbon.png");
+
 
 		Canvas canvas = new Canvas (1280,720);
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
 
+
 		Font font = new Font ("Broadway BT",20,FontStyle.Regular);
 		Font fonttitle = new Font ("Broadway BT",30,FontStyle.Regular);
 
-		SolidBrush brushpurple = new SolidBrush (purpleish);
+		//SolidBrush brushpurple = new SolidBrush (purpleish);
+		SolidBrush brushpurple = new SolidBrush (Color.ForestGreen);
 
 
 

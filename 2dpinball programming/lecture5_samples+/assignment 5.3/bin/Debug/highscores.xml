@@ -2,12 +2,32 @@
 <Highscores>
   <Solo>
     <highscore>
+      <Score>454</Score>
+      <Name>ACER</Name>
+    </highscore>
+    <highscore>
+      <Score>297</Score>
+      <Name>AHRI</Name>
+    </highscore>
+    <highscore>
+      <Score>226</Score>
+      <Name>ACER</Name>
+    </highscore>
+    <highscore>
       <Score>168</Score>
       <Name>ACER</Name>
     </highscore>
     <highscore>
       <Score>141</Score>
       <Name>KAZUYA</Name>
+    </highscore>
+    <highscore>
+      <Score>139</Score>
+      <Name>ALIEN</Name>
+    </highscore>
+    <highscore>
+      <Score>130</Score>
+      <Name>ACER</Name>
     </highscore>
     <highscore>
       <Score>125</Score>
@@ -21,28 +41,16 @@
       <Score>114</Score>
       <Name>ANT</Name>
     </highscore>
-    <highscore>
-      <Score>95</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>88</Score>
-      <Name>ACER</Name>
-    </highscore>
-    <highscore>
-      <Score>81</Score>
-      <Name>ACER</Name>
-    </highscore>
-    <highscore>
-      <Score>69</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>60</Score>
-      <Name>ANT</Name>
-    </highscore>
   </Solo>
   <Team>
+    <highscore>
+      <Score>751</Score>
+      <Name>AKBAR</Name>
+    </highscore>
+    <highscore>
+      <Score>356</Score>
+      <Name>ALLAHU</Name>
+    </highscore>
     <highscore>
       <Score>256</Score>
       <Name>ACER</Name>
@@ -53,6 +61,10 @@
     </highscore>
     <highscore>
       <Score>241</Score>
+      <Name>ANT</Name>
+    </highscore>
+    <highscore>
+      <Score>190</Score>
       <Name>ANT</Name>
     </highscore>
     <highscore>
@@ -70,18 +82,6 @@
     <highscore>
       <Score>70</Score>
       <Name>SAXION</Name>
-    </highscore>
-    <highscore>
-      <Score>45</Score>
-      <Name>MONKEYS</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>AHRI</Name>
-    </highscore>
-    <highscore>
-      <Score>0</Score>
-      <Name>ANT</Name>
     </highscore>
   </Team>
 </Highscores>

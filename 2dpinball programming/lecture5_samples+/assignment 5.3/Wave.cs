@@ -18,6 +18,7 @@ namespace GXPEngine
 		static Random rnd;
 		Message message;
 		int currentwave = 0;
+		PresetWave lastwave;
 
 		public Wave (Level level)
 		{
@@ -33,7 +34,11 @@ namespace GXPEngine
 					currentwave++;
 				} else {
 					//SpawnWave(wavelist[rnd.Next(0,wavelist.Count)]);
-					SpawnPresetWave (random_wavelist [rnd.Next (0, random_wavelist.Count)]);
+					int number = rnd.Next (0, random_wavelist.Count);
+					if (random_wavelist [number] == lastwave) {
+						return;
+					}
+					SpawnPresetWave (random_wavelist [number]);
 					currentwave++;
 				}
 			}
@@ -61,6 +66,7 @@ namespace GXPEngine
 			}
 		}
 		void SpawnPresetWave(PresetWave presetwave){
+			lastwave = presetwave;
 			SoundManager.StopMusic ();
 			message = new Message (_game.currentFps, presetwave.startmessage, presetwave.messagetimer);
 			message.SetXY (_level.GetWidth()/2 - message.size.Width/2 , 150);
@@ -89,6 +95,12 @@ namespace GXPEngine
 						break;
 					case 3:
 						enemy = new Enemy (Types.Purple){ speed = presetwave.enemygravity };
+						WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
+						enemy.SetXY (WIDTH / 10 * i + WIDTH, a * 64 - 10 * 64);
+						_level.Addenemy (enemy);
+						break;
+					case 4:
+						enemy = new Enemy (Types.Yellow){ speed = presetwave.enemygravity };
 						WIDTH = _level.GetWidth () / 3 * 2 - _level.GetWidth () / 3;
 						enemy.SetXY (WIDTH / 10 * i + WIDTH, a * 64 - 10 * 64);
 						_level.Addenemy (enemy);

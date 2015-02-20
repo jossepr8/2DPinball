@@ -13,13 +13,15 @@ namespace GXPEngine
 
 		MyGame _game;
 
-		string introduction;
-		string controls;
-		Sprite _background = new Sprite ("mainmenubackground.png");
-
+		//string introduction;
+		//string controls;
+	//	Sprite _background = new Sprite ("mainmenubackground.png");
+		Sprite _background = new Sprite ("carbon.png");
+		Sprite _menu = new Sprite ("howtoplaytodo.png");
 		//5a5492
 		Font font = new Font ("Broadway BT",18,FontStyle.Regular);
-		readonly SolidBrush brushred = new SolidBrush (purpleish);
+		//readonly SolidBrush brushred = new SolidBrush (purpleish);
+		readonly SolidBrush brushred = new SolidBrush (Color.DarkOrchid);
 
 
 		Canvas canvas = new Canvas (1280,720);
@@ -29,7 +31,9 @@ namespace GXPEngine
 			_game = game;
 			AddChild (_background);
 			AddChild (canvas);
-
+			_menu.SetScaleXY (0.7f, 0.7f);
+			//_menu.SetXY (100, 100);
+			AddChild (_menu);
 			SoundManager.Playmusic ("mainmenu.mp3");
 
 			_esc = new Sprite ("esc.png");
@@ -38,7 +42,7 @@ namespace GXPEngine
 			AddChild (_esc);
 
 			canvas.graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
+			/*
 			introduction = "This game is a co-op game which is meant to be played with two players.\n" +
 				"The purpose of the game is to destroy as many waves of enemies as\n" + "you can before the enemies do too much damage.\n"+
 				"You receive damage when the enemies reach the bottom of the screen,\n" +
@@ -48,6 +52,7 @@ namespace GXPEngine
 
 			canvas.graphics.DrawString (introduction,font,brushred,320,160);
 			canvas.graphics.DrawString (controls,font,brushred,320,380);
+			*/
 		}
 
 		void Update()

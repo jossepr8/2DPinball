@@ -27,6 +27,9 @@ namespace GXPEngine
 			case Types.Purple:
 				SetColor (200, 0, 200);
 				break;
+			case Types.Yellow:
+				SetColor (200, 200, 0);
+				break;
 			}
 
 		}
@@ -57,7 +60,8 @@ namespace GXPEngine
 	public enum Types{
 		Normal,
 		Green,
-		Purple
+		Purple,
+		Yellow
 	}
 
 }

@@ -15,7 +15,8 @@ namespace GXPEngine
 		Font font = new Font ("Broadway BT",20,FontStyle.Regular);
 
 		static Color purpleish = ColorTranslator.FromHtml("#5a5492");
-		SolidBrush purpbrush = new SolidBrush (purpleish);
+		//SolidBrush purpbrush = new SolidBrush (purpleish);
+		SolidBrush purpbrush = new SolidBrush (Color.ForestGreen);
 
 		Sprite background = new Sprite ("carbon.png");
 		NameOwner state;
