@@ -39,6 +39,7 @@ namespace GXPEngine
 		public int maxhealth = 100;
 		Canvas _canvas;
 
+
 		public HUD ()
 		{	
 

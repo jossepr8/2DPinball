@@ -1,7 +1,7 @@
 <preset_waves>
 
 <Config>
-<number_of_waves> 26 </number_of_waves>
+<number_of_waves> 30 </number_of_waves>
 </Config>
 
 <Waves>
@@ -67,7 +67,7 @@
 
 <Wave>
 <start_message> Box </start_message>
-<messagetimer> 3 </messagetimer>
+<messagetimer> 1 </messagetimer>
 <paddlewidth> 150 </paddlewidth>
 <ballsize> 150 </ballsize>
 <enemygravity> 6 </enemygravity>
@@ -75,10 +75,10 @@
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 0,0,0,3,1,1,3,0,0,0 </row>
-<row> 0,0,0,1,2,2,1,0,0,0 </row>
-<row> 0,0,0,1,2,2,1,0,0,0 </row>
-<row> 0,0,0,3,1,1,3,0,0,0 </row>
+<row> 0,0,0,4,4,4,4,0,0,0 </row>
+<row> 0,0,0,4,2,2,4,0,0,0 </row>
+<row> 0,0,0,4,2,2,4,0,0,0 </row>
+<row> 0,0,0,4,4,4,4,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -104,12 +104,12 @@
 </Wave>
 
 <Wave>
-<start_message> the lazy line </start_message>
+<start_message> The Lazy Line </start_message>
 <messagetimer> 3 </messagetimer>
 <paddlewidth> 75 </paddlewidth>
 <ballsize> 100 </ballsize>
 <enemygravity> 2 </enemygravity>
-<wavemusic>Wave6.mp3</wavemusic>
+<wavemusic>Wave5.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -240,9 +240,9 @@
 <start_message> 2fast2furious </start_message>
 <messagetimer> 1 </messagetimer>
 <paddlewidth> 222 </paddlewidth>
-<ballsize> 222 </ballsize>
-<enemygravity> 6 </enemygravity>
-<wavemusic>Wave10.mp3</wavemusic>
+<ballsize> 275 </ballsize>
+<enemygravity> 5 </enemygravity>
+<wavemusic>Wave6.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,2,2,2,2,0,0,0 </row>
 <row> 0,0,1,1,1,1,1,2,2,0 </row>
@@ -317,7 +317,7 @@
 <messagetimer> 3 </messagetimer>
 <paddlewidth> 175 </paddlewidth>
 <ballsize> 150 </ballsize>
-<enemygravity> 5 </enemygravity>
+<enemygravity> 3 </enemygravity>
 <wavemusic>Wave10.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -355,8 +355,8 @@
 <messagetimer> 0.25 </messagetimer>
 <paddlewidth> 1000 </paddlewidth>
 <ballsize> 1000 </ballsize>
-<enemygravity> 8 </enemygravity>
-<wavemusic>Wave12.mp3</wavemusic>
+<enemygravity> 10 </enemygravity>
+<wavemusic>Wave5.mp3</wavemusic>
 <row> 0,0,0,0,3,3,0,0,0,0 </row>
 <row> 0,0,0,0,3,3,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -454,12 +454,12 @@
 <wavemusic>Wave10.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
-<row> 2,0,0,0,0,0,0,0,0,3 </row>
+<row> 2,1,0,0,0,0,0,0,1,3 </row>
+<row> 2,1,0,0,0,0,0,0,1,3 </row>
+<row> 2,2,0,0,0,0,0,0,3,3 </row>
+<row> 2,2,0,0,0,0,0,0,3,3 </row>
+<row> 2,1,0,0,0,0,0,0,1,3 </row>
+<row> 2,1,0,0,0,0,0,0,1,3 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
@@ -473,12 +473,12 @@
 <wavemusic>Wave7.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
-<row> 3,0,0,0,0,0,0,0,0,2 </row>
+<row> 3,1,0,0,0,0,0,0,1,2 </row>
+<row> 3,1,0,0,0,0,0,0,1,2 </row>
+<row> 3,3,0,0,0,0,0,0,2,2 </row>
+<row> 3,3,0,0,0,0,0,0,2,2 </row>
+<row> 3,1,0,0,0,0,0,0,1,2 </row>
+<row> 3,1,0,0,0,0,0,0,1,2 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 </Wave>
@@ -491,6 +491,7 @@
 <enemygravity> 10 </enemygravity>
 <wavemusic>Wave5.mp3</wavemusic>
 <row> 0,0,0,3,3,3,3,0,0,0 </row>
+<row> 0,0,0,3,3,3,3,0,0,0 </row>
 <row> 0,0,0,0,3,3,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
@@ -499,7 +500,82 @@
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Taste that lightning </start_message>
+<messagetimer> 2 </messagetimer>
+<paddlewidth> 1000 </paddlewidth>
+<ballsize> 300 </ballsize>
+<enemygravity> 10 </enemygravity>
+<wavemusic>Wave11.mp3</wavemusic>
 <row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,4,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,4,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,4,4,0,0,0,0,0 </row>
+<row> 0,0,0,4,4,4,0,0,0,0 </row>
+<row> 0,0,0,0,4,4,4,0,0,0 </row>
+<row> 0,0,0,0,0,4,4,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,4,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,4,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Supernova </start_message>
+<messagetimer> 2 </messagetimer>
+<paddlewidth> 300 </paddlewidth>
+<ballsize> 325 </ballsize>
+<enemygravity> 10 </enemygravity>
+<wavemusic>Wave2.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,0,0,0,0,0 </row>
+<row> 0,0,0,1,4,4,1,0,0,0 </row>
+<row> 0,0,0,4,3,3,4,1,0,0 </row>
+<row> 0,0,1,4,3,3,4,0,0,0 </row>
+<row> 0,0,0,1,4,4,1,0,0,0 </row>
+<row> 0,0,0,0,0,1,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Bad Piggy </start_message>
+<messagetimer> 0.5 </messagetimer>
+<paddlewidth> 100 </paddlewidth>
+<ballsize> 75 </ballsize>
+<enemygravity> 1 </enemygravity>
+<wavemusic>Wave10.mp3</wavemusic>
+<row> 0,0,0,3,0,0,3,0,0,0 </row>
+<row> 0,0,3,3,0,0,3,3,0,0 </row>
+<row> 0,3,3,3,3,3,3,3,3,0 </row>
+<row> 0,3,1,2,3,3,2,1,3,0 </row>
+<row> 0,3,3,3,3,3,3,3,3,0 </row>
+<row> 0,0,3,3,3,3,3,3,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+</Wave>
+
+<Wave>
+<start_message> Skill shot </start_message>
+<messagetimer> 3 </messagetimer>
+<paddlewidth> 50 </paddlewidth>
+<ballsize> 55 </ballsize>
+<enemygravity> 2 </enemygravity>
+<wavemusic>Wave5.mp3</wavemusic>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,0,0,0,0,0,0 </row>
+<row> 0,0,0,0,1,2,0,0,0,0 </row>
+<row> 0,0,0,0,3,4,0,0,0,0 </row>
 </Wave>
 
 

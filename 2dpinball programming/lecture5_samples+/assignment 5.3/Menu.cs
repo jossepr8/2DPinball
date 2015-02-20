@@ -12,33 +12,29 @@ namespace GXPEngine
 		AnimSprite _highscore;
 		AnimSprite _manual;
 		AnimSprite _names;
+		Wave wave;
 		Sprite logo;
 		Sprite _esc;
 
-		Ball _ball;
 		Sprite _background;
 
 
 		int selectednumber = 0;
 		List<AnimSprite> buttonlist = new List<AnimSprite>();
-
+		public List<Enemy> enemylist = new List<Enemy> ();
 
 		public Menu (MyGame game)
 		{	
 			_game = game;
 			_background = new Sprite ("mainmenubackground.png");
 			AddChild (_background);
-
+			wave = new Wave (this);
 			logo = new Sprite ("PAVATI.png");
 			logo.SetXY (_game.width / 2 - logo.width / 2, -140);
 			AddChild (logo);
 
 			SoundManager.Playmusic ("mainmenu.mp3");
 
-			_ball = new Ball ( 32, new Vec2 (game.width / 8, 3 * game.height / 4), null, Color.Green){
-				position = new Vec2 (-100, -100)};	//start position
-			AddChild (_ball);
-			_ball.velocity = new Vec2 (5,5);	//start velocity
 
 
 			_esc = new Sprite ("esc.png");
@@ -66,6 +62,14 @@ namespace GXPEngine
 
 			AddButtons ();
 
+		}
+		public MyGame GetGame(){
+			return _game;
+		}
+
+		public void Addenemy(Enemy enemy){
+			AddChild (enemy);
+			enemylist.Add (enemy);
 		}
 
 		void AddButtons()
@@ -106,16 +110,28 @@ namespace GXPEngine
 			}
 		}
 
+		public void UpdateButtons(){
+			RemoveChild (_start);
+			RemoveChild (_highscore);
+			RemoveChild (_manual);
+			RemoveChild (_names);
+			RemoveChild (logo);
 
+			AddChild (_start);
+			AddChild (_highscore);
+			AddChild (_manual);
+			AddChild (_names);
+			AddChild (logo);
+		}
 		void Update()
 		{	
-			if (_ball.y > _game.height + 50) {
-				_ball.position = new Vec2 (-100, -100);
-				_ball.velocity = new Vec2 (Utils.Random (2, 7), Utils.Random (2, 7));
-				int randomscale = Utils.Random (1, 3);
-				_ball.SetScaleXY (randomscale,randomscale);
-
-
+			wave.Step (true);
+			foreach (Enemy enemy in enemylist) {
+				if (enemy.y > _game.height + 50) {
+					enemylist.Remove (enemy);
+					enemy.Destroy ();
+					break;
+				}
 			}
 			//_ball.rotation += 10;
 
@@ -129,7 +145,7 @@ namespace GXPEngine
 			if (Input.GetKeyDown (Key.ESCAPE)) {
 				Environment.Exit (0);
 			}
-			_ball.MenuStep ();
+		
 			//namemenu.Step ();
 
 			if (Input.GetKeyDown (Key.SPACE)) 

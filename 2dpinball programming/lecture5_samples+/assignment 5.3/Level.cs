@@ -258,6 +258,10 @@ namespace GXPEngine
 			_hud.UpdateHUD (Damage,_player1.score,_player2.score);
 
 		}
+		public void FixHud(){
+			RemoveChild (_hud);
+			AddChild (_hud);
+		}
 
 		public void ButtonMashPlayer1Win(){
 			_ball.position = new Vec2 (width/4, _player1.y);

@@ -30,16 +30,16 @@
       <Name>ACER</Name>
     </highscore>
     <highscore>
+      <Score>129</Score>
+      <Name>ALLAHU</Name>
+    </highscore>
+    <highscore>
       <Score>125</Score>
       <Name>ANT</Name>
     </highscore>
     <highscore>
-      <Score>116</Score>
-      <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>114</Score>
-      <Name>ANT</Name>
+      <Score>124</Score>
+      <Name>AKBAR</Name>
     </highscore>
   </Solo>
   <Team>
@@ -57,6 +57,10 @@
     </highscore>
     <highscore>
       <Score>255</Score>
+      <Name>ANT</Name>
+    </highscore>
+    <highscore>
+      <Score>253</Score>
       <Name>ANT</Name>
     </highscore>
     <highscore>
@@ -78,10 +82,6 @@
     <highscore>
       <Score>94</Score>
       <Name>ANT</Name>
-    </highscore>
-    <highscore>
-      <Score>70</Score>
-      <Name>SAXION</Name>
     </highscore>
   </Team>
 </Highscores>
